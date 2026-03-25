@@ -1,0 +1,61 @@
+name: drug_traceability_app
+description: 药监通 - 智能药品全流程追溯监管系统移动端应用
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  
+  # 状态管理
+  flutter_riverpod: ^2.4.9
+  
+  # 网络请求
+  dio: ^5.4.0
+  
+  # 本地存储
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  
+  # 扫码
+  mobile_scanner: ^4.0.1
+  
+  # 推送
+  # firebase_messaging: ^14.7.10
+  
+  # 图表
+  fl_chart: ^0.66.0
+  
+  # 地图
+  google_maps_flutter: ^2.5.0
+  
+  # UI组件
+  flutter_svg: ^2.0.9
+  cached_network_image: ^3.3.0
+  shimmer: ^3.0.0
+  
+  # 工具
+  intl: ^0.18.1
+  url_launcher: ^6.2.2
+  share_plus: ^7.2.1
+  image_picker: ^1.0.5
+  permission_handler: ^11.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.7
+
+flutter:
+  uses-material-design: true
+  
+  # 需要图片/图标时再创建 assets/images/、assets/icons/ 并取消下面注释
+  # assets:
+  #   - assets/images/
+  #   - assets/icons/

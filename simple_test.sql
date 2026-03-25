@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS drug_traceability CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE drug_traceability;
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(50) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
+  `name` VARCHAR(50) NOT NULL,
+  `role_id` BIGINT(20) NOT NULL,
+  `organization` VARCHAR(100),
+  `phone` VARCHAR(20),
+  `email` VARCHAR(100),
+  `status` INT(11) NOT NULL DEFAULT 1,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

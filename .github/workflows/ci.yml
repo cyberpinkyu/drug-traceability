@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: drug-traceability
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '8'
+          cache: maven
+      - name: Role Matrix Gate
+        run: python3 scripts/check_role_matrix.py --controllers src/main/java/com/example/drug/controller --matrix ../docs/role-matrix.md
+      - name: Static Scan (SpotBugs)
+        run: mvn -B -q -DskipTests=true com.github.spotbugs:spotbugs-maven-plugin:4.8.6.2:check
+      - name: Unit Tests
+        run: mvn -B -q test
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: drug-traceability-frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: drug-traceability-frontend/package-lock.json
+      - name: Install
+        run: npm ci
+      - name: Static Scan (npm audit)
+        run: npm audit --audit-level=high
+      - name: Build Gate
+        run: npm run build
+
+  app:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: drug-traceability-app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - name: Pub Get
+        run: flutter pub get
+      - name: Static Scan (flutter analyze)
+        run: flutter analyze
+      - name: Tests
+        run: flutter test

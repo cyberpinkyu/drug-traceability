@@ -1,0 +1,13 @@
+USE drug_traceability;
+INSERT INTO role (name, code, description) VALUES ('Super Admin', 'super_admin', 'System Admin');
+INSERT INTO role (name, code, description) VALUES ('Regulator', 'regulator', 'Drug Regulator');
+INSERT INTO role (name, code, description) VALUES ('Producer', 'producer', 'Drug Producer');
+INSERT INTO role (name, code, description) VALUES ('Distributor', 'distributor', 'Drug Distributor');
+INSERT INTO role (name, code, description) VALUES ('Hospital', 'hospital', 'Medical Institution');
+INSERT INTO role (name, code, description) VALUES ('Public', 'public', 'General Public');
+INSERT INTO user (username, password, name, role_id, organization, phone, email, status) VALUES ('admin', '123456', 'Super Admin', 1, 'System Management', '13800138000', 'admin@example.com', 1);
+INSERT INTO user (username, password, name, role_id, organization, phone, email, status) VALUES ('regulator', '123456', 'Regulator', 2, 'FDA', '13800138001', 'regulator@example.com', 1);
+INSERT INTO user (username, password, name, role_id, organization, phone, email, status) VALUES ('producer', '123456', 'Producer', 3, 'Pharma Co', '13800138002', 'producer@example.com', 1);
+INSERT INTO user (username, password, name, role_id, organization, phone, email, status) VALUES ('distributor', '123456', 'Distributor', 4, 'Medicine Co', '13800138003', 'distributor@example.com', 1);
+INSERT INTO user (username, password, name, role_id, organization, phone, email, status) VALUES ('hospital', '123456', 'Hospital', 5, 'Hospital', '13800138004', 'hospital@example.com', 1);
+INSERT INTO user (username, password, name, role_id, organization, phone, email, status) VALUES ('public', '123456', 'Public', 6, 'Individual', '13800138005', 'public@example.com', 1);

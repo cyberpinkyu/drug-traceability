@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS test_db;
+USE test_db;
+CREATE TABLE test (id INT);
+DROP DATABASE test_db;
