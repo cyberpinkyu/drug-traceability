@@ -15,6 +15,7 @@ import com.example.drug.service.InventoryService;
 import com.example.drug.service.ProcurementRecordService;
 import com.example.drug.service.ProductionBatchService;
 import com.example.drug.service.SaleRecordService;
+import com.example.drug.service.UserService;
 import com.example.drug.service.UsageRecordService;
 import com.example.drug.utils.MapUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -50,6 +52,9 @@ public class TraceController {
 
     @Autowired
     private AdverseReactionService adverseReactionService;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/batch")
     public Map<String, Object> getBatches() {
@@ -129,7 +134,10 @@ public class TraceController {
 
     @GetMapping("/procurement")
     public Map<String, Object> getProcurementRecords() {
-        return MapUtils.of("code", 200, "data", procurementRecordService.list());
+        List<Map<String, Object>> rows = procurementRecordService.list().stream()
+            .map(this::toProcurementView)
+            .collect(java.util.stream.Collectors.toList());
+        return MapUtils.of("code", 200, "data", rows);
     }
 
     @RequireRole({"admin", "producer", "enterprise", "institution"})
@@ -147,7 +155,10 @@ public class TraceController {
 
     @GetMapping("/sale")
     public Map<String, Object> getSaleRecords() {
-        return MapUtils.of("code", 200, "data", saleRecordService.list());
+        List<Map<String, Object>> rows = saleRecordService.list().stream()
+            .map(this::toSaleView)
+            .collect(java.util.stream.Collectors.toList());
+        return MapUtils.of("code", 200, "data", rows);
     }
 
     @RequireRole({"admin", "producer", "enterprise", "institution"})
@@ -165,7 +176,10 @@ public class TraceController {
 
     @GetMapping("/inventory")
     public Map<String, Object> getInventories() {
-        return MapUtils.of("code", 200, "data", inventoryService.list());
+        List<Map<String, Object>> rows = inventoryService.list().stream()
+            .map(this::toInventoryView)
+            .collect(java.util.stream.Collectors.toList());
+        return MapUtils.of("code", 200, "data", rows);
     }
 
     @GetMapping("/inventory/org/{orgId}")
@@ -231,7 +245,10 @@ public class TraceController {
 
     @GetMapping("/usage/records")
     public Map<String, Object> getUsageRecords() {
-        return MapUtils.of("code", 200, "data", usageRecordService.list());
+        List<Map<String, Object>> rows = usageRecordService.list().stream()
+            .map(this::toUsageRecordView)
+            .collect(java.util.stream.Collectors.toList());
+        return MapUtils.of("code", 200, "data", rows);
     }
 
     @RequireRole({"admin", "institution", "public"})
@@ -258,5 +275,132 @@ public class TraceController {
         return success
             ? MapUtils.of("code", 200, "message", "上报成功")
             : MapUtils.of("code", 500, "message", "上报失败");
+    }
+    private Map<String, Object> toInventoryView(Inventory inventory) {
+        Map<String, Object> row = new LinkedHashMap<String, Object>();
+        row.put("id", inventory.getId());
+        row.put("batchId", inventory.getBatchId());
+        row.put("organizationId", inventory.getOrganizationId());
+        row.put("quantity", inventory.getQuantity());
+        row.put("lastUpdateDate", inventory.getLastUpdateDate());
+        row.put("status", inventory.getStatus());
+
+        ProductionBatch batch = productionBatchService.getById(inventory.getBatchId());
+        if (batch != null) {
+            row.put("batchNumber", batch.getBatchNumber());
+            row.put("productionDate", batch.getProductionDate());
+            row.put("expiryDate", batch.getExpiryDate());
+            row.put("drugId", batch.getDrugId());
+
+            DrugInfo drug = drugInfoService.getById(batch.getDrugId());
+            if (drug != null) {
+                row.put("drugCode", drug.getDrugCode());
+                row.put("drugName", drug.getName());
+                row.put("specification", drug.getSpecification());
+                row.put("manufacturer", drug.getManufacturer());
+                row.put("category", drug.getCategory());
+                row.put("unit", drug.getUnit());
+            }
+        }
+
+        com.example.drug.entity.User org = userService.getById(inventory.getOrganizationId());
+        if (org != null) {
+            row.put("organizationName", org.getName());
+            row.put("organization", org.getOrganization());
+        }
+        return row;
+    }
+
+    private Map<String, Object> toUsageRecordView(UsageRecord record) {
+        Map<String, Object> row = new LinkedHashMap<String, Object>();
+        row.put("id", record.getId());
+        row.put("drugId", record.getDrugId());
+        row.put("patientName", record.getPatientName());
+        row.put("dosage", record.getDosage());
+        row.put("frequency", record.getFrequency());
+        row.put("usageDate", record.getUsageDate());
+        row.put("doctorId", record.getDoctorId());
+        row.put("hospital", record.getHospital());
+        row.put("status", record.getStatus());
+        row.put("createdAt", record.getCreatedAt());
+        row.put("recordType", "用药记录");
+
+        DrugInfo drug = drugInfoService.getById(record.getDrugId());
+        if (drug != null) {
+            row.put("drugCode", drug.getDrugCode());
+            row.put("drugName", drug.getName());
+            row.put("manufacturer", drug.getManufacturer());
+            row.put("category", drug.getCategory());
+            row.put("specification", drug.getSpecification());
+        }
+        return row;
+    }
+
+    private Map<String, Object> toProcurementView(ProcurementRecord record) {
+        Map<String, Object> row = new LinkedHashMap<String, Object>();
+        row.put("id", record.getId());
+        row.put("batchId", record.getBatchId());
+        row.put("buyerId", record.getBuyerId());
+        row.put("supplierId", record.getSupplierId());
+        row.put("quantity", record.getQuantity());
+        row.put("purchaseDate", record.getPurchaseDate());
+        row.put("purchasePrice", record.getPurchasePrice());
+        row.put("status", record.getStatus());
+
+        ProductionBatch batch = productionBatchService.getById(record.getBatchId());
+        if (batch != null) {
+            row.put("batchNumber", batch.getBatchNumber());
+            DrugInfo drug = drugInfoService.getById(batch.getDrugId());
+            if (drug != null) {
+                row.put("drugCode", drug.getDrugCode());
+                row.put("drugName", drug.getName());
+            }
+        }
+
+        com.example.drug.entity.User buyer = userService.getById(record.getBuyerId());
+        if (buyer != null) {
+            row.put("buyerName", buyer.getName());
+            row.put("buyerOrganization", buyer.getOrganization());
+        }
+        com.example.drug.entity.User supplier = userService.getById(record.getSupplierId());
+        if (supplier != null) {
+            row.put("supplierName", supplier.getName());
+            row.put("supplierOrganization", supplier.getOrganization());
+        }
+        return row;
+    }
+
+    private Map<String, Object> toSaleView(SaleRecord record) {
+        Map<String, Object> row = new LinkedHashMap<String, Object>();
+        row.put("id", record.getId());
+        row.put("batchId", record.getBatchId());
+        row.put("sellerId", record.getSellerId());
+        row.put("buyerId", record.getBuyerId());
+        row.put("quantity", record.getQuantity());
+        row.put("saleDate", record.getSaleDate());
+        row.put("salePrice", record.getSalePrice());
+        row.put("status", record.getStatus());
+
+        ProductionBatch batch = productionBatchService.getById(record.getBatchId());
+        if (batch != null) {
+            row.put("batchNumber", batch.getBatchNumber());
+            DrugInfo drug = drugInfoService.getById(batch.getDrugId());
+            if (drug != null) {
+                row.put("drugCode", drug.getDrugCode());
+                row.put("drugName", drug.getName());
+            }
+        }
+
+        com.example.drug.entity.User seller = userService.getById(record.getSellerId());
+        if (seller != null) {
+            row.put("sellerName", seller.getName());
+            row.put("sellerOrganization", seller.getOrganization());
+        }
+        com.example.drug.entity.User buyer = userService.getById(record.getBuyerId());
+        if (buyer != null) {
+            row.put("buyerName", buyer.getName());
+            row.put("buyerOrganization", buyer.getOrganization());
+        }
+        return row;
     }
 }

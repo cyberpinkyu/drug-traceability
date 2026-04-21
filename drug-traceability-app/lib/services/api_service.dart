@@ -92,15 +92,15 @@ class ApiService {
       final code = payload['code'];
       if (code != null && code != 200) {
         throw ApiException(
-          payload['message']?.toString() ?? '请求失败',
+          payload['message']?.toString() ?? 'request failed',
           code: code is int ? code : null,
         );
       }
       return payload;
     } on DioException catch (e) {
       final msg = e.response?.data is Map
-          ? (e.response?.data['message']?.toString() ?? '网络请求失败')
-          : (e.message ?? '网络请求失败');
+          ? (e.response?.data['message']?.toString() ?? 'network request failed')
+          : (e.message ?? 'network request failed');
       throw ApiException(msg, code: e.response?.statusCode);
     }
   }
@@ -122,6 +122,114 @@ class ApiService {
 
   Future<Map<String, dynamic>> getPublicTrace(String code) {
     return _request('/trace/public/$code');
+  }
+
+  Future<Map<String, dynamic>> getBatchByNumber(String batchNumber) {
+    return _request('/trace/batch/number/$batchNumber');
+  }
+
+  Future<Map<String, dynamic>> getDrugByCode(String code) {
+    return _request('/drug/info/code/$code');
+  }
+
+  Future<Map<String, dynamic>> searchDrug(String keyword) {
+    return _request('/drug/info/search', query: {'keyword': keyword});
+  }
+
+  String normalizeScanCode(String raw) {
+    String code = raw.trim();
+    if (code.isEmpty) return code;
+
+    if (code.contains('?')) {
+      code = code.split('?').first;
+    }
+    if (code.contains('#')) {
+      code = code.split('#').first;
+    }
+    if (code.contains('/')) {
+      final parts = code.split('/').where((e) => e.isNotEmpty).toList();
+      if (parts.isNotEmpty) {
+        code = parts.last;
+      }
+    }
+    return code.trim();
+  }
+
+  Future<Map<String, dynamic>> resolveTraceByScanCode(String rawCode) async {
+    final code = normalizeScanCode(rawCode);
+    if (code.isEmpty) {
+      throw ApiException('empty scan code');
+    }
+
+    try {
+      final trace = await getPublicTrace(code);
+      return {
+        'type': 'trace',
+        'code': code,
+        'data': trace['data'],
+      };
+    } catch (_) {
+      // fallback
+    }
+
+    try {
+      final batch = await getBatchByNumber(code);
+      return {
+        'type': 'batch',
+        'code': code,
+        'data': batch['data'],
+      };
+    } catch (_) {
+      // fallback
+    }
+
+    try {
+      final drug = await getDrugByCode(code);
+      return {
+        'type': 'drug',
+        'code': code,
+        'data': drug['data'],
+      };
+    } catch (_) {
+      // fallback
+    }
+
+    final search = await searchDrug(code);
+    final list = (search['data'] is List) ? List.from(search['data']) : <dynamic>[];
+    if (list.isNotEmpty) {
+      return {
+        'type': 'drug',
+        'code': code,
+        'data': list.first,
+      };
+    }
+
+    throw ApiException('no matching drug or trace record found for $code');
+  }
+
+  Future<Map<String, dynamic>> resolveDrugForUsageByScanCode(String rawCode) async {
+    final code = normalizeScanCode(rawCode);
+    if (code.isEmpty) {
+      throw ApiException('empty scan code');
+    }
+
+    try {
+      final drug = await getDrugByCode(code);
+      return {
+        'code': code,
+        'data': drug['data'],
+      };
+    } catch (_) {
+      final search = await searchDrug(code);
+      final list = (search['data'] is List) ? List.from(search['data']) : <dynamic>[];
+      if (list.isNotEmpty) {
+        return {
+          'code': code,
+          'data': list.first,
+        };
+      }
+      throw ApiException('no matching drug found for $code');
+    }
   }
 
   Future<Map<String, dynamic>> warehouseIn(Map<String, dynamic> data) {
@@ -149,7 +257,7 @@ class ApiService {
   }
 
   Future<Map<String, dynamic>> getRiskMap() {
-    return _request('/regulatory/stats/risk');
+    return _request('/regulatory/stats/risk-map');
   }
 
   Future<Map<String, dynamic>> aiChat(Map<String, dynamic> data) {

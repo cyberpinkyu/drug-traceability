@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="regulatory-page">
     <el-tabs v-model="activeTab">
       <el-tab-pane label="待派发上报" name="reports">

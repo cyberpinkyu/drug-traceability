@@ -1,7 +1,10 @@
-﻿<template>
+<template>
   <div class="login-container">
-    <div class="login-form">
+    <div class="decor decor-a"></div>
+    <div class="decor decor-b"></div>
+    <div class="login-form panel-card">
       <h2>药品全流程追溯监管系统</h2>
+      <p class="sub">智能追溯 · 风险预警 · 监管闭环</p>
       <el-tabs v-model="activeTab">
         <el-tab-pane label="登录" name="login">
           <el-form ref="loginFormRef" :model="loginForm" :rules="loginRules" label-width="80px">
@@ -9,10 +12,10 @@
               <el-input v-model="loginForm.username" placeholder="请输入用户名" />
             </el-form-item>
             <el-form-item label="密码" prop="password">
-              <el-input v-model="loginForm.password" type="password" placeholder="请输入密码" />
+              <el-input v-model="loginForm.password" type="password" placeholder="请输入密码" show-password />
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" style="width: 100%" @click="login">登录</el-button>
+              <el-button type="primary" class="full" @click="login">登录</el-button>
             </el-form-item>
           </el-form>
         </el-tab-pane>
@@ -26,7 +29,7 @@
               <el-input v-model="registerForm.name" placeholder="请输入姓名" />
             </el-form-item>
             <el-form-item label="密码" prop="password">
-              <el-input v-model="registerForm.password" type="password" placeholder="请输入密码" />
+              <el-input v-model="registerForm.password" type="password" placeholder="请输入密码" show-password />
             </el-form-item>
             <el-form-item label="邮箱" prop="email">
               <el-input v-model="registerForm.email" placeholder="请输入邮箱" />
@@ -35,7 +38,7 @@
               <el-input v-model="registerForm.phone" placeholder="请输入电话" />
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" style="width: 100%" @click="register">注册</el-button>
+              <el-button type="primary" class="full" @click="register">注册</el-button>
             </el-form-item>
           </el-form>
         </el-tab-pane>
@@ -125,24 +128,58 @@ const register = async () => {
 
 <style scoped>
 .login-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f766e 0%, #14532d 100%);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.decor {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(4px);
+}
+
+.decor-a {
+  width: 380px;
+  height: 380px;
+  right: -90px;
+  top: -100px;
+  background: rgba(37, 99, 235, 0.2);
+}
+
+.decor-b {
+  width: 320px;
+  height: 320px;
+  left: -90px;
+  bottom: -70px;
+  background: rgba(15, 118, 110, 0.2);
 }
 
 .login-form {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  width: 420px;
+  position: relative;
+  z-index: 1;
+  width: 430px;
+  padding: 28px;
 }
 
 .login-form h2 {
   text-align: center;
-  margin-bottom: 24px;
-  color: #1f2937;
+  margin: 0 0 8px;
+  color: var(--text-main);
+}
+
+.sub {
+  margin: 0 0 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.full {
+  width: 100%;
 }
 </style>

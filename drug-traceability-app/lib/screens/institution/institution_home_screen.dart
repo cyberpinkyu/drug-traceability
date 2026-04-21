@@ -1,9 +1,10 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 import '../../services/api_service.dart';
 import '../adverse_reaction_screen.dart';
 import '../ai_assistant_profile.dart';
 import '../ai_chat_screen.dart';
+import '../usage_record_scan_screen.dart';
 import 'history_record_screen.dart';
 import 'inventory_management_screen.dart';
 
@@ -35,7 +36,7 @@ class _InstitutionHomeScreenState extends State<InstitutionHomeScreen> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _openAssistant,
         icon: const Icon(Icons.smart_toy),
-        label: const Text('AI助手'),
+        label: const Text('智能助手'),
       ),
     );
   }
@@ -52,7 +53,7 @@ class _InstitutionHomeScreenState extends State<InstitutionHomeScreen> {
         children: [
           Text('医疗机构端', style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold)),
           SizedBox(height: 6),
-          Text('验收入库 · 用药记录 · 不良反应上报', style: TextStyle(color: Colors.white70)),
+          Text('入库管理、用药登记、不良反应上报', style: TextStyle(color: Colors.white70)),
         ],
       ),
     );
@@ -66,9 +67,14 @@ class _InstitutionHomeScreenState extends State<InstitutionHomeScreen> {
           children: [
             Expanded(
               child: ElevatedButton.icon(
-                onPressed: _showUsageRecordDialog,
-                icon: const Icon(Icons.edit_note),
-                label: const Text('记录用药'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const UsageRecordScanScreen()),
+                  );
+                },
+                icon: const Icon(Icons.qr_code_scanner),
+                label: const Text('扫码登记用药'),
               ),
             ),
             const SizedBox(width: 12),
@@ -101,7 +107,7 @@ class _InstitutionHomeScreenState extends State<InstitutionHomeScreen> {
       children: [
         _serviceCard(
           title: '库存管理',
-          subtitle: '查看药品库存',
+          subtitle: '当前库存',
           icon: Icons.inventory_2,
           color: Colors.green,
           onTap: () {
@@ -113,7 +119,7 @@ class _InstitutionHomeScreenState extends State<InstitutionHomeScreen> {
         ),
         _serviceCard(
           title: '历史记录',
-          subtitle: '查看院内记录',
+          subtitle: '机构记录',
           icon: Icons.history,
           color: Colors.purple,
           onTap: () {
@@ -125,7 +131,7 @@ class _InstitutionHomeScreenState extends State<InstitutionHomeScreen> {
         ),
         _serviceCard(
           title: '问题上报',
-          subtitle: '上报不良反应',
+          subtitle: '不良事件',
           icon: Icons.report,
           color: Colors.orange,
           onTap: () {
@@ -136,8 +142,8 @@ class _InstitutionHomeScreenState extends State<InstitutionHomeScreen> {
           },
         ),
         _serviceCard(
-          title: 'AI助手',
-          subtitle: '院内流程答疑',
+          title: '智能助手',
+          subtitle: '流程支持',
           icon: Icons.smart_toy,
           color: Colors.indigo,
           onTap: _openAssistant,
@@ -172,46 +178,6 @@ class _InstitutionHomeScreenState extends State<InstitutionHomeScreen> {
         ),
       ),
     );
-  }
-
-  Future<void> _showUsageRecordDialog() async {
-    final drugId = TextEditingController();
-    final patientName = TextEditingController();
-    final usage = TextEditingController();
-
-    final ok = await showDialog<bool>(
-      context: context,
-      builder: (_) => AlertDialog(
-        title: const Text('新增用药记录'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(controller: drugId, decoration: const InputDecoration(labelText: '药品ID')),
-            TextField(controller: patientName, decoration: const InputDecoration(labelText: '患者姓名')),
-            TextField(controller: usage, decoration: const InputDecoration(labelText: '用药说明')),
-          ],
-        ),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('取消')),
-          TextButton(onPressed: () => Navigator.pop(context, true), child: const Text('提交')),
-        ],
-      ),
-    );
-
-    if (ok != true) return;
-
-    try {
-      await _apiService.submitUsageRecord({
-        'drugId': int.tryParse(drugId.text.trim()) ?? 0,
-        'patientName': patientName.text.trim(),
-        'usage': usage.text.trim(),
-      });
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('提交成功')));
-    } catch (e) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('提交失败: $e')));
-    }
   }
 
   void _openAssistant() {

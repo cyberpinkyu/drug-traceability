@@ -4,6 +4,7 @@ C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\impl\Aler
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\entity\AIKnowledgeDoc.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\security\TokenPair.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\impl\SaleRecordServiceImpl.java
+C:\dev\design\drug-traceability\src\main\java\com\example\drug\entity\AuditOperationLog.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\security\JwtTokenService.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\ai\tools\DrugTraceTool.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\entity\ProductionBatch.java
@@ -16,6 +17,7 @@ C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\ScanLogSe
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\impl\StatsServiceImpl.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\mapper\UsageRecordMapper.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\config\WebMvcConfig.java
+C:\dev\design\drug-traceability\src\main\java\com\example\drug\mapper\AuditOperationLogMapper.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\mapper\SaleRecordMapper.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\entity\Inventory.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\impl\RoleServiceImpl.java
@@ -33,6 +35,7 @@ C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\impl\Scan
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\common\BusinessException.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\impl\DrugInfoServiceImpl.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\security\AuthPrincipal.java
+C:\dev\design\drug-traceability\src\main\java\com\example\drug\config\SecurityStartupValidator.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\impl\MessageNoticeServiceImpl.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\entity\RegulatoryTask.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\AdverseReactionService.java
@@ -74,6 +77,7 @@ C:\dev\design\drug-traceability\src\main\java\com\example\drug\entity\AdverseRea
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\AIKnowledgeDocService.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\RegulatoryTaskService.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\mapper\ProductionBatchMapper.java
+C:\dev\design\drug-traceability\src\main\java\com\example\drug\filter\RequestBodyCachingFilter.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\common\RequireRole.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\impl\InventoryServiceImpl.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\mapper\AIToolUsageLogMapper.java

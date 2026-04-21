@@ -5,12 +5,10 @@
 </template>
 
 <script setup>
-// App组件
 </script>
 
 <style>
 .app-container {
   min-height: 100vh;
-  background-color: #f5f7fa;
 }
 </style>

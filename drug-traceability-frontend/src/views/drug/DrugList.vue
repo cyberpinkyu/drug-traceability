@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="drug-list">
     <el-card>
       <template #header>

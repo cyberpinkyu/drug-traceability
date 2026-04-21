@@ -1,10 +1,14 @@
 package com.example.drug.controller;
 
 import com.example.drug.common.RequireRole;
+import com.example.drug.entity.AdverseReaction;
+import com.example.drug.entity.DrugInfo;
 import com.example.drug.entity.RegulatoryEnforcement;
 import com.example.drug.entity.RegulatoryTask;
 import com.example.drug.entity.Role;
 import com.example.drug.entity.User;
+import com.example.drug.service.AdverseReactionService;
+import com.example.drug.service.DrugInfoService;
 import com.example.drug.service.RegulatoryEnforcementService;
 import com.example.drug.service.RegulatoryTaskService;
 import com.example.drug.service.RoleService;
@@ -14,7 +18,9 @@ import com.example.drug.utils.MapUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -36,6 +42,12 @@ public class RegulatoryController {
 
     @Autowired
     private RoleService roleService;
+
+    @Autowired
+    private AdverseReactionService adverseReactionService;
+
+    @Autowired
+    private DrugInfoService drugInfoService;
 
     @RequireRole({"admin", "regulator"})
     @GetMapping("/enforcement")
@@ -138,5 +150,52 @@ public class RegulatoryController {
     @GetMapping("/stats/risk")
     public Map<String, Object> getRiskStats() {
         return MapUtils.of("code", 200, "data", statsService.getRiskStats());
+    }
+
+    @RequireRole({"admin", "regulator"})
+    @GetMapping("/stats/risk-map")
+    public Map<String, Object> getRiskMap() {
+        List<Map<String, Object>> points = new ArrayList<Map<String, Object>>();
+        for (AdverseReaction reaction : adverseReactionService.list()) {
+            Map<String, Object> point = new HashMap<String, Object>();
+            point.put("id", reaction.getId());
+            point.put("riskLevel", normalizeSeverity(reaction.getSeverity()));
+            point.put("latitude", resolveLatitude(reaction.getHospital()));
+            point.put("longitude", resolveLongitude(reaction.getHospital()));
+
+            DrugInfo drug = drugInfoService.getById(reaction.getDrugId());
+            String drugName = drug == null ? "药品风险点" : drug.getName();
+            String hospital = reaction.getHospital() == null ? "未知机构" : reaction.getHospital();
+            point.put("name", hospital + " - " + drugName);
+            points.add(point);
+        }
+        return MapUtils.of("code", 200, "data", points);
+    }
+
+    private String normalizeSeverity(String severity) {
+        if ("high".equalsIgnoreCase(severity) || "medium".equalsIgnoreCase(severity) || "low".equalsIgnoreCase(severity)) {
+            return severity.toLowerCase();
+        }
+        return "medium";
+    }
+
+    private double resolveLatitude(String hospital) {
+        if (hospital != null && hospital.contains("第一人民医院")) {
+            return 22.5431;
+        }
+        if (hospital != null && hospital.contains("儿童医院")) {
+            return 22.5510;
+        }
+        return 22.5431;
+    }
+
+    private double resolveLongitude(String hospital) {
+        if (hospital != null && hospital.contains("第一人民医院")) {
+            return 114.0579;
+        }
+        if (hospital != null && hospital.contains("儿童医院")) {
+            return 114.1095;
+        }
+        return 114.0579;
     }
 }

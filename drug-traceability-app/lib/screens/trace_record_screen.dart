@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import '../../services/api_service.dart';
+
+import '../services/api_service.dart';
 
 class TraceRecordScreen extends StatefulWidget {
   const TraceRecordScreen({super.key});
@@ -10,13 +11,15 @@ class TraceRecordScreen extends StatefulWidget {
 }
 
 class _TraceRecordScreenState extends State<TraceRecordScreen> {
-  final _apiService = ApiService();
-  final _codeController = TextEditingController();
-  List<Map<String, dynamic>> _records = [];
-  List<Map<String, dynamic>> _historyRecords = [];
+  final ApiService _apiService = ApiService();
+  final TextEditingController _codeController = TextEditingController();
+
+  Map<String, dynamic>? _record;
+  final List<Map<String, dynamic>> _historyRecords = [];
+
   bool _isLoading = false;
   bool _hasSearched = false;
-  bool _isScanning = false;
+  bool _handlingScan = false;
 
   @override
   void dispose() {
@@ -25,113 +28,85 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
   }
 
   Future<void> _searchTrace() async {
-    final code = _codeController.text.trim();
-    if (code.isEmpty) {
+    final input = _codeController.text.trim();
+    if (input.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('请输入追溯码')),
+        const SnackBar(content: Text('Please input scan code')),
       );
       return;
     }
 
     setState(() {
       _isLoading = true;
-      _isScanning = false;
     });
 
     try {
-      final response = await _apiService.getPublicTrace(code);
-      if (response['code'] == 200) {
-        setState(() {
-          _records = [response['data']];
-          _historyRecords.insert(0, {
-            'code': code,
-            'timestamp': DateTime.now(),
-            'drugName': response['data']['drugName'] ?? '未知'
-          });
-          _hasSearched = true;
+      final result = await _apiService.resolveTraceByScanCode(input);
+      final data = result['data'] is Map
+          ? Map<String, dynamic>.from(result['data'] as Map)
+          : <String, dynamic>{};
+
+      setState(() {
+        _record = data;
+        _hasSearched = true;
+        _historyRecords.insert(0, {
+          'code': result['code']?.toString() ?? input,
+          'type': result['type']?.toString() ?? 'unknown',
+          'timestamp': DateTime.now(),
+          'drugName': data['drugName']?.toString() ?? data['name']?.toString() ?? 'unknown',
         });
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('查询成功')),
-        );
-      } else {
-        setState(() {
-          _hasSearched = true;
-        });
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(response['message'] ?? '查询失败')),
-        );
-      }
+      });
+
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Trace success: ${result['type']}')),
+      );
     } catch (e) {
       setState(() {
+        _record = null;
         _hasSearched = true;
       });
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('查询失败: $e')),
+        SnackBar(content: Text('Trace failed: $e')),
       );
     } finally {
-      setState(() {
-        _isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
     }
   }
 
-  void _showScanner() {
-    setState(() {
-      _isScanning = true;
-    });
-
-    showModalBottomSheet(
+  Future<void> _showScanner() async {
+    _handlingScan = false;
+    await showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
-      builder: (context) => DraggableScrollableSheet(
-        initialChildSize: 0.7,
-        minChildSize: 0.5,
-        maxChildSize: 0.95,
-        builder: (context, scrollController) => Container(
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-          ),
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      '扫码查询',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.close),
-                      onPressed: () {
-                        Navigator.pop(context);
-                        setState(() {
-                          _isScanning = false;
-                        });
-                      },
-                    ),
-                  ],
-                ),
+      builder: (context) => SizedBox(
+        height: MediaQuery.of(context).size.height * 0.75,
+        child: Column(
+          children: [
+            const SizedBox(height: 12),
+            const Text('Scan Barcode / QR', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+            const SizedBox(height: 12),
+            Expanded(
+              child: MobileScanner(
+                onDetect: (capture) {
+                  if (_handlingScan) return;
+                  final raw = capture.barcodes.first.rawValue;
+                  if (raw == null || raw.trim().isEmpty) return;
+                  _handlingScan = true;
+
+                  Navigator.pop(context);
+                  final normalized = _apiService.normalizeScanCode(raw);
+                  _codeController.text = normalized;
+                  _searchTrace();
+                },
               ),
-              Expanded(
-                child: MobileScanner(
-                  onDetect: (capture) {
-                    final barcode = capture.barcodes.first;
-                    if (barcode.rawValue != null) {
-                      Navigator.pop(context);
-                      _codeController.text = barcode.rawValue!;
-                      _searchTrace();
-                    }
-                  },
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -141,11 +116,11 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('追溯记录'),
+        title: const Text('Trace Records'),
         actions: [
           IconButton(
             icon: const Icon(Icons.history),
-            onPressed: () => _showHistory(),
+            onPressed: _showHistory,
           ),
         ],
       ),
@@ -157,28 +132,18 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
             const SizedBox(height: 24),
             if (_isLoading)
               const Center(child: CircularProgressIndicator())
-            else if (_hasSearched && _records.isEmpty)
-              const Center(
-                child: Padding(
-                  padding: EdgeInsets.all(24),
-                  child: Text(
-                    '未找到相关追溯记录',
-                    style: TextStyle(color: Colors.grey),
-                  ),
+            else if (_hasSearched && _record == null)
+              const Expanded(
+                child: Center(
+                  child: Text('No matching trace info'),
                 ),
               )
-            else if (_records.isNotEmpty)
-              Expanded(child: _buildTraceInfo())
+            else if (_record != null)
+              Expanded(child: _buildTraceInfo(_record!))
             else
-              Expanded(
+              const Expanded(
                 child: Center(
-                  child: Padding(
-                    padding: EdgeInsets.all(24),
-                    child: Text(
-                      '请输入追溯码查询药品追溯记录',
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                  ),
+                  child: Text('Scan or input code to start trace query'),
                 ),
               ),
           ],
@@ -197,7 +162,7 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
               child: TextField(
                 controller: _codeController,
                 decoration: const InputDecoration(
-                  labelText: '请输入药品追溯码',
+                  labelText: 'Barcode / trace code',
                   border: InputBorder.none,
                 ),
                 onSubmitted: (_) => _searchTrace(),
@@ -217,15 +182,33 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
     );
   }
 
-  Widget _buildTraceInfo() {
-    final record = _records[0];
+  Widget _buildTraceInfo(Map<String, dynamic> record) {
+    final timeline = _buildTimeline(record);
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _buildInfoCard(record),
           const SizedBox(height: 24),
-          _buildTraceChain(record),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Trace Timeline',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 12),
+                  if (timeline.isEmpty)
+                    const Text('No detailed timeline provided by backend')
+                  else
+                    ...timeline,
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -238,31 +221,25 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildInfoRow('药品名称', record['drugName'] ?? '未知'),
-            _buildInfoRow('药品规格', record['specification'] ?? '未知'),
-            _buildInfoRow('生产企业', record['manufacturer'] ?? '未知'),
-            _buildInfoRow('生产批号', record['batchNumber'] ?? '未知'),
-            _buildInfoRow('生产日期', record['productionDate'] ?? '未知'),
-            _buildInfoRow('有效期至', record['expiryDate'] ?? '未知'),
-            _buildInfoRow('追溯码', record['traceCode'] ?? '未知'),
-            const SizedBox(height: 16),
+            _buildInfoRow('Drug Name', _pick(record, ['drugName', 'name'])),
+            _buildInfoRow('Specification', _pick(record, ['specification'])),
+            _buildInfoRow('Manufacturer', _pick(record, ['manufacturer'])),
+            _buildInfoRow('Batch Number', _pick(record, ['batchNumber', 'batch_number'])),
+            _buildInfoRow('Production Date', _pick(record, ['productionDate', 'production_date'])),
+            _buildInfoRow('Expiry Date', _pick(record, ['expiryDate', 'expiry_date'])),
+            _buildInfoRow('Trace Code', _pick(record, ['traceCode', 'drugCode', 'drug_code'])),
+            const SizedBox(height: 12),
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.green.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: Row(
+              child: const Row(
                 children: [
-                  const Icon(Icons.check_circle, color: Colors.green),
-                  const SizedBox(width: 8),
-                  const Text(
-                    '该药品追溯信息完整',
-                    style: TextStyle(
-                      color: Colors.green,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  Icon(Icons.check_circle, color: Colors.green),
+                  SizedBox(width: 8),
+                  Text('Trace information is available', style: TextStyle(color: Colors.green)),
                 ],
               ),
             ),
@@ -272,35 +249,39 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
     );
   }
 
-  Widget _buildTraceChain(Map<String, dynamic> record) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              '追溯链路',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+  List<Widget> _buildTimeline(Map<String, dynamic> record) {
+    final steps = <Widget>[];
+
+    final rawTimeline = record['timeline'];
+    if (rawTimeline is List) {
+      for (final item in rawTimeline) {
+        if (item is Map) {
+          final map = Map<String, dynamic>.from(item);
+          steps.add(
+            _buildTraceStep(
+              _pick(map, ['stage', 'traceStep', 'step']),
+              _pick(map, ['time', 'stepTime', 'createdAt']),
+              _pick(map, ['organization', 'company']),
+              _pick(map, ['description', 'detail']),
             ),
-            const SizedBox(height: 16),
-            _buildTraceStep('原料采购', '2024-01-15 09:30', '华康制药有限公司', '原料检验合格'),
-            _buildTraceStep('生产加工', '2024-01-16 14:20', '华康制药厂', '按标准生产工艺生产'),
-            _buildTraceStep('质量检测', '2024-01-17 10:45', '质检部门', '各项指标符合标准'),
-            _buildTraceStep('包装入库', '2024-01-18 16:10', '仓储部', '按批次包装入库'),
-            _buildTraceStep('物流配送', '2024-01-19 08:30', '医药物流公司', '冷链运输至各地'),
-            _buildTraceStep('药店销售', '2024-01-20 15:00', '康健大药房', '零售至消费者'),
-          ],
-        ),
-      ),
-    );
+          );
+        }
+      }
+    }
+
+    if (steps.isEmpty) {
+      final keys = ['procurementCount', 'saleCount', 'inventoryCount'];
+      for (final k in keys) {
+        if (record.containsKey(k)) {
+          steps.add(_buildTraceStep(k, '-', '-', '${record[k]}'));
+        }
+      }
+    }
+
+    return steps;
   }
 
-  Widget _buildTraceStep(
-      String stage, String time, String company, String desc) {
+  Widget _buildTraceStep(String stage, String time, String company, String desc) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
@@ -313,37 +294,16 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
               color: Theme.of(context).colorScheme.primary,
               shape: BoxShape.circle,
             ),
-            child: const Icon(
-              Icons.done,
-              size: 12,
-              color: Colors.white,
-            ),
+            child: const Icon(Icons.done, size: 12, color: Colors.white),
           ),
           const SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  stage,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  '$time | $company',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey[600],
-                  ),
-                ),
-                Text(
-                  desc,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey[600],
-                  ),
-                ),
+                Text(stage, style: const TextStyle(fontWeight: FontWeight.bold)),
+                Text('$time | $company', style: TextStyle(fontSize: 12, color: Colors.grey[600])),
+                Text(desc, style: TextStyle(fontSize: 12, color: Colors.grey[600])),
               ],
             ),
           ),
@@ -367,36 +327,11 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
           ),
           child: Column(
             children: [
-              Container(
-                padding: const EdgeInsets.all(16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      '查询历史',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.close),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                  ],
-                ),
-              ),
+              const SizedBox(height: 12),
+              const Text('Query History', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               Expanded(
                 child: _historyRecords.isEmpty
-                    ? const Center(
-                        child: Padding(
-                          padding: EdgeInsets.all(24),
-                          child: Text(
-                            '暂无查询历史',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ),
-                      )
+                    ? const Center(child: Text('No history'))
                     : ListView.builder(
                         controller: scrollController,
                         padding: const EdgeInsets.all(16),
@@ -405,11 +340,10 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
                           final record = _historyRecords[index];
                           return ListTile(
                             leading: const Icon(Icons.medication),
-                            title: Text(record['drugName']),
-                            subtitle: Text(
-                                '${record['code']} • ${record['timestamp'].toString().substring(0, 19)}'),
+                            title: Text(record['drugName']?.toString() ?? 'unknown'),
+                            subtitle: Text('${record['code']} | ${record['type']}'),
                             onTap: () {
-                              _codeController.text = record['code'];
+                              _codeController.text = record['code'].toString();
                               Navigator.pop(context);
                               _searchTrace();
                             },
@@ -426,20 +360,24 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
 
   Widget _buildInfoRow(String label, String value) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 6),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            width: 100,
-            child: Text(
-              '$label:',
-              style: const TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ),
+          SizedBox(width: 120, child: Text('$label:', style: const TextStyle(fontWeight: FontWeight.bold))),
           Expanded(child: Text(value)),
         ],
       ),
     );
+  }
+
+  String _pick(Map<String, dynamic> map, List<String> keys) {
+    for (final k in keys) {
+      final v = map[k];
+      if (v != null && v.toString().trim().isNotEmpty) {
+        return v.toString();
+      }
+    }
+    return '-';
   }
 }

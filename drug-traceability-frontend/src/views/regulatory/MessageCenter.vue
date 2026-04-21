@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="page">
     <el-tabs v-model="active">
       <el-tab-pane label="消息中心" name="messages">

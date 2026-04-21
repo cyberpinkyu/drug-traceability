@@ -1,10 +1,11 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../services/api_service.dart';
 import '../adverse_reaction_screen.dart';
 import '../ai_assistant_profile.dart';
 import '../ai_chat_screen.dart';
+import '../barcode_trace_screen.dart';
 import '../drug_encyclopedia_screen.dart';
 import '../trace_record_screen.dart';
 
@@ -36,7 +37,7 @@ class _PublicHomeScreenState extends ConsumerState<PublicHomeScreen> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _openAssistant(context),
         icon: const Icon(Icons.smart_toy),
-        label: const Text('AI客服'),
+        label: const Text('智能助手'),
       ),
     );
   }
@@ -57,7 +58,7 @@ class _PublicHomeScreenState extends ConsumerState<PublicHomeScreen> {
         children: [
           Text('公众服务', style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold)),
           SizedBox(height: 8),
-          Text('药品追溯查询 · 用药咨询 · 问题上报', style: TextStyle(color: Colors.white70)),
+          Text('溯源查询、用药咨询、问题上报', style: TextStyle(color: Colors.white70)),
         ],
       ),
     );
@@ -70,28 +71,28 @@ class _PublicHomeScreenState extends ConsumerState<PublicHomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('快速查询', style: TextStyle(fontWeight: FontWeight.w600)),
+            const Text('快捷查询', style: TextStyle(fontWeight: FontWeight.w600)),
             const SizedBox(height: 12),
             Row(
               children: [
                 Expanded(
                   child: ElevatedButton.icon(
-                    onPressed: _manualTrace,
-                    icon: const Icon(Icons.search),
-                    label: const Text('追溯码查询'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const BarcodeTraceScreen()),
+                      );
+                    },
+                    icon: const Icon(Icons.qr_code_scanner),
+                    label: const Text('扫码溯源'),
                   ),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
                   child: OutlinedButton.icon(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const TraceRecordScreen()),
-                      );
-                    },
-                    icon: const Icon(Icons.history),
-                    label: const Text('查询记录'),
+                    onPressed: _manualTrace,
+                    icon: const Icon(Icons.search),
+                    label: const Text('手动查询'),
                   ),
                 ),
               ],
@@ -112,7 +113,7 @@ class _PublicHomeScreenState extends ConsumerState<PublicHomeScreen> {
       childAspectRatio: 1.1,
       children: [
         _serviceCard(
-          title: '用药AI客服',
+          title: '智能助手',
           subtitle: '公众问答',
           icon: Icons.smart_toy,
           color: Colors.indigo,
@@ -132,7 +133,7 @@ class _PublicHomeScreenState extends ConsumerState<PublicHomeScreen> {
         ),
         _serviceCard(
           title: '药品百科',
-          subtitle: '基础信息查询',
+          subtitle: '基础信息',
           icon: Icons.menu_book,
           color: Colors.green,
           onTap: () {
@@ -144,7 +145,7 @@ class _PublicHomeScreenState extends ConsumerState<PublicHomeScreen> {
         ),
         _serviceCard(
           title: '追溯记录',
-          subtitle: '历史可追踪',
+          subtitle: '历史查询',
           icon: Icons.receipt_long,
           color: Colors.blue,
           onTap: () {
@@ -210,7 +211,7 @@ class _PublicHomeScreenState extends ConsumerState<PublicHomeScreen> {
       final ok = res['code'] == 200;
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(ok ? '查询成功，已返回追溯信息' : (res['message']?.toString() ?? '查询失败'))),
+        SnackBar(content: Text(ok ? '追溯查询成功' : (res['message']?.toString() ?? '查询失败'))),
       );
     } catch (e) {
       if (!mounted) return;

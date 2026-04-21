@@ -1,0 +1,46 @@
+:root {
+  --bg-page: #eef3f8;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f7fafc;
+  --text-main: #17233d;
+  --text-secondary: #55637a;
+  --brand: #0f766e;
+  --brand-2: #2563eb;
+  --brand-soft: #e7f3ff;
+  --ok: #059669;
+  --warn: #d97706;
+  --danger: #dc2626;
+  --border: #dbe3ee;
+  --shadow-card: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+html, body, #app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 90% 0%, rgba(37, 99, 235, 0.12), transparent 35%),
+    radial-gradient(circle at 0% 100%, rgba(15, 118, 110, 0.1), transparent 42%),
+    var(--bg-page);
+}
+
+.panel-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.metric-value {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.metric-label {
+  color: var(--text-secondary);
+  font-size: 13px;
+}

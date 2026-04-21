@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1120" viewBox="0 0 1400 1120">
+  <defs>
+    <style>
+      .outer { fill: #ffffff; stroke: #222222; stroke-width: 4; }
+      .pill { fill: #ffffff; stroke: #222222; stroke-width: 4; }
+      .title { font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif; font-size: 30px; fill: #333333; }
+      .text { font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif; font-size: 24px; fill: #333333; }
+      .mid { font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif; font-size: 22px; fill: #333333; }
+      .small { font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif; font-size: 20px; fill: #333333; }
+      .center { text-anchor: middle; dominant-baseline: middle; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#222222"/>
+    </marker>
+  </defs>
+
+  <rect x="70" y="30" width="1260" height="1040" fill="#ffffff"/>
+
+  <!-- 表示层 -->
+  <rect class="outer" x="90" y="30" width="1220" height="205"/>
+  <text class="title center" x="700" y="65">表示层</text>
+
+  <rect class="pill" x="150" y="80" rx="28" ry="28" width="210" height="70"/>
+  <text class="text center" x="255" y="115">监管端界面</text>
+
+  <rect class="pill" x="430" y="80" rx="28" ry="28" width="210" height="70"/>
+  <text class="text center" x="535" y="115">企业端界面</text>
+
+  <rect class="pill" x="710" y="80" rx="28" ry="28" width="210" height="70"/>
+  <text class="text center" x="815" y="115">医疗机构界面</text>
+
+  <rect class="pill" x="990" y="80" rx="28" ry="28" width="210" height="70"/>
+  <text class="text center" x="1095" y="115">公众查询界面</text>
+
+  <rect class="pill" x="150" y="160" rx="28" ry="28" width="210" height="70"/>
+  <text class="text center" x="255" y="195">管理员界面</text>
+
+  <rect class="pill" x="430" y="160" rx="28" ry="28" width="210" height="70"/>
+  <text class="text center" x="535" y="195">举报投诉界面</text>
+
+  <rect class="pill" x="710" y="160" rx="28" ry="28" width="210" height="70"/>
+  <text class="text center" x="815" y="195">统计分析界面</text>
+
+  <rect class="pill" x="990" y="160" rx="28" ry="28" width="210" height="70"/>
+  <text class="text center" x="1095" y="195">移动端 App 界面</text>
+
+  <!-- 连线1 -->
+  <line x1="700" y1="235" x2="700" y2="270" stroke="#222222" stroke-width="4"/>
+  <text class="mid center" x="700" y="300">HTTP/HTTPS JSON</text>
+  <line x1="700" y1="320" x2="700" y2="355" stroke="#222222" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <!-- 业务逻辑层 -->
+  <rect class="outer" x="90" y="355" width="1220" height="245"/>
+  <text class="title center" x="700" y="390">业务逻辑层</text>
+
+  <rect class="pill" x="120" y="425" rx="28" ry="28" width="230" height="68"/>
+  <text class="small center" x="235" y="459">用户与权限管理服务</text>
+
+  <rect class="pill" x="410" y="425" rx="28" ry="28" width="230" height="68"/>
+  <text class="small center" x="525" y="459">药品基础信息管理服务</text>
+
+  <rect class="pill" x="700" y="425" rx="28" ry="28" width="230" height="68"/>
+  <text class="small center" x="815" y="459">生产追溯管理服务</text>
+
+  <rect class="pill" x="990" y="425" rx="28" ry="28" width="230" height="68"/>
+  <text class="small center" x="1105" y="459">流通追溯管理服务</text>
+
+  <rect class="pill" x="120" y="515" rx="28" ry="28" width="230" height="68"/>
+  <text class="small center" x="235" y="549">库存与销售管理服务</text>
+
+  <rect class="pill" x="410" y="515" rx="28" ry="28" width="230" height="68"/>
+  <text class="small center" x="525" y="549">医疗机构用药管理服务</text>
+
+  <rect class="pill" x="700" y="515" rx="28" ry="28" width="230" height="68"/>
+  <text class="small center" x="815" y="549">举报投诉处理服务</text>
+
+  <rect class="pill" x="990" y="515" rx="28" ry="28" width="230" height="68"/>
+  <text class="small center" x="1105" y="549">监管执法与分析服务</text>
+
+  <!-- 连线2 -->
+  <line x1="700" y1="600" x2="700" y2="635" stroke="#222222" stroke-width="4"/>
+  <text class="mid center" x="700" y="665">MyBatis-Plus / SQL</text>
+  <line x1="700" y1="685" x2="700" y2="720" stroke="#222222" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <!-- 数据访问层 -->
+  <rect class="outer" x="90" y="720" width="1220" height="170"/>
+  <text class="title center" x="700" y="755">数据访问层</text>
+
+  <rect class="pill" x="180" y="790" rx="28" ry="28" width="260" height="68"/>
+  <text class="small center" x="310" y="824">用户与权限 Mapper</text>
+
+  <rect class="pill" x="570" y="790" rx="28" ry="28" width="260" height="68"/>
+  <text class="small center" x="700" y="824">药品追溯业务 Mapper</text>
+
+  <rect class="pill" x="960" y="790" rx="28" ry="28" width="260" height="68"/>
+  <text class="small center" x="1090" y="824">举报监管统计 Mapper</text>
+
+  <!-- 连线3 -->
+  <line x1="700" y1="890" x2="700" y2="915" stroke="#222222" stroke-width="4"/>
+  <text class="mid center" x="700" y="942">JDBC</text>
+  <line x1="700" y1="954" x2="700" y2="970" stroke="#222222" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <!-- 数据层 -->
+  <rect class="outer" x="90" y="930" width="1220" height="150"/>
+  <text class="title center" x="700" y="965">数据层</text>
+
+  <rect class="pill" x="520" y="990" rx="28" ry="28" width="360" height="68"/>
+  <text class="text center" x="700" y="1024">MySQL / Redis / Milvus</text>
+</svg>

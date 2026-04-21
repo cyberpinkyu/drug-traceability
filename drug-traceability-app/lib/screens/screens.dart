@@ -11,3 +11,6 @@ export 'trace_record_screen.dart';
 export 'settings_screen.dart';
 export 'adverse_reaction_screen.dart';
 export 'drug_encyclopedia_screen.dart';
+
+export 'barcode_trace_screen.dart';
+export 'usage_record_scan_screen.dart';

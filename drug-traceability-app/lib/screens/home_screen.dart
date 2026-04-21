@@ -6,6 +6,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import '../models/user_model.dart';
 import '../providers/user_provider.dart';
 import '../services/api_service.dart';
+import 'barcode_trace_screen.dart';
 import 'screens.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -22,7 +23,7 @@ class HomeScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('药监通'),
+        title: const Text('药品追溯'),
         actions: [
           PopupMenuButton<String>(
             onSelected: (value) {
@@ -71,12 +72,12 @@ class HomeScreen extends ConsumerWidget {
           ),
           ListTile(
             leading: const Icon(Icons.qr_code_scanner),
-            title: const Text('扫码查询'),
+            title: const Text('扫码溯源'),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => const PublicHomeScreen()),
+                MaterialPageRoute(builder: (_) => const BarcodeTraceScreen()),
               );
             },
           ),
@@ -101,10 +102,10 @@ class HomeScreen extends ConsumerWidget {
       context: context,
       builder: (_) => AlertDialog(
         title: const Text('确认退出'),
-        content: const Text('确定要退出登录吗？'),
+        content: const Text('是否确认退出当前账号？'),
         actions: [
           TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('取消')),
-          TextButton(onPressed: () => Navigator.pop(context, true), child: const Text('确定')),
+          TextButton(onPressed: () => Navigator.pop(context, true), child: const Text('确认')),
         ],
       ),
     );

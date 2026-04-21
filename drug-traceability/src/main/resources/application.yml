@@ -1,4 +1,4 @@
-﻿spring:
+﻿﻿spring:
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 
@@ -8,6 +8,7 @@ mybatis-plus:
 
 server:
   port: ${SERVER_PORT:8080}
+  address: ${SERVER_ADDRESS:0.0.0.0}
 
 jwt:
   secret: ${JWT_SECRET:change-me-please-change-me-123456789012}

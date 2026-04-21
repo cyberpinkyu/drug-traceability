@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div class="user-list">
     <el-card>
       <template #header>
