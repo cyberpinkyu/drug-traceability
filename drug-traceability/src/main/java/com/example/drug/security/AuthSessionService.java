@@ -5,26 +5,46 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
+import java.util.Set;
 
 @Service
 public class AuthSessionService {
 
-    private static final String SESSION_PREFIX = "auth:session:";
+    private static final String SESSION_PREFIX = "auth:sessions:";
     private static final String BLACKLIST_PREFIX = "auth:blacklist:";
 
     @Autowired
     private StringRedisTemplate redisTemplate;
 
     public void saveSession(Long userId, String sessionId, long ttlSeconds) {
-        redisTemplate.opsForValue().set(sessionKey(userId), sessionId, Duration.ofSeconds(ttlSeconds));
+        redisTemplate.opsForSet().add(sessionKey(userId), sessionId);
+        redisTemplate.expire(sessionKey(userId), Duration.ofSeconds(ttlSeconds));
     }
 
-    public String getSession(Long userId) {
-        return redisTemplate.opsForValue().get(sessionKey(userId));
+    public boolean hasSession(Long userId, String sessionId) {
+        if (userId == null || sessionId == null || sessionId.trim().isEmpty()) {
+            return false;
+        }
+        return Boolean.TRUE.equals(redisTemplate.opsForSet().isMember(sessionKey(userId), sessionId));
     }
 
-    public void removeSession(Long userId) {
+    public void refreshSessionTtl(Long userId, long ttlSeconds) {
+        redisTemplate.expire(sessionKey(userId), Duration.ofSeconds(ttlSeconds));
+    }
+
+    public void removeSession(Long userId, String sessionId) {
+        if (userId == null || sessionId == null || sessionId.trim().isEmpty()) {
+            return;
+        }
+        redisTemplate.opsForSet().remove(sessionKey(userId), sessionId);
+    }
+
+    public void removeAllSessions(Long userId) {
         redisTemplate.delete(sessionKey(userId));
+    }
+
+    public Set<String> getSessions(Long userId) {
+        return redisTemplate.opsForSet().members(sessionKey(userId));
     }
 
     public void blacklistToken(String tokenId, long ttlSeconds) {

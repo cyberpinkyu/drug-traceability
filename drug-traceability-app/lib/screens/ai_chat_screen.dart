@@ -23,6 +23,25 @@ class _AIChatScreenState extends ConsumerState<AIChatScreen> {
   String? _conversationId;
   bool _isLoading = false;
 
+  String _formatError(Object error) {
+    if (error is ApiException) {
+      if (error.code == 401) {
+        return '登录状态已失效，请重新登录后再试。';
+      }
+      if (error.code == 403) {
+        return '当前账号没有使用该 AI 功能的权限。';
+      }
+      final message = error.message.trim();
+      return message.isEmpty ? 'AI 服务暂时不可用，请稍后再试。' : message;
+    }
+
+    final fallback = error.toString().trim();
+    if (fallback.isEmpty) {
+      return '网络异常，请检查连接后重试。';
+    }
+    return fallback;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -79,11 +98,11 @@ class _AIChatScreenState extends ConsumerState<AIChatScreen> {
           });
         });
       }
-    } catch (_) {
+    } catch (e) {
       setState(() {
         _messages.add({
           'role': 'assistant',
-          'content': '网络异常，请检查连接后重试。',
+          'content': _formatError(e),
         });
       });
     } finally {

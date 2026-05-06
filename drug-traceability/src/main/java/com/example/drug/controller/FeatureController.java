@@ -106,6 +106,17 @@ public class FeatureController {
         batchNode.put("abnormal", isBatchExpired(batch));
         nodes.add(batchNode);
 
+        DrugInfo drug = drugInfoService.getById(batch.getDrugId());
+        if (drug != null) {
+            Map<String, Object> drugNode = new HashMap<String, Object>();
+            drugNode.put("id", "drug-" + drug.getId());
+            drugNode.put("type", "drug");
+            drugNode.put("label", drug.getName());
+            drugNode.put("abnormal", false);
+            nodes.add(drugNode);
+            edges.add(edge("drug-" + drug.getId(), "batch-" + batch.getId(), "批次生产"));
+        }
+
         User producer = userService.getById(batch.getProducerId());
         if (producer != null) {
             Map<String, Object> producerNode = orgNode(producer.getId(), producer.getName(), "producer", false);
@@ -145,7 +156,8 @@ public class FeatureController {
         for (Inventory inv : inventoryList) {
             boolean abnormal = inv.getQuantity() != null && inv.getQuantity() < 0;
             edges.add(edge("batch-" + batchId, "org-" + inv.getOrganizationId(), "inventory:" + inv.getQuantity()));
-            nodes.add(orgNode(inv.getOrganizationId(), "Org" + inv.getOrganizationId(), "inventoryHolder", abnormal));
+            User holder = userService.getById(inv.getOrganizationId());
+            nodes.add(orgNode(inv.getOrganizationId(), holder == null ? "Org" + inv.getOrganizationId() : holder.getOrganization(), "inventoryHolder", abnormal));
         }
 
         List<AdverseReaction> reactions = adverseReactionService.list(
@@ -156,6 +168,13 @@ public class FeatureController {
             if ("high".equalsIgnoreCase(reaction.getSeverity())) {
                 highRiskCount++;
             }
+            Map<String, Object> riskNode = new HashMap<String, Object>();
+            riskNode.put("id", "reaction-" + reaction.getId());
+            riskNode.put("type", "reaction");
+            riskNode.put("label", reaction.getHospital() + " " + reaction.getSeverity());
+            riskNode.put("abnormal", "high".equalsIgnoreCase(reaction.getSeverity()));
+            nodes.add(riskNode);
+            edges.add(edge("batch-" + batch.getId(), "reaction-" + reaction.getId(), "不良反应监测"));
         }
 
         Map<String, Object> summary = new HashMap<String, Object>();
@@ -190,13 +209,21 @@ public class FeatureController {
                 }
                 Map<String, Object> row = new HashMap<String, Object>();
                 row.put("key", batch.getBatchNumber());
+                DrugInfo drug = drugInfoService.getById(batch.getDrugId());
+                User producer = userService.getById(batch.getProducerId());
+                row.put("name", drug == null ? batch.getBatchNumber() : drug.getName());
+                row.put("organization", producer == null ? "未知生产企业" : producer.getOrganization());
+                row.put("phone", producer == null ? "" : producer.getPhone());
+                row.put("email", producer == null ? "" : producer.getEmail());
                 row.put("productionQuantity", batch.getProductionQuantity());
                 row.put("procurementCount", procurementRecordService.count(new QueryWrapper<ProcurementRecord>().eq("batch_id", batch.getId())));
                 row.put("saleCount", saleRecordService.count(new QueryWrapper<SaleRecord>().eq("batch_id", batch.getId())));
                 row.put("inventoryOrgCount", inventoryService.count(new QueryWrapper<Inventory>().eq("batch_id", batch.getId())));
+                row.put("procurementQuantity", sumProcurementByBatch(batch.getId()));
+                row.put("saleQuantity", sumSaleByBatch(batch.getId()));
                 rows.add(row);
             }
-        } else if ("enterprise".equalsIgnoreCase(dimension) || "region".equalsIgnoreCase(dimension)) {
+        } else if ("enterprise".equalsIgnoreCase(dimension)) {
             Map<Long, Map<String, Object>> bucket = new LinkedHashMap<Long, Map<String, Object>>();
             for (Inventory inventory : inventoryService.list()) {
                 if (organizationId != null && !organizationId.equals(inventory.getOrganizationId())) {
@@ -209,14 +236,78 @@ public class FeatureController {
                     row.put("key", inventory.getOrganizationId());
                     row.put("name", org == null ? "Unknown" : org.getName());
                     row.put("organization", org == null ? "Unknown" : org.getOrganization());
+                    row.put("phone", org == null ? "" : org.getPhone());
+                    row.put("email", org == null ? "" : org.getEmail());
                     row.put("inventoryTotal", 0L);
                     row.put("batchCount", 0L);
+                    row.put("procurementQuantity", 0L);
+                    row.put("saleQuantity", 0L);
                     bucket.put(inventory.getOrganizationId(), row);
                 }
                 long oldInv = ((Number) row.get("inventoryTotal")).longValue();
                 long oldBatch = ((Number) row.get("batchCount")).longValue();
                 row.put("inventoryTotal", oldInv + (inventory.getQuantity() == null ? 0 : inventory.getQuantity()));
                 row.put("batchCount", oldBatch + 1);
+            }
+            for (ProcurementRecord record : procurementRecordService.list()) {
+                Map<String, Object> row = bucket.get(record.getBuyerId());
+                if (row != null) {
+                    row.put("procurementQuantity", number(row.get("procurementQuantity")) + (record.getQuantity() == null ? 0 : record.getQuantity()));
+                }
+            }
+            for (SaleRecord record : saleRecordService.list()) {
+                Map<String, Object> row = bucket.get(record.getBuyerId());
+                if (row != null) {
+                    row.put("saleQuantity", number(row.get("saleQuantity")) + (record.getQuantity() == null ? 0 : record.getQuantity()));
+                }
+            }
+            rows.addAll(bucket.values());
+        } else if ("region".equalsIgnoreCase(dimension)) {
+            Map<String, Map<String, Object>> bucket = new LinkedHashMap<String, Map<String, Object>>();
+            for (Inventory inventory : inventoryService.list()) {
+                User org = userService.getById(inventory.getOrganizationId());
+                String regionName = resolveRegionName(org == null ? null : org.getOrganization());
+                Map<String, Object> row = bucket.get(regionName);
+                if (row == null) {
+                    row = new HashMap<String, Object>();
+                    row.put("key", regionName);
+                    row.put("name", regionName + "流通圈");
+                    row.put("organization", regionName);
+                    row.put("phone", regionHotline(regionName));
+                    row.put("email", regionEmail(regionName));
+                    row.put("productionQuantity", 0L);
+                    row.put("procurementQuantity", 0L);
+                    row.put("saleQuantity", 0L);
+                    row.put("inventoryTotal", 0L);
+                    row.put("batchCount", 0L);
+                    bucket.put(regionName, row);
+                }
+                row.put("inventoryTotal", number(row.get("inventoryTotal")) + (inventory.getQuantity() == null ? 0 : inventory.getQuantity()));
+                row.put("batchCount", number(row.get("batchCount")) + 1);
+            }
+            for (ProductionBatch batch : productionBatchService.list()) {
+                User producer = userService.getById(batch.getProducerId());
+                String regionName = resolveRegionName(producer == null ? null : producer.getOrganization());
+                Map<String, Object> row = bucket.get(regionName);
+                if (row != null) {
+                    row.put("productionQuantity", number(row.get("productionQuantity")) + (batch.getProductionQuantity() == null ? 0 : batch.getProductionQuantity()));
+                }
+            }
+            for (ProcurementRecord record : procurementRecordService.list()) {
+                User buyer = userService.getById(record.getBuyerId());
+                String regionName = resolveRegionName(buyer == null ? null : buyer.getOrganization());
+                Map<String, Object> row = bucket.get(regionName);
+                if (row != null) {
+                    row.put("procurementQuantity", number(row.get("procurementQuantity")) + (record.getQuantity() == null ? 0 : record.getQuantity()));
+                }
+            }
+            for (SaleRecord record : saleRecordService.list()) {
+                User buyer = userService.getById(record.getBuyerId());
+                String regionName = resolveRegionName(buyer == null ? null : buyer.getOrganization());
+                Map<String, Object> row = bucket.get(regionName);
+                if (row != null) {
+                    row.put("saleQuantity", number(row.get("saleQuantity")) + (record.getQuantity() == null ? 0 : record.getQuantity()));
+                }
             }
             rows.addAll(bucket.values());
         } else {
@@ -240,7 +331,15 @@ public class FeatureController {
             for (Map.Entry<YearMonth, Long> e : productionByMonth.entrySet()) {
                 Map<String, Object> row = new HashMap<String, Object>();
                 row.put("key", e.getKey().toString());
+                row.put("name", e.getKey().toString() + " 月度汇总");
+                row.put("organization", "广东省药品流通监测");
+                row.put("phone", "020-12345-6" + (Math.abs(e.getKey().getMonthValue()) % 10));
+                row.put("email", "report-" + e.getKey().toString().replace("-", "") + "@trace.local");
                 row.put("productionQuantity", e.getValue());
+                row.put("procurementQuantity", sumProcurementByMonth(e.getKey()));
+                row.put("saleQuantity", sumSaleByMonth(e.getKey()));
+                row.put("inventoryTotal", sumInventoryByMonth());
+                row.put("batchCount", countBatchByMonth(e.getKey()));
                 rows.add(row);
             }
         }
@@ -250,7 +349,7 @@ public class FeatureController {
         summary.put("from", start.toString());
         summary.put("to", end.toString());
         summary.put("count", rows.size());
-        return MapUtils.of("code", 200, "data", rows, "summary", summary);
+        return MapUtils.of("code", 200, "data", rows, "summary", summary, "charts", buildReportCharts(rows, dimension));
     }
 
     @RequireRole({"admin", "regulator"})
@@ -685,6 +784,112 @@ public class FeatureController {
         edge.put("to", to);
         edge.put("label", label);
         return edge;
+    }
+
+    private Map<String, Object> buildReportCharts(List<Map<String, Object>> rows, String dimension) {
+        Map<String, Object> charts = new LinkedHashMap<String, Object>();
+        List<String> labels = new ArrayList<String>();
+        List<Long> production = new ArrayList<Long>();
+        List<Long> procurement = new ArrayList<Long>();
+        List<Long> sale = new ArrayList<Long>();
+        List<Long> inventory = new ArrayList<Long>();
+        List<Long> batchCount = new ArrayList<Long>();
+
+        for (Map<String, Object> row : rows) {
+            labels.add(String.valueOf(row.get("name") == null ? row.get("key") : row.get("name")));
+            production.add(number(row.get("productionQuantity")));
+            procurement.add(number(row.get("procurementQuantity")));
+            sale.add(number(row.get("saleQuantity")));
+            inventory.add(number(row.get("inventoryTotal")));
+            batchCount.add(number(row.get("batchCount")));
+        }
+        charts.put("labels", labels);
+        charts.put("production", production);
+        charts.put("procurement", procurement);
+        charts.put("sale", sale);
+        charts.put("inventory", inventory);
+        charts.put("batchCount", batchCount);
+        charts.put("dimension", dimension);
+        return charts;
+    }
+
+    private long number(Object value) {
+        return value instanceof Number ? ((Number) value).longValue() : 0L;
+    }
+
+    private long sumProcurementByBatch(Long batchId) {
+        long total = 0L;
+        for (ProcurementRecord record : procurementRecordService.getRecordsByBatchId(batchId)) {
+            total += record.getQuantity() == null ? 0 : record.getQuantity();
+        }
+        return total;
+    }
+
+    private long sumSaleByBatch(Long batchId) {
+        long total = 0L;
+        for (SaleRecord record : saleRecordService.getRecordsByBatchId(batchId)) {
+            total += record.getQuantity() == null ? 0 : record.getQuantity();
+        }
+        return total;
+    }
+
+    private long sumProcurementByMonth(YearMonth month) {
+        long total = 0L;
+        for (ProcurementRecord record : procurementRecordService.list()) {
+            if (record.getPurchaseDate() != null && YearMonth.from(record.getPurchaseDate()).equals(month)) {
+                total += record.getQuantity() == null ? 0 : record.getQuantity();
+            }
+        }
+        return total;
+    }
+
+    private long sumSaleByMonth(YearMonth month) {
+        long total = 0L;
+        for (SaleRecord record : saleRecordService.list()) {
+            if (record.getSaleDate() != null && YearMonth.from(record.getSaleDate()).equals(month)) {
+                total += record.getQuantity() == null ? 0 : record.getQuantity();
+            }
+        }
+        return total;
+    }
+
+    private long sumInventoryByMonth() {
+        long total = 0L;
+        for (Inventory inventory : inventoryService.list()) {
+            total += inventory.getQuantity() == null ? 0 : inventory.getQuantity();
+        }
+        return total;
+    }
+
+    private long countBatchByMonth(YearMonth month) {
+        long total = 0L;
+        for (ProductionBatch batch : productionBatchService.list()) {
+            if (batch.getProductionDate() != null && YearMonth.from(batch.getProductionDate()).equals(month)) {
+                total++;
+            }
+        }
+        return total;
+    }
+
+    private String resolveRegionName(String organization) {
+        if (organization == null) {
+            return "广东其他";
+        }
+        String[] names = {"广州", "深圳", "佛山", "东莞", "珠海", "惠州", "中山", "江门"};
+        for (String name : names) {
+            if (organization.contains(name)) {
+                return name;
+            }
+        }
+        return "广东其他";
+    }
+
+    private String regionHotline(String regionName) {
+        return "020-88" + Math.abs(regionName.hashCode() % 900000 + 100000);
+    }
+
+    private String regionEmail(String regionName) {
+        return regionName + "@trace-region.local";
     }
 
     private boolean isBatchExpired(ProductionBatch batch) {

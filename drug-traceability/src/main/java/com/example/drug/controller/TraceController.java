@@ -1,5 +1,6 @@
 package com.example.drug.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.drug.common.BusinessException;
 import com.example.drug.common.RequireRole;
 import com.example.drug.entity.AdverseReaction;
@@ -23,6 +24,11 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -73,14 +79,7 @@ public class TraceController {
 
     @GetMapping("/public/{code}")
     public Map<String, Object> getPublicTrace(@PathVariable String code) {
-        ProductionBatch batch = productionBatchService.getBatchByNumber(code);
-        if (batch == null) {
-            try {
-                batch = productionBatchService.getById(Long.valueOf(code));
-            } catch (NumberFormatException ignored) {
-            }
-        }
-
+        ProductionBatch batch = findBatchByCode(code);
         if (batch == null) {
             return MapUtils.of("code", 404, "message", "未找到追溯记录");
         }
@@ -98,7 +97,19 @@ public class TraceController {
             data.put("drugName", drug.getName());
             data.put("specification", drug.getSpecification());
             data.put("manufacturer", drug.getManufacturer());
+            data.put("approvalNumber", drug.getApprovalNumber());
+            data.put("category", drug.getCategory());
         }
+        data.put("traceSteps", buildTraceSteps(batch, drug));
+        data.put("procurementRecords", procurementRecordService.getRecordsByBatchId(batch.getId()).stream()
+            .map(this::toProcurementView)
+            .collect(java.util.stream.Collectors.toList()));
+        data.put("saleRecords", saleRecordService.getRecordsByBatchId(batch.getId()).stream()
+            .map(this::toSaleView)
+            .collect(java.util.stream.Collectors.toList()));
+        data.put("inventoryRecords", inventoryService.getInventoriesByBatchId(batch.getId()).stream()
+            .map(this::toInventoryView)
+            .collect(java.util.stream.Collectors.toList()));
 
         return MapUtils.of("code", 200, "data", data);
     }
@@ -402,5 +413,91 @@ public class TraceController {
             row.put("buyerOrganization", buyer.getOrganization());
         }
         return row;
+    }
+
+    private ProductionBatch findBatchByCode(String code) {
+        ProductionBatch batch = productionBatchService.getBatchByNumber(code);
+        if (batch != null) {
+            return batch;
+        }
+        try {
+            batch = productionBatchService.getById(Long.valueOf(code));
+            if (batch != null) {
+                return batch;
+            }
+        } catch (NumberFormatException ignored) {
+        }
+
+        DrugInfo drug = drugInfoService.getOne(new QueryWrapper<DrugInfo>().eq("drug_code", code));
+        if (drug == null) {
+            return null;
+        }
+        return productionBatchService.getOne(new QueryWrapper<ProductionBatch>()
+            .eq("drug_id", drug.getId())
+            .orderByDesc("production_date")
+            .last("LIMIT 1"));
+    }
+
+    private List<Map<String, Object>> buildTraceSteps(ProductionBatch batch, DrugInfo drug) {
+        List<Map<String, Object>> steps = new ArrayList<Map<String, Object>>();
+        com.example.drug.entity.User producer = userService.getById(batch.getProducerId());
+        String producerName = producer == null ? "生产企业" : producer.getOrganization();
+
+        addStep(steps, "原料入厂", batch.getProductionDate().atTime(8, 30), producerName, "原辅料到货并完成供应商资质核验");
+        addStep(steps, "生产投料", batch.getProductionDate().atTime(13, 20), producerName, "按生产指令完成投料，批号：" + batch.getBatchNumber());
+        addStep(steps, "成品检验", batch.getProductionDate().plusDays(1).atTime(10, 10), producerName, "含量、微生物限度、包装完整性检验合格");
+        addStep(steps, "成品入库", batch.getProductionDate().plusDays(2).atTime(9, 40), producerName, "入成品库，数量：" + batch.getProductionQuantity());
+
+        for (ProcurementRecord record : procurementRecordService.getRecordsByBatchId(batch.getId())) {
+            com.example.drug.entity.User supplier = userService.getById(record.getSupplierId());
+            com.example.drug.entity.User buyer = userService.getById(record.getBuyerId());
+            String supplierName = supplier == null ? "供应方" : supplier.getOrganization();
+            String buyerName = buyer == null ? "采购方" : buyer.getOrganization();
+            addStep(steps, "采购入库", record.getPurchaseDate().atTime(15, 10), buyerName,
+                supplierName + "向" + buyerName + "发货 " + record.getQuantity() + displayUnit(drug));
+        }
+
+        for (SaleRecord record : saleRecordService.getRecordsByBatchId(batch.getId())) {
+            com.example.drug.entity.User seller = userService.getById(record.getSellerId());
+            com.example.drug.entity.User buyer = userService.getById(record.getBuyerId());
+            String sellerName = seller == null ? "销售方" : seller.getOrganization();
+            String buyerName = buyer == null ? "收货方" : buyer.getOrganization();
+            addStep(steps, "销售出库", record.getSaleDate().atTime(16, 20), sellerName,
+                "向" + buyerName + "配送 " + record.getQuantity() + displayUnit(drug));
+            addStep(steps, "终端验收", record.getSaleDate().plusDays(1).atTime(9, 25), buyerName,
+                "扫码验收入库，批号与随货同行单一致");
+        }
+
+        List<AdverseReaction> reactions = adverseReactionService.list(new QueryWrapper<AdverseReaction>().eq("drug_id", batch.getDrugId()));
+        for (AdverseReaction reaction : reactions) {
+            LocalDateTime time = reaction.getCreatedAt() == null ? batch.getProductionDate().atTime(LocalTime.NOON) : toLocalDateTime(reaction.getCreatedAt());
+            addStep(steps, "不良反应监测", time, reaction.getHospital(), reaction.getSeverity() + "：" + reaction.getReactionDescription());
+        }
+
+        steps.sort(Comparator.comparing(o -> (LocalDateTime) o.get("timeValue")));
+        for (Map<String, Object> step : steps) {
+            step.remove("timeValue");
+        }
+        return steps;
+    }
+
+    private void addStep(List<Map<String, Object>> steps, String stage, LocalDateTime time, String organization, String desc) {
+        Map<String, Object> step = new LinkedHashMap<String, Object>();
+        step.put("stage", stage);
+        step.put("time", time.toString().replace('T', ' '));
+        step.put("company", organization);
+        step.put("organization", organization);
+        step.put("desc", desc);
+        step.put("description", desc);
+        step.put("timeValue", time);
+        steps.add(step);
+    }
+
+    private String displayUnit(DrugInfo drug) {
+        return drug == null || drug.getUnit() == null ? "" : drug.getUnit();
+    }
+
+    private LocalDateTime toLocalDateTime(Date value) {
+        return LocalDateTime.ofInstant(value.toInstant(), java.time.ZoneId.systemDefault());
     }
 }

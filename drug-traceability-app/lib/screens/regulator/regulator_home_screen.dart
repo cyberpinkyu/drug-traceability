@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/foundation.dart' show TargetPlatform, defaultTargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -21,6 +21,12 @@ class _RegulatorHomeScreenState extends State<RegulatorHomeScreen> {
 
   static const LatLng _center = LatLng(39.9042, 116.4074);
 
+  bool get _supportsNativeMap {
+    if (kIsWeb) return false;
+    return defaultTargetPlatform == TargetPlatform.android ||
+        defaultTargetPlatform == TargetPlatform.iOS;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -36,8 +42,7 @@ class _RegulatorHomeScreenState extends State<RegulatorHomeScreen> {
         final markers = data.map((item) {
           final level = item['riskLevel']?.toString() ?? 'medium';
           return Marker(
-            markerId:
-                MarkerId(item['id']?.toString() ?? UniqueKey().toString()),
+            markerId: MarkerId(item['id']?.toString() ?? UniqueKey().toString()),
             position: LatLng(
               (item['latitude'] as num?)?.toDouble() ?? _center.latitude,
               (item['longitude'] as num?)?.toDouble() ?? _center.longitude,
@@ -57,7 +62,7 @@ class _RegulatorHomeScreenState extends State<RegulatorHomeScreen> {
         });
       }
     } catch (_) {
-      // ignore
+      // keep fallback board visible
     } finally {
       if (mounted) setState(() => _isLoading = false);
     }
@@ -66,17 +71,11 @@ class _RegulatorHomeScreenState extends State<RegulatorHomeScreen> {
   BitmapDescriptor _markerIcon(String level) {
     switch (level) {
       case 'high':
-        return BitmapDescriptor.defaultMarkerWithHue(
-          BitmapDescriptor.hueRed,
-        );
+        return BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueRed);
       case 'low':
-        return BitmapDescriptor.defaultMarkerWithHue(
-          BitmapDescriptor.hueGreen,
-        );
+        return BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueGreen);
       default:
-        return BitmapDescriptor.defaultMarkerWithHue(
-          BitmapDescriptor.hueOrange,
-        );
+        return BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange);
     }
   }
 
@@ -90,9 +89,8 @@ class _RegulatorHomeScreenState extends State<RegulatorHomeScreen> {
             Expanded(
               child: Stack(
                 children: [
-                  kIsWeb ? _buildWebRiskBoard() : _buildNativeMap(),
-                  if (_isLoading)
-                    const Center(child: CircularProgressIndicator()),
+                  _supportsNativeMap ? _buildNativeMap() : _buildDesktopRiskBoard(),
+                  if (_isLoading) const Center(child: CircularProgressIndicator()),
                   Positioned(
                     top: 12,
                     left: 12,
@@ -146,52 +144,97 @@ class _RegulatorHomeScreenState extends State<RegulatorHomeScreen> {
     );
   }
 
-  Widget _buildWebRiskBoard() {
-    if (_riskPoints.isEmpty) {
-      return Container(
-        color: Colors.red[900],
-        alignment: Alignment.center,
-        child: const Text(
-          '暂无风险点数据',
-          style: TextStyle(color: Colors.white, fontSize: 16),
-        ),
-      );
-    }
-
+  Widget _buildDesktopRiskBoard() {
+    final hasData = _riskPoints.isNotEmpty;
     return Container(
-      color: Colors.red[900],
+      color: const Color(0xFFF4F7FB),
       padding: const EdgeInsets.fromLTRB(16, 72, 16, 16),
-      child: ListView.separated(
-        itemCount: _riskPoints.length,
-        separatorBuilder: (_, __) => const SizedBox(height: 12),
-        itemBuilder: (context, index) {
-          final item = _riskPoints[index];
-          final level = item['riskLevel']?.toString() ?? 'medium';
-          final levelColor = level == 'high'
-              ? Colors.red
-              : level == 'low'
-                  ? Colors.green
-                  : Colors.orange;
-          final levelText = level == 'high'
-              ? '高风险'
-              : level == 'low'
-                  ? '低风险'
-                  : '中风险';
-
-          return Card(
-            child: ListTile(
-              leading: CircleAvatar(
-                backgroundColor: levelColor.withOpacity(0.15),
-                child: Icon(Icons.location_on, color: levelColor),
+      child: ListView(
+        children: [
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 44,
+                    height: 44,
+                    decoration: BoxDecoration(
+                      color: Colors.red.withOpacity(0.08),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Icon(Icons.map_outlined, color: Colors.red),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          '桌面端使用风险面板',
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          'Windows 桌面暂不支持当前地图插件，已自动切换为风险点列表展示。手机端仍使用地图。',
+                          style: TextStyle(color: Colors.grey[700], height: 1.4),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-              title: Text(item['name']?.toString() ?? '风险点'),
-              subtitle: Text(
-                '级别: $levelText\n坐标: ${item['latitude']}, ${item['longitude']}',
-              ),
-              isThreeLine: true,
             ),
-          );
-        },
+          ),
+          const SizedBox(height: 12),
+          if (!hasData)
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  children: const [
+                    Icon(Icons.location_off, size: 40, color: Colors.grey),
+                    SizedBox(height: 12),
+                    Text('当前暂无风险点数据'),
+                  ],
+                ),
+              ),
+            )
+          else
+            ..._riskPoints.map(_buildRiskCard),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRiskCard(Map<String, dynamic> item) {
+    final level = item['riskLevel']?.toString() ?? 'medium';
+    final levelColor = level == 'high'
+        ? Colors.red
+        : level == 'low'
+            ? Colors.green
+            : Colors.orange;
+    final levelText = level == 'high'
+        ? '高风险'
+        : level == 'low'
+            ? '低风险'
+            : '中风险';
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: Card(
+        child: ListTile(
+          leading: CircleAvatar(
+            backgroundColor: levelColor.withOpacity(0.15),
+            child: Icon(Icons.location_on, color: levelColor),
+          ),
+          title: Text(item['name']?.toString() ?? '风险点'),
+          subtitle: Text(
+            '级别: $levelText\n坐标: ${item['latitude']}, ${item['longitude']}',
+          ),
+          isThreeLine: true,
+        ),
       ),
     );
   }
@@ -277,14 +320,14 @@ class _RegulatorHomeScreenState extends State<RegulatorHomeScreen> {
         'description': desc.text.trim(),
       });
       if (!mounted) return;
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('提交成功')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('提交成功')),
+      );
     } catch (e) {
       if (!mounted) return;
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('提交失败: $e')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('提交失败: $e')),
+      );
     }
   }
 

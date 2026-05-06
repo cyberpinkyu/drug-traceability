@@ -1,0 +1,4140 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/tf3dao",
+    "id": "tf3dao",
+    "slide": 6,
+    "layoutId": "0fd4975e-e717-47e2-8f71-daa90e35448d",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "2e3b606b-3860-4dcd-8498-b4eb538d288a",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "0fd4975e-e717-47e2-8f71-daa90e35448d",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "2e3b606b-3860-4dcd-8498-b4eb538d288a",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "2e3b606b-3860-4dcd-8498-b4eb538d288a",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h0fepkzu",
+      "id": "1",
+      "name": "canvas",
+      "bbox": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "composeSource": {
+        "run": 1,
+        "path": "0.0"
+      },
+      "geometry": "rect",
+      "fillColor": "#F7FAF8"
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a9w3m94f",
+      "id": "2",
+      "name": "top-rule",
+      "bbox": [
+        0,
+        0,
+        1920,
+        12
+      ],
+      "composeSource": {
+        "run": 1,
+        "path": "0.1"
+      },
+      "geometry": "rect",
+      "fillColor": "#1F7A5A"
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zupwb2hw",
+      "id": "3",
+      "name": "slide-title",
+      "bbox": [
+        96,
+        70,
+        894,
+        60
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.0.0"
+      },
+      "geometry": "rect",
+      "text": "AI与算法：检索增强，减少模型自由发挥",
+      "textPreview": "AI与算法：检索增强，减少模型自由发挥",
+      "resolvedFontSize": 50,
+      "resolvedTextStyle": {
+        "fontSize": 50,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "AI与算法：检索增强，减少模型自由发挥"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "AI与算法：检索增强，减少模型自由发挥",
+          "runs": [
+            {
+              "index": 1,
+              "text": "AI与算法：检索增强，减少模型自由发挥",
+              "fontSize": 50,
+              "color": "#13231E",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/orytsvu9",
+      "id": "4",
+      "name": "slide-subtitle",
+      "bbox": [
+        96,
+        144,
+        822,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.0.1"
+      },
+      "geometry": "rect",
+      "text": "论文中的 AI 能力，在实现上拆成意图识别、只读查询、事实注入和回答生成。",
+      "textPreview": "论文中的 AI 能力，在实现上拆成意图识别、只读查询、事实注入和回答生成。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "论文中的 AI"
+          },
+          {
+            "index": 2,
+            "text": "能力，在实现上拆成意图识别、只读查询、事实注入和回答生成。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "论文中的 AI 能力，在实现上拆成意图识别、只读查询、事实注入和回答生成。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "论文中的 AI 能力，在实现上拆成意图识别、只读查询、事实注入和回答生成。",
+              "fontSize": 24,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hcrmhk3q",
+      "id": "5",
+      "name": "node-用户问题",
+      "bbox": [
+        96,
+        206.8,
+        190,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.0.0"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/al87ed8b",
+      "id": "6",
+      "name": "node-text-用户问题",
+      "bbox": [
+        112,
+        220,
+        158,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.0.0.0"
+      },
+      "geometry": "rect",
+      "text": "用户问题",
+      "textPreview": "用户问题",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "用户问题"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "用户问题",
+          "runs": [
+            {
+              "index": 1,
+              "text": "用户问题",
+              "fontSize": 22,
+              "color": "#1F9AA0",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z61032ls",
+      "id": "7",
+      "name": "arrow-symbol-",
+      "bbox": [
+        302,
+        206,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.0.1.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oza1gvy9",
+      "id": "8",
+      "name": "node-意图识别",
+      "bbox": [
+        410,
+        206.8,
+        210,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.0.2"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hk3q5o7q",
+      "id": "9",
+      "name": "node-text-意图识别",
+      "bbox": [
+        426,
+        220,
+        178,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.0.2.0"
+      },
+      "geometry": "rect",
+      "text": "意图识别",
+      "textPreview": "意图识别",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "意图识别"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "意图识别",
+          "runs": [
+            {
+              "index": 1,
+              "text": "意图识别",
+              "fontSize": 22,
+              "color": "#1F9AA0",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hgn29gr2",
+      "id": "10",
+      "name": "arrow-symbol-",
+      "bbox": [
+        636,
+        206,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.0.3.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/svu9knih",
+      "id": "11",
+      "name": "node-参数抽取",
+      "bbox": [
+        744,
+        206.8,
+        210,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.0.4"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/za1gvy90",
+      "id": "12",
+      "name": "node-text-参数抽取",
+      "bbox": [
+        760,
+        220,
+        178,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.0.4.0"
+      },
+      "geometry": "rect",
+      "text": "参数抽取",
+      "textPreview": "参数抽取",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "参数抽取"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "参数抽取",
+          "runs": [
+            {
+              "index": 1,
+              "text": "参数抽取",
+              "fontSize": 22,
+              "color": "#1F9AA0",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ap4r65wj",
+      "id": "13",
+      "name": "node-只读 SQL",
+      "bbox": [
+        96,
+        302.8,
+        190,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.0"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hoza1gvy",
+      "id": "14",
+      "name": "node-text-只读 SQL",
+      "bbox": [
+        112,
+        316,
+        158,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.0.0"
+      },
+      "geometry": "rect",
+      "text": "只读 SQL",
+      "textPreview": "只读 SQL",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "只读 SQL"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "只读 SQL",
+          "runs": [
+            {
+              "index": 1,
+              "text": "只读 SQL",
+              "fontSize": 22,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s36hcrmh",
+      "id": "15",
+      "name": "arrow-symbol-",
+      "bbox": [
+        302,
+        302,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.1.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zidonyd0",
+      "id": "16",
+      "name": "node-事实结果",
+      "bbox": [
+        410,
+        302.8,
+        210,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.2"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a1gvy90j",
+      "id": "17",
+      "name": "node-text-事实结果",
+      "bbox": [
+        426,
+        316,
+        178,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.2.0"
+      },
+      "geometry": "rect",
+      "text": "事实结果",
+      "textPreview": "事实结果",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "事实结果"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "事实结果",
+          "runs": [
+            {
+              "index": 1,
+              "text": "事实结果",
+              "fontSize": 22,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lszqtcj6",
+      "id": "18",
+      "name": "arrow-symbol-",
+      "bbox": [
+        636,
+        302,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.3.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s72x4nap",
+      "id": "19",
+      "name": "node-Prompt 注入",
+      "bbox": [
+        744,
+        302.8,
+        230,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.4"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8z25kb6x",
+      "id": "20",
+      "name": "node-text-Prompt 注入",
+      "bbox": [
+        760,
+        316,
+        198,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.4.0"
+      },
+      "geometry": "rect",
+      "text": "Prompt 注入",
+      "textPreview": "Prompt 注入",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Prompt 注入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Prompt 注入",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Prompt 注入",
+              "fontSize": 22,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1gvy90je",
+      "id": "21",
+      "name": "node-大模型生成",
+      "bbox": [
+        96,
+        398.8,
+        230,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.2.0"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qtcj6tov",
+      "id": "22",
+      "name": "node-text-大模型生成",
+      "bbox": [
+        112,
+        412,
+        198,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.2.0.0"
+      },
+      "geometry": "rect",
+      "text": "大模型生成",
+      "textPreview": "大模型生成",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "大模型生成"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "大模型生成",
+          "runs": [
+            {
+              "index": 1,
+              "text": "大模型生成",
+              "fontSize": 22,
+              "color": "#1F7A5A",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/je9cvixc",
+      "id": "23",
+      "name": "arrow-symbol-",
+      "bbox": [
+        342,
+        398,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.2.1.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/87ed8bat",
+      "id": "24",
+      "name": "node-中文回答",
+      "bbox": [
+        450,
+        398.8,
+        210,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.2.2"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xs72x4na",
+      "id": "25",
+      "name": "node-text-中文回答",
+      "bbox": [
+        466,
+        412,
+        178,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.2.2.0"
+      },
+      "geometry": "rect",
+      "text": "中文回答",
+      "textPreview": "中文回答",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "中文回答"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "中文回答",
+          "runs": [
+            {
+              "index": 1,
+              "text": "中文回答",
+              "fontSize": 22,
+              "color": "#1F7A5A",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q1orytsv",
+      "id": "26",
+      "name": "arrow-symbol-",
+      "bbox": [
+        676,
+        398,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.2.3.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fmlkjm1c",
+      "id": "27",
+      "name": "node-会话记录",
+      "bbox": [
+        784,
+        398.8,
+        210,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.2.4"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8jqh0fep",
+      "id": "28",
+      "name": "node-text-会话记录",
+      "bbox": [
+        800,
+        412,
+        178,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.2.4.0"
+      },
+      "geometry": "rect",
+      "text": "会话记录",
+      "textPreview": "会话记录",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "会话记录"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "会话记录",
+          "runs": [
+            {
+              "index": 1,
+              "text": "会话记录",
+              "fontSize": 22,
+              "color": "#1F7A5A",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x4nap4r6",
+      "id": "29",
+      "name": "ai-caveat",
+      "bbox": [
+        96,
+        494,
+        1002,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.3"
+      },
+      "geometry": "rect",
+      "text": "关键约束：监管结论仍由人工复核，AI 只做信息检索与表达增强。",
+      "textPreview": "关键约束：监管结论仍由人工复核，AI 只做信息检索与表达增强。",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "fontSize": 25,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "关键约束：监管结论仍由人工复核，AI 只做信息检索与表达增强。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "关键约束：监管结论仍由人工复核，AI 只做信息检索与表达增强。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "关键约束：监管结论仍由人工复核，AI 只做信息检索与表达增强。",
+              "fontSize": 25,
+              "color": "#C94A4A",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n29gr2p8",
+      "id": "30",
+      "name": "rules-title",
+      "bbox": [
+        1156,
+        206,
+        668,
+        34
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.0"
+      },
+      "geometry": "rect",
+      "text": "实现中的规则化检索",
+      "textPreview": "实现中的规则化检索",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "实现中的规则化检索"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "实现中的规则化检索",
+          "runs": [
+            {
+              "index": 1,
+              "text": "实现中的规则化检索",
+              "fontSize": 28,
+              "color": "#13231E",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yhgn29gr",
+      "id": "31",
+      "name": "rule-batch",
+      "bbox": [
+        1156,
+        264,
+        668,
+        34
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1"
+      },
+      "geometry": "rect",
+      "text": "批号：B\\d{6}[A-Z]?",
+      "textPreview": "批号：B\\d{6}[A-Z]?",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "批号：B\\d{6}[A-Z]?"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "批号：B\\d{6}[A-Z]?",
+          "runs": [
+            {
+              "index": 1,
+              "text": "批号：B\\d{6}[A-Z]?",
+              "fontSize": 28,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/58z25kb6",
+      "id": "32",
+      "name": "rule-drug",
+      "bbox": [
+        1156,
+        322,
+        668,
+        34
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.2"
+      },
+      "geometry": "rect",
+      "text": "药品编码：RX\\d{6}",
+      "textPreview": "药品编码：RX\\d{6}",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "药品编码：RX\\d{6}"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "药品编码：RX\\d{6}",
+          "runs": [
+            {
+              "index": 1,
+              "text": "药品编码：RX\\d{6}",
+              "fontSize": 28,
+              "color": "#1F9AA0",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gn29gr2p",
+      "id": "33",
+      "name": "rule-keyword",
+      "bbox": [
+        1156,
+        380,
+        668,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.3"
+      },
+      "geometry": "rect",
+      "text": "关键词：库存 / 风险 / 不良反应 / 追溯 / 药品说明",
+      "textPreview": "关键词：库存 / 风险 / 不良反应 / 追溯 / 药品说明",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "关键词：库存 / 风险 / 不良反应 / 追溯 / 药品说明"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "关键词：库存 / 风险 / 不良反应 / 追溯 / 药品说明",
+          "runs": [
+            {
+              "index": 1,
+              "text": "关键词：库存 / 风险 / 不良反应 / 追溯 / 药品说明",
+              "fontSize": 24,
+              "color": "#13231E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nuxc3ylc",
+      "id": "34",
+      "name": "rules-line",
+      "bbox": [
+        1156,
+        432,
+        668,
+        2
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.4"
+      },
+      "geometry": "rect",
+      "fillColor": "#D4E3DE",
+      "lineColor": "#D4E3DE",
+      "lineWidth": 0
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y90je9cv",
+      "id": "35",
+      "name": "rules-summary",
+      "bbox": [
+        1156,
+        458,
+        668,
+        56
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.5"
+      },
+      "geometry": "rect",
+      "text": "这样做的目的：减少幻觉、保留可追溯事实、让答辩中能讲清算法边界。",
+      "textPreview": "这样做的目的：减少幻觉、保留可追溯事实、让答辩中能讲清算法边界。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "这样做的目的：减少幻觉、保留可追溯事实、让答辩中能讲清算法"
+          },
+          {
+            "index": 2,
+            "text": "边界。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "这样做的目的：减少幻觉、保留可追溯事实、让答辩中能讲清算法边界。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "这样做的目的：减少幻觉、保留可追溯事实、让答辩中能讲清算法边界。",
+              "fontSize": 23,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5wjudg7a",
+      "id": "36",
+      "name": "footer",
+      "bbox": [
+        96,
+        994,
+        1728,
+        18
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.2"
+      },
+      "geometry": "rect",
+      "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+      "textPreview": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+          "runs": [
+            {
+              "index": 1,
+              "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+              "fontSize": 14,
+              "color": "#7B8B86"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "composeRuns": [
+    {
+      "index": 1,
+      "frame": {
+        "left": 0,
+        "top": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "baseUnit": 8,
+      "root": {
+        "path": "0",
+        "kind": "layers",
+        "name": "background",
+        "requestedSize": {
+          "width": {
+            "mode": "fill",
+            "value": 1
+          },
+          "height": {
+            "mode": "fill",
+            "value": 1
+          }
+        },
+        "intrinsicSize": {
+          "width": 1920,
+          "height": 1080
+        },
+        "frame": {
+          "left": 0,
+          "top": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "children": [
+          {
+            "path": "0.0",
+            "kind": "shape",
+            "name": "canvas",
+            "requestedSize": {
+              "width": {
+                "mode": "fixed",
+                "value": 1920
+              },
+              "height": {
+                "mode": "fixed",
+                "value": 1080
+              }
+            },
+            "intrinsicSize": {
+              "width": 1920,
+              "height": 1080
+            },
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 1080
+            },
+            "snappedFrame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 1080
+            },
+            "children": [],
+            "geometry": "rect",
+            "element": {
+              "aid": "sh/h0fepkzu",
+              "id": "1",
+              "kind": "shape"
+            }
+          },
+          {
+            "path": "0.1",
+            "kind": "shape",
+            "name": "top-rule",
+            "requestedSize": {
+              "width": {
+                "mode": "fixed",
+                "value": 1920
+              },
+              "height": {
+                "mode": "fixed",
+                "value": 12
+              }
+            },
+            "intrinsicSize": {
+              "width": 1920,
+              "height": 12
+            },
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 12
+            },
+            "snappedFrame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 12
+            },
+            "children": [],
+            "geometry": "rect",
+            "element": {
+              "aid": "sh/a9w3m94f",
+              "id": "2",
+              "kind": "shape"
+            }
+          }
+        ],
+        "padding": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "alignItems": "stretch",
+        "justifyItems": "stretch",
+        "contentFrame": {
+          "left": 0,
+          "top": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "items": [
+          {
+            "path": "0.0",
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 1080
+            }
+          },
+          {
+            "path": "0.1",
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "frame": {
+        "left": 0,
+        "top": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "baseUnit": 8,
+      "root": {
+        "path": "0",
+        "kind": "column",
+        "name": "root",
+        "requestedSize": {
+          "width": {
+            "mode": "fill",
+            "value": 1
+          },
+          "height": {
+            "mode": "fill",
+            "value": 1
+          }
+        },
+        "intrinsicSize": {
+          "width": 192,
+          "height": 327.6
+        },
+        "frame": {
+          "left": 0,
+          "top": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "children": [
+          {
+            "path": "0.0",
+            "kind": "column",
+            "name": "title-stack",
+            "requestedSize": {
+              "width": {
+                "mode": "fill",
+                "value": 1
+              },
+              "height": {
+                "mode": "hug"
+              }
+            },
+            "intrinsicSize": {
+              "width": 893.63,
+              "height": 102.8
+            },
+            "frame": {
+              "left": 96,
+              "top": 70,
+              "width": 1728,
+              "height": 102.8
+            },
+            "children": [
+              {
+                "path": "0.0.0",
+                "kind": "text",
+                "name": "slide-title",
+                "requestedSize": {
+                  "width": {
+                    "mode": "wrap",
+                    "max": 1640
+                  },
+                  "height": {
+                    "mode": "hug"
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 893.63,
+                  "height": 60
+                },
+                "frame": {
+                  "left": 96,
+                  "top": 70,
+                  "width": 893.63,
+                  "height": 60
+                },
+                "snappedFrame": {
+                  "left": 96,
+                  "top": 70,
+                  "width": 894,
+                  "height": 60
+                },
+                "children": [],
+                "text": "AI与算法：检索增强，减少模型自由发挥",
+                "transform": "none",
+                "element": {
+                  "aid": "sh/zupwb2hw",
+                  "id": "3",
+                  "kind": "shape"
+                }
+              },
+              {
+                "path": "0.0.1",
+                "kind": "text",
+                "name": "slide-subtitle",
+                "requestedSize": {
+                  "width": {
+                    "mode": "wrap",
+                    "max": 1320
+                  },
+                  "height": {
+                    "mode": "hug"
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 822.79,
+                  "height": 28.8
+                },
+                "frame": {
+                  "left": 96,
+                  "top": 144,
+                  "width": 822.79,
+                  "height": 28.8
+                },
+                "snappedFrame": {
+                  "left": 96,
+                  "top": 144,
+                  "width": 822,
+                  "height": 30
+                },
+                "children": [],
+                "text": "论文中的 AI 能力，在实现上拆成意图识别、只读查询、事实注入和回答生成。",
+                "transform": "none",
+                "element": {
+                  "aid": "sh/orytsvu9",
+                  "id": "4",
+                  "kind": "shape"
+                }
+              }
+            ],
+            "padding": {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "gap": 14,
+            "effectiveGap": 14,
+            "justifyOffset": 0,
+            "align": "start",
+            "justify": "start",
+            "contentFrame": {
+              "left": 96,
+              "top": 70,
+              "width": 1728,
+              "height": 102.8
+            },
+            "items": [
+              {
+                "path": "0.0.0",
+                "frame": {
+                  "left": 96,
+                  "top": 70,
+                  "width": 893.63,
+                  "height": 60
+                }
+              },
+              {
+                "path": "0.0.1",
+                "frame": {
+                  "left": 96,
+                  "top": 144,
+                  "width": 822.79,
+                  "height": 28.8
+                }
+              }
+            ]
+          },
+          {
+            "path": "0.1",
+            "kind": "grid",
+            "name": "ai-grid",
+            "requestedSize": {
+              "width": {
+                "mode": "fill",
+                "value": 1
+              },
+              "height": {
+                "mode": "fill",
+                "value": 1
+              }
+            },
+            "intrinsicSize": {
+              "width": 58,
+              "height": 0
+            },
+            "frame": {
+              "left": 96,
+              "top": 206.8,
+              "width": 1728,
+              "height": 752.4
+            },
+            "children": [
+              {
+                "path": "0.1.0",
+                "kind": "column",
+                "name": "ai-flow",
+                "requestedSize": {
+                  "width": {
+                    "mode": "fill",
+                    "value": 1
+                  },
+                  "height": {
+                    "mode": "fill",
+                    "value": 1
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 0,
+                  "height": 318
+                },
+                "frame": {
+                  "left": 96,
+                  "top": 206.8,
+                  "width": 1002,
+                  "height": 752.4
+                },
+                "children": [
+                  {
+                    "path": "0.1.0.0",
+                    "kind": "row",
+                    "name": "ai-step-1",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 858,
+                      "height": 72
+                    },
+                    "frame": {
+                      "left": 96,
+                      "top": 206.8,
+                      "width": 1002,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.0.0.0",
+                        "kind": "panel",
+                        "name": "node-用户问题",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 190
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 96,
+                          "top": 206.8,
+                          "width": 190,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 96,
+                          "top": 206.8,
+                          "width": 190,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.0.0.0",
+                            "kind": "text",
+                            "name": "node-text-用户问题",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 112,
+                              "top": 220.8,
+                              "width": 158,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 112,
+                              "top": 220,
+                              "width": 158,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "用户问题",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/al87ed8b",
+                              "id": "6",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 112,
+                          "top": 220.8,
+                          "width": 158,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/hcrmhk3q",
+                          "id": "5",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.0.1",
+                        "kind": "column",
+                        "name": "arrow-",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 50.4
+                        },
+                        "frame": {
+                          "left": 302,
+                          "top": 206.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.0.1.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 302,
+                              "top": 206.8,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 302,
+                              "top": 206,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/z61032ls",
+                              "id": "7",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 302,
+                          "top": 206.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.0.0.1.0",
+                            "frame": {
+                              "left": 302,
+                              "top": 206.8,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.0.0.2",
+                        "kind": "panel",
+                        "name": "node-意图识别",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 210
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 410,
+                          "top": 206.8,
+                          "width": 210,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 410,
+                          "top": 206.8,
+                          "width": 210,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.0.2.0",
+                            "kind": "text",
+                            "name": "node-text-意图识别",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 426,
+                              "top": 220.8,
+                              "width": 178,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 426,
+                              "top": 220,
+                              "width": 178,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "意图识别",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/hk3q5o7q",
+                              "id": "9",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 426,
+                          "top": 220.8,
+                          "width": 178,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/oza1gvy9",
+                          "id": "8",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.0.3",
+                        "kind": "column",
+                        "name": "arrow-",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 50.4
+                        },
+                        "frame": {
+                          "left": 636,
+                          "top": 206.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.0.3.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 636,
+                              "top": 206.8,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 636,
+                              "top": 206,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/hgn29gr2",
+                              "id": "10",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 636,
+                          "top": 206.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.0.0.3.0",
+                            "frame": {
+                              "left": 636,
+                              "top": 206.8,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.0.0.4",
+                        "kind": "panel",
+                        "name": "node-参数抽取",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 210
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 744,
+                          "top": 206.8,
+                          "width": 210,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 744,
+                          "top": 206.8,
+                          "width": 210,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.0.4.0",
+                            "kind": "text",
+                            "name": "node-text-参数抽取",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 760,
+                              "top": 220.8,
+                              "width": 178,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 760,
+                              "top": 220,
+                              "width": 178,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "参数抽取",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/za1gvy90",
+                              "id": "12",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 760,
+                          "top": 220.8,
+                          "width": 178,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/svu9knih",
+                          "id": "11",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0,
+                      "left": 0
+                    },
+                    "gap": 16,
+                    "effectiveGap": 16,
+                    "justifyOffset": 0,
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 96,
+                      "top": 206.8,
+                      "width": 1002,
+                      "height": 72
+                    },
+                    "items": [
+                      {
+                        "path": "0.1.0.0.0",
+                        "frame": {
+                          "left": 96,
+                          "top": 206.8,
+                          "width": 190,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.0.1",
+                        "frame": {
+                          "left": 302,
+                          "top": 206.8,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.0.2",
+                        "frame": {
+                          "left": 410,
+                          "top": 206.8,
+                          "width": 210,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.0.3",
+                        "frame": {
+                          "left": 636,
+                          "top": 206.8,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.0.4",
+                        "frame": {
+                          "left": 744,
+                          "top": 206.8,
+                          "width": 210,
+                          "height": 72
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "path": "0.1.0.1",
+                    "kind": "row",
+                    "name": "ai-step-2",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 878,
+                      "height": 72
+                    },
+                    "frame": {
+                      "left": 96,
+                      "top": 302.8,
+                      "width": 1002,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.0.1.0",
+                        "kind": "panel",
+                        "name": "node-只读 SQL",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 190
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 96,
+                          "top": 302.8,
+                          "width": 190,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 96,
+                          "top": 302.8,
+                          "width": 190,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.0.0",
+                            "kind": "text",
+                            "name": "node-text-只读 SQL",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 112,
+                              "top": 316.8,
+                              "width": 158,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 112,
+                              "top": 316,
+                              "width": 158,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "只读 SQL",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/hoza1gvy",
+                              "id": "14",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 112,
+                          "top": 316.8,
+                          "width": 158,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/ap4r65wj",
+                          "id": "13",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.1",
+                        "kind": "column",
+                        "name": "arrow-",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 50.4
+                        },
+                        "frame": {
+                          "left": 302,
+                          "top": 302.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.1.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 302,
+                              "top": 302.8,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 302,
+                              "top": 302,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/s36hcrmh",
+                              "id": "15",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 302,
+                          "top": 302.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.0.1.1.0",
+                            "frame": {
+                              "left": 302,
+                              "top": 302.8,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.0.1.2",
+                        "kind": "panel",
+                        "name": "node-事实结果",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 210
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 410,
+                          "top": 302.8,
+                          "width": 210,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 410,
+                          "top": 302.8,
+                          "width": 210,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.2.0",
+                            "kind": "text",
+                            "name": "node-text-事实结果",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 426,
+                              "top": 316.8,
+                              "width": 178,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 426,
+                              "top": 316,
+                              "width": 178,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "事实结果",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/a1gvy90j",
+                              "id": "17",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 426,
+                          "top": 316.8,
+                          "width": 178,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/zidonyd0",
+                          "id": "16",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.3",
+                        "kind": "column",
+                        "name": "arrow-",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 50.4
+                        },
+                        "frame": {
+                          "left": 636,
+                          "top": 302.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.3.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 636,
+                              "top": 302.8,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 636,
+                              "top": 302,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/lszqtcj6",
+                              "id": "18",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 636,
+                          "top": 302.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.0.1.3.0",
+                            "frame": {
+                              "left": 636,
+                              "top": 302.8,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.0.1.4",
+                        "kind": "panel",
+                        "name": "node-Prompt 注入",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 230
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 744,
+                          "top": 302.8,
+                          "width": 230,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 744,
+                          "top": 302.8,
+                          "width": 230,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.4.0",
+                            "kind": "text",
+                            "name": "node-text-Prompt 注入",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 760,
+                              "top": 316.8,
+                              "width": 198,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 760,
+                              "top": 316,
+                              "width": 198,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "Prompt 注入",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/8z25kb6x",
+                              "id": "20",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 760,
+                          "top": 316.8,
+                          "width": 198,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/s72x4nap",
+                          "id": "19",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0,
+                      "left": 0
+                    },
+                    "gap": 16,
+                    "effectiveGap": 16,
+                    "justifyOffset": 0,
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 96,
+                      "top": 302.8,
+                      "width": 1002,
+                      "height": 72
+                    },
+                    "items": [
+                      {
+                        "path": "0.1.0.1.0",
+                        "frame": {
+                          "left": 96,
+                          "top": 302.8,
+                          "width": 190,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.1",
+                        "frame": {
+                          "left": 302,
+                          "top": 302.8,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.2",
+                        "frame": {
+                          "left": 410,
+                          "top": 302.8,
+                          "width": 210,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.3",
+                        "frame": {
+                          "left": 636,
+                          "top": 302.8,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.4",
+                        "frame": {
+                          "left": 744,
+                          "top": 302.8,
+                          "width": 230,
+                          "height": 72
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "path": "0.1.0.2",
+                    "kind": "row",
+                    "name": "ai-step-3",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 898,
+                      "height": 72
+                    },
+                    "frame": {
+                      "left": 96,
+                      "top": 398.8,
+                      "width": 1002,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.0.2.0",
+                        "kind": "panel",
+                        "name": "node-大模型生成",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 230
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 96,
+                          "top": 398.8,
+                          "width": 230,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 96,
+                          "top": 398.8,
+                          "width": 230,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.2.0.0",
+                            "kind": "text",
+                            "name": "node-text-大模型生成",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 112,
+                              "top": 412.8,
+                              "width": 198,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 112,
+                              "top": 412,
+                              "width": 198,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "大模型生成",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/qtcj6tov",
+                              "id": "22",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 112,
+                          "top": 412.8,
+                          "width": 198,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/1gvy90je",
+                          "id": "21",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.2.1",
+                        "kind": "column",
+                        "name": "arrow-",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 50.4
+                        },
+                        "frame": {
+                          "left": 342,
+                          "top": 398.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.2.1.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 342,
+                              "top": 398.8,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 342,
+                              "top": 398,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/je9cvixc",
+                              "id": "23",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 342,
+                          "top": 398.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.0.2.1.0",
+                            "frame": {
+                              "left": 342,
+                              "top": 398.8,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.0.2.2",
+                        "kind": "panel",
+                        "name": "node-中文回答",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 210
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 450,
+                          "top": 398.8,
+                          "width": 210,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 450,
+                          "top": 398.8,
+                          "width": 210,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.2.2.0",
+                            "kind": "text",
+                            "name": "node-text-中文回答",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 466,
+                              "top": 412.8,
+                              "width": 178,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 466,
+                              "top": 412,
+                              "width": 178,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "中文回答",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/xs72x4na",
+                              "id": "25",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 466,
+                          "top": 412.8,
+                          "width": 178,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/87ed8bat",
+                          "id": "24",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.2.3",
+                        "kind": "column",
+                        "name": "arrow-",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 50.4
+                        },
+                        "frame": {
+                          "left": 676,
+                          "top": 398.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.2.3.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 676,
+                              "top": 398.8,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 676,
+                              "top": 398,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/q1orytsv",
+                              "id": "26",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 676,
+                          "top": 398.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.0.2.3.0",
+                            "frame": {
+                              "left": 676,
+                              "top": 398.8,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.0.2.4",
+                        "kind": "panel",
+                        "name": "node-会话记录",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 210
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 784,
+                          "top": 398.8,
+                          "width": 210,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 784,
+                          "top": 398.8,
+                          "width": 210,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.2.4.0",
+                            "kind": "text",
+                            "name": "node-text-会话记录",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 800,
+                              "top": 412.8,
+                              "width": 178,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 800,
+                              "top": 412,
+                              "width": 178,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "会话记录",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/8jqh0fep",
+                              "id": "28",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 800,
+                          "top": 412.8,
+                          "width": 178,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/fmlkjm1c",
+                          "id": "27",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0,
+                      "left": 0
+                    },
+                    "gap": 16,
+                    "effectiveGap": 16,
+                    "justifyOffset": 0,
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 96,
+                      "top": 398.8,
+                      "width": 1002,
+                      "height": 72
+                    },
+                    "items": [
+                      {
+                        "path": "0.1.0.2.0",
+                        "frame": {
+                          "left": 96,
+                          "top": 398.8,
+                          "width": 230,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.2.1",
+                        "frame": {
+                          "left": 342,
+                          "top": 398.8,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.2.2",
+                        "frame": {
+                          "left": 450,
+                          "top": 398.8,
+                          "width": 210,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.2.3",
+                        "frame": {
+                          "left": 676,
+                          "top": 398.8,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.2.4",
+                        "frame": {
+                          "left": 784,
+                          "top": 398.8,
+                          "width": 210,
+                          "height": 72
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "path": "0.1.0.3",
+                    "kind": "text",
+                    "name": "ai-caveat",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 30
+                    },
+                    "frame": {
+                      "left": 96,
+                      "top": 494.8,
+                      "width": 1002,
+                      "height": 30
+                    },
+                    "snappedFrame": {
+                      "left": 96,
+                      "top": 494,
+                      "width": 1002,
+                      "height": 30
+                    },
+                    "children": [],
+                    "text": "关键约束：监管结论仍由人工复核，AI 只做信息检索与表达增强。",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/x4nap4r6",
+                      "id": "29",
+                      "kind": "shape"
+                    }
+                  }
+                ],
+                "padding": {
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                },
+                "gap": 24,
+                "effectiveGap": 24,
+                "justifyOffset": 0,
+                "align": "start",
+                "justify": "start",
+                "contentFrame": {
+                  "left": 96,
+                  "top": 206.8,
+                  "width": 1002,
+                  "height": 752.4
+                },
+                "items": [
+                  {
+                    "path": "0.1.0.0",
+                    "frame": {
+                      "left": 96,
+                      "top": 206.8,
+                      "width": 1002,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.0.1",
+                    "frame": {
+                      "left": 96,
+                      "top": 302.8,
+                      "width": 1002,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.0.2",
+                    "frame": {
+                      "left": 96,
+                      "top": 398.8,
+                      "width": 1002,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.0.3",
+                    "frame": {
+                      "left": 96,
+                      "top": 494.8,
+                      "width": 1002,
+                      "height": 30
+                    }
+                  }
+                ]
+              },
+              {
+                "path": "0.1.1",
+                "kind": "column",
+                "name": "rules",
+                "requestedSize": {
+                  "width": {
+                    "mode": "fill",
+                    "value": 1
+                  },
+                  "height": {
+                    "mode": "fill",
+                    "value": 1
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 0,
+                  "height": 279.2
+                },
+                "frame": {
+                  "left": 1156,
+                  "top": 206.8,
+                  "width": 668,
+                  "height": 752.4
+                },
+                "children": [
+                  {
+                    "path": "0.1.1.0",
+                    "kind": "text",
+                    "name": "rules-title",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 33.6
+                    },
+                    "frame": {
+                      "left": 1156,
+                      "top": 206.8,
+                      "width": 668,
+                      "height": 33.6
+                    },
+                    "snappedFrame": {
+                      "left": 1156,
+                      "top": 206,
+                      "width": 668,
+                      "height": 34
+                    },
+                    "children": [],
+                    "text": "实现中的规则化检索",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/n29gr2p8",
+                      "id": "30",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.1.1",
+                    "kind": "text",
+                    "name": "rule-batch",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 33.6
+                    },
+                    "frame": {
+                      "left": 1156,
+                      "top": 264.4,
+                      "width": 668,
+                      "height": 33.6
+                    },
+                    "snappedFrame": {
+                      "left": 1156,
+                      "top": 264,
+                      "width": 668,
+                      "height": 34
+                    },
+                    "children": [],
+                    "text": "批号：B\\d{6}[A-Z]?",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/yhgn29gr",
+                      "id": "31",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.1.2",
+                    "kind": "text",
+                    "name": "rule-drug",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 33.6
+                    },
+                    "frame": {
+                      "left": 1156,
+                      "top": 322,
+                      "width": 668,
+                      "height": 33.6
+                    },
+                    "snappedFrame": {
+                      "left": 1156,
+                      "top": 322,
+                      "width": 668,
+                      "height": 34
+                    },
+                    "children": [],
+                    "text": "药品编码：RX\\d{6}",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/58z25kb6",
+                      "id": "32",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.1.3",
+                    "kind": "text",
+                    "name": "rule-keyword",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 28.8
+                    },
+                    "frame": {
+                      "left": 1156,
+                      "top": 379.6,
+                      "width": 668,
+                      "height": 28.8
+                    },
+                    "snappedFrame": {
+                      "left": 1156,
+                      "top": 380,
+                      "width": 668,
+                      "height": 30
+                    },
+                    "children": [],
+                    "text": "关键词：库存 / 风险 / 不良反应 / 追溯 / 药品说明",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/gn29gr2p",
+                      "id": "33",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.1.4",
+                    "kind": "rule",
+                    "name": "rules-line",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 2
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 2
+                    },
+                    "frame": {
+                      "left": 1156,
+                      "top": 432.4,
+                      "width": 668,
+                      "height": 2
+                    },
+                    "snappedFrame": {
+                      "left": 1156,
+                      "top": 432,
+                      "width": 668,
+                      "height": 2
+                    },
+                    "children": [],
+                    "weight": 2,
+                    "element": {
+                      "aid": "sh/nuxc3ylc",
+                      "id": "34",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.1.5",
+                    "kind": "text",
+                    "name": "rules-summary",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 27.6
+                    },
+                    "frame": {
+                      "left": 1156,
+                      "top": 458.4,
+                      "width": 668,
+                      "height": 55.2
+                    },
+                    "snappedFrame": {
+                      "left": 1156,
+                      "top": 458,
+                      "width": 668,
+                      "height": 56
+                    },
+                    "children": [],
+                    "text": "这样做的目的：减少幻觉、保留可追溯事实、让答辩中能讲清算法边界。",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/y90je9cv",
+                      "id": "35",
+                      "kind": "shape"
+                    }
+                  }
+                ],
+                "padding": {
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                },
+                "gap": 24,
+                "effectiveGap": 24,
+                "justifyOffset": 0,
+                "align": "start",
+                "justify": "start",
+                "contentFrame": {
+                  "left": 1156,
+                  "top": 206.8,
+                  "width": 668,
+                  "height": 752.4
+                },
+                "items": [
+                  {
+                    "path": "0.1.1.0",
+                    "frame": {
+                      "left": 1156,
+                      "top": 206.8,
+                      "width": 668,
+                      "height": 33.6
+                    }
+                  },
+                  {
+                    "path": "0.1.1.1",
+                    "frame": {
+                      "left": 1156,
+                      "top": 264.4,
+                      "width": 668,
+                      "height": 33.6
+                    }
+                  },
+                  {
+                    "path": "0.1.1.2",
+                    "frame": {
+                      "left": 1156,
+                      "top": 322,
+                      "width": 668,
+                      "height": 33.6
+                    }
+                  },
+                  {
+                    "path": "0.1.1.3",
+                    "frame": {
+                      "left": 1156,
+                      "top": 379.6,
+                      "width": 668,
+                      "height": 28.8
+                    }
+                  },
+                  {
+                    "path": "0.1.1.4",
+                    "frame": {
+                      "left": 1156,
+                      "top": 432.4,
+                      "width": 668,
+                      "height": 2
+                    }
+                  },
+                  {
+                    "path": "0.1.1.5",
+                    "frame": {
+                      "left": 1156,
+                      "top": 458.4,
+                      "width": 668,
+                      "height": 55.2
+                    }
+                  }
+                ]
+              }
+            ],
+            "padding": {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "columnGap": 58,
+            "rowGap": 0,
+            "alignItems": "stretch",
+            "justifyItems": "stretch",
+            "contentFrame": {
+              "left": 96,
+              "top": 206.8,
+              "width": 1728,
+              "height": 752.4
+            },
+            "columns": [
+              {
+                "mode": "fr",
+                "value": 1.2
+              },
+              {
+                "mode": "fr",
+                "value": 0.8
+              }
+            ],
+            "autoRows": "auto",
+            "resolvedRows": [
+              "auto"
+            ],
+            "columnSizes": [
+              1002,
+              668
+            ],
+            "rowSizes": [
+              752.4
+            ],
+            "cells": [
+              {
+                "path": "0.1.0",
+                "column": 0,
+                "row": 0,
+                "columnSpan": 1,
+                "rowSpan": 1,
+                "cellFrame": {
+                  "left": 96,
+                  "top": 206.8,
+                  "width": 1002,
+                  "height": 752.4
+                }
+              },
+              {
+                "path": "0.1.1",
+                "column": 1,
+                "row": 0,
+                "columnSpan": 1,
+                "rowSpan": 1,
+                "cellFrame": {
+                  "left": 1156,
+                  "top": 206.8,
+                  "width": 668,
+                  "height": 752.4
+                }
+              }
+            ]
+          },
+          {
+            "path": "0.2",
+            "kind": "text",
+            "name": "footer",
+            "requestedSize": {
+              "width": {
+                "mode": "fill",
+                "value": 1
+              },
+              "height": {
+                "mode": "hug"
+              }
+            },
+            "intrinsicSize": {
+              "width": 0,
+              "height": 16.8
+            },
+            "frame": {
+              "left": 96,
+              "top": 993.2,
+              "width": 1728,
+              "height": 16.8
+            },
+            "snappedFrame": {
+              "left": 96,
+              "top": 994,
+              "width": 1728,
+              "height": 18
+            },
+            "children": [],
+            "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+            "transform": "none",
+            "element": {
+              "aid": "sh/5wjudg7a",
+              "id": "36",
+              "kind": "shape"
+            }
+          }
+        ],
+        "padding": {
+          "top": 70,
+          "right": 96,
+          "bottom": 70,
+          "left": 96
+        },
+        "gap": 34,
+        "effectiveGap": 34,
+        "justifyOffset": 0,
+        "align": "start",
+        "justify": "start",
+        "contentFrame": {
+          "left": 96,
+          "top": 70,
+          "width": 1728,
+          "height": 940
+        },
+        "items": [
+          {
+            "path": "0.0",
+            "frame": {
+              "left": 96,
+              "top": 70,
+              "width": 1728,
+              "height": 102.8
+            }
+          },
+          {
+            "path": "0.1",
+            "frame": {
+              "left": 96,
+              "top": 206.8,
+              "width": 1728,
+              "height": 752.4
+            }
+          },
+          {
+            "path": "0.2",
+            "frame": {
+              "left": 96,
+              "top": 993.2,
+              "width": 1728,
+              "height": 16.8
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

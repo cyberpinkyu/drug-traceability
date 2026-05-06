@@ -1,0 +1,3346 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/skl69q",
+    "id": "skl69q",
+    "slide": 3,
+    "layoutId": "0fd4975e-e717-47e2-8f71-daa90e35448d",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "2e3b606b-3860-4dcd-8498-b4eb538d288a",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "0fd4975e-e717-47e2-8f71-daa90e35448d",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "2e3b606b-3860-4dcd-8498-b4eb538d288a",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "2e3b606b-3860-4dcd-8498-b4eb538d288a",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4vmtwra5",
+      "id": "1",
+      "name": "canvas",
+      "bbox": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "composeSource": {
+        "run": 1,
+        "path": "0.0"
+      },
+      "geometry": "rect",
+      "fillColor": "#F7FAF8"
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bat47y1k",
+      "id": "2",
+      "name": "top-rule",
+      "bbox": [
+        0,
+        0,
+        1920,
+        12
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.2"
+      },
+      "geometry": "rect",
+      "fillColor": "#1F7A5A"
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mp0bi9s3",
+      "id": "3",
+      "name": "slide-title",
+      "bbox": [
+        100,
+        70,
+        878,
+        120
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.1.0"
+      },
+      "geometry": "rect",
+      "text": "系统架构：Web + App + Spring Boot 服务",
+      "textPreview": "系统架构：Web + App + Spring Boot 服务",
+      "resolvedFontSize": 50,
+      "resolvedTextStyle": {
+        "fontSize": 50,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "系统架构：Web + App + Spring Boot 服务"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "系统架构：Web + App + Spring Boot 服务",
+          "runs": [
+            {
+              "index": 1,
+              "text": "系统架构：Web + App + Spring Boot 服务",
+              "fontSize": 50,
+              "color": "#13231E",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tsvu9kni",
+      "id": "4",
+      "name": "slide-subtitle",
+      "bbox": [
+        100,
+        204,
+        816,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.0.1"
+      },
+      "geometry": "rect",
+      "text": "论文内容被拆解为四层可讲元素：终端、接口、业务服务、数据与智能支撑。",
+      "textPreview": "论文内容被拆解为四层可讲元素：终端、接口、业务服务、数据与智能支撑。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "论文内容被拆解为四层可讲元素：终端、接口、业务服务、数据与智能支撑。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "论文内容被拆解为四层可讲元素：终端、接口、业务服务、数据与智能支撑。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "论文内容被拆解为四层可讲元素：终端、接口、业务服务、数据与智能支撑。",
+              "fontSize": 24,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/47y1kre1",
+      "id": "5",
+      "name": "node-Vue Web 管理端",
+      "bbox": [
+        100,
+        264.8,
+        300,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.0"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bm58z25k",
+      "id": "6",
+      "name": "node-text-Vue Web 管理端",
+      "bbox": [
+        116,
+        278,
+        268,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.0.0"
+      },
+      "geometry": "rect",
+      "text": "Vue Web 管理端",
+      "textPreview": "Vue Web 管理端",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Vue Web 管理端"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Vue Web 管理端",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Vue Web 管理端",
+              "fontSize": 22,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1cfa9w3",
+      "id": "7",
+      "name": "node-Flutter 移动端",
+      "bbox": [
+        424,
+        264.8,
+        300,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/twra5gbq",
+      "id": "8",
+      "name": "node-text-Flutter 移动端",
+      "bbox": [
+        440,
+        278,
+        268,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.0"
+      },
+      "geometry": "rect",
+      "text": "Flutter 移动端",
+      "textPreview": "Flutter 移动端",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Flutter 移动端"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Flutter 移动端",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Flutter 移动端",
+              "fontSize": 22,
+              "color": "#1F9AA0",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4byhgn29",
+      "id": "9",
+      "name": "client-note",
+      "bbox": [
+        748,
+        264,
+        1072,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1"
+      },
+      "geometry": "rect",
+      "text": "多角色入口：管理员 / 监管 / 企业 / 机构 / 公众",
+      "textPreview": "多角色入口：管理员 / 监管 / 企业 / 机构 / 公众",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "多角色入口：管理员 / 监管 / 企业 / 机构 / 公众"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "多角色入口：管理员 / 监管 / 企业 / 机构 / 公众",
+          "runs": [
+            {
+              "index": 1,
+              "text": "多角色入口：管理员 / 监管 / 企业 / 机构 / 公众",
+              "fontSize": 24,
+              "color": "#13231E",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m58z25kb",
+      "id": "10",
+      "name": "node-统一 API",
+      "bbox": [
+        100,
+        443.4,
+        260,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.0"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bq1oryts",
+      "id": "11",
+      "name": "node-text-统一 API",
+      "bbox": [
+        116,
+        458,
+        228,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.0.0"
+      },
+      "geometry": "rect",
+      "text": "统一 API",
+      "textPreview": "统一 API",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "统一 API"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "统一 API",
+          "runs": [
+            {
+              "index": 1,
+              "text": "统一 API",
+              "fontSize": 22,
+              "color": "#1F7A5A",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4byhgn29",
+      "id": "12",
+      "name": "node-JWT + RBAC",
+      "bbox": [
+        384,
+        443.4,
+        260,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/twra5gbq",
+      "id": "13",
+      "name": "node-text-JWT + RBAC",
+      "bbox": [
+        400,
+        458,
+        228,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.0"
+      },
+      "geometry": "rect",
+      "text": "JWT + RBAC",
+      "textPreview": "JWT + RBAC",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "JWT + RBAC"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "JWT + RBAC",
+          "runs": [
+            {
+              "index": 1,
+              "text": "JWT + RBAC",
+              "fontSize": 22,
+              "color": "#1F7A5A",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mhk3q5o7",
+      "id": "14",
+      "name": "api-note",
+      "bbox": [
+        668,
+        444,
+        1152,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.2"
+      },
+      "geometry": "rect",
+      "text": "前端控制体验，后端拦截器完成真正授权校验",
+      "textPreview": "前端控制体验，后端拦截器完成真正授权校验",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "前端控制体验，后端拦截器完成真正授权校验"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "前端控制体验，后端拦截器完成真正授权校验",
+          "runs": [
+            {
+              "index": 1,
+              "text": "前端控制体验，后端拦截器完成真正授权校验",
+              "fontSize": 24,
+              "color": "#13231E",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b2hwfyxo",
+      "id": "15",
+      "name": "node-药品主数据",
+      "bbox": [
+        100,
+        622,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.0"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4nap4r65",
+      "id": "16",
+      "name": "node-text-药品主数据",
+      "bbox": [
+        116,
+        636,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.0.0"
+      },
+      "geometry": "rect",
+      "text": "药品主数据",
+      "textPreview": "药品主数据",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "药品主数据"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "药品主数据",
+          "runs": [
+            {
+              "index": 1,
+              "text": "药品主数据",
+              "fontSize": 22,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t83itgfm",
+      "id": "17",
+      "name": "node-生产批次",
+      "bbox": [
+        338,
+        622,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.1"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mp0bi9s3",
+      "id": "18",
+      "name": "node-text-生产批次",
+      "bbox": [
+        354,
+        636,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.1.0"
+      },
+      "geometry": "rect",
+      "text": "生产批次",
+      "textPreview": "生产批次",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "生产批次"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "生产批次",
+          "runs": [
+            {
+              "index": 1,
+              "text": "生产批次",
+              "fontSize": 22,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bat47y1k",
+      "id": "19",
+      "name": "node-采购销售库存",
+      "bbox": [
+        576,
+        622,
+        250,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.2"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ex0nuxc",
+      "id": "20",
+      "name": "node-text-采购销售库存",
+      "bbox": [
+        592,
+        636,
+        218,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.2.0"
+      },
+      "geometry": "rect",
+      "text": "采购销售库存",
+      "textPreview": "采购销售库存",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "采购销售库存"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "采购销售库存",
+          "runs": [
+            {
+              "index": 1,
+              "text": "采购销售库存",
+              "fontSize": 22,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/at47y1kr",
+      "id": "21",
+      "name": "node-监管任务",
+      "bbox": [
+        844,
+        622,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.3"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lkjm1cfa",
+      "id": "22",
+      "name": "node-text-监管任务",
+      "bbox": [
+        860,
+        636,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.3.0"
+      },
+      "geometry": "rect",
+      "text": "监管任务",
+      "textPreview": "监管任务",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "监管任务"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "监管任务",
+          "runs": [
+            {
+              "index": 1,
+              "text": "监管任务",
+              "fontSize": 22,
+              "color": "#D8912B",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/szqtcj6t",
+      "id": "23",
+      "name": "node-AI 助手",
+      "bbox": [
+        1082,
+        622,
+        200,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.4"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/32lszqtc",
+      "id": "24",
+      "name": "node-text-AI 助手",
+      "bbox": [
+        1098,
+        636,
+        168,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.4.0"
+      },
+      "geometry": "rect",
+      "text": "AI 助手",
+      "textPreview": "AI 助手",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "AI 助手"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "AI 助手",
+          "runs": [
+            {
+              "index": 1,
+              "text": "AI 助手",
+              "fontSize": 22,
+              "color": "#1F9AA0",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ahoza1gv",
+      "id": "25",
+      "name": "node-MySQL",
+      "bbox": [
+        100,
+        800.6,
+        190,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.3.0"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l87ed8ba",
+      "id": "26",
+      "name": "node-text-MySQL",
+      "bbox": [
+        116,
+        814,
+        158,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.3.0.0"
+      },
+      "geometry": "rect",
+      "text": "MySQL",
+      "textPreview": "MySQL",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "MySQL"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "MySQL",
+          "runs": [
+            {
+              "index": 1,
+              "text": "MySQL",
+              "fontSize": 22,
+              "color": "#0E2A25",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sneloj2t",
+      "id": "27",
+      "name": "node-Redis",
+      "bbox": [
+        314,
+        800.6,
+        190,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.3.1"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3q5o7qpg",
+      "id": "28",
+      "name": "node-text-Redis",
+      "bbox": [
+        330,
+        814,
+        158,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.3.1.0"
+      },
+      "geometry": "rect",
+      "text": "Redis",
+      "textPreview": "Redis",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Redis"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Redis",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Redis",
+              "fontSize": 22,
+              "color": "#0E2A25",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e9cvixcz",
+      "id": "29",
+      "name": "node-审计日志",
+      "bbox": [
+        528,
+        800.6,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.3.2"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o7qpg3ex",
+      "id": "30",
+      "name": "node-text-审计日志",
+      "bbox": [
+        544,
+        814,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.3.2.0"
+      },
+      "geometry": "rect",
+      "text": "审计日志",
+      "textPreview": "审计日志",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "审计日志"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "审计日志",
+          "runs": [
+            {
+              "index": 1,
+              "text": "审计日志",
+              "fontSize": 22,
+              "color": "#0E2A25",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dsji5sne",
+      "id": "31",
+      "name": "data-note",
+      "bbox": [
+        772,
+        800,
+        1048,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.3.3"
+      },
+      "geometry": "rect",
+      "text": "数据一致性、会话状态、操作留痕共同支撑监管可信度",
+      "textPreview": "数据一致性、会话状态、操作留痕共同支撑监管可信度",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "数据一致性、会话状态、操作留痕共同支撑监管可信度"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "数据一致性、会话状态、操作留痕共同支撑监管可信度",
+          "runs": [
+            {
+              "index": 1,
+              "text": "数据一致性、会话状态、操作留痕共同支撑监管可信度",
+              "fontSize": 24,
+              "color": "#13231E",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/61032lsz",
+      "id": "32",
+      "name": "footer",
+      "bbox": [
+        100,
+        994,
+        1720,
+        18
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.2"
+      },
+      "geometry": "rect",
+      "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+      "textPreview": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+          "runs": [
+            {
+              "index": 1,
+              "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+              "fontSize": 14,
+              "color": "#7B8B86"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "composeRuns": [
+    {
+      "index": 1,
+      "frame": {
+        "left": 0,
+        "top": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "baseUnit": 8,
+      "root": {
+        "path": "0",
+        "kind": "layers",
+        "name": "background",
+        "requestedSize": {
+          "width": {
+            "mode": "fill",
+            "value": 1
+          },
+          "height": {
+            "mode": "fill",
+            "value": 1
+          }
+        },
+        "intrinsicSize": {
+          "width": 1920,
+          "height": 1080
+        },
+        "frame": {
+          "left": 0,
+          "top": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "children": [
+          {
+            "path": "0.0",
+            "kind": "shape",
+            "name": "canvas",
+            "requestedSize": {
+              "width": {
+                "mode": "fixed",
+                "value": 1920
+              },
+              "height": {
+                "mode": "fixed",
+                "value": 1080
+              }
+            },
+            "intrinsicSize": {
+              "width": 1920,
+              "height": 1080
+            },
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 1080
+            },
+            "snappedFrame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 1080
+            },
+            "children": [],
+            "geometry": "rect",
+            "element": {
+              "aid": "sh/4vmtwra5",
+              "id": "1",
+              "kind": "shape"
+            }
+          },
+          {
+            "path": "0.1",
+            "kind": "shape",
+            "name": "top-rule",
+            "requestedSize": {
+              "width": {
+                "mode": "fixed",
+                "value": 1920
+              },
+              "height": {
+                "mode": "fixed",
+                "value": 12
+              }
+            },
+            "intrinsicSize": {
+              "width": 1920,
+              "height": 12
+            },
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 12
+            },
+            "snappedFrame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 12
+            },
+            "children": [],
+            "geometry": "rect",
+            "element": {
+              "aid": "sh/bat47y1k",
+              "id": "2",
+              "kind": "shape"
+            }
+          }
+        ],
+        "padding": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "alignItems": "stretch",
+        "justifyItems": "stretch",
+        "contentFrame": {
+          "left": 0,
+          "top": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "items": [
+          {
+            "path": "0.0",
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 1080
+            }
+          },
+          {
+            "path": "0.1",
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "frame": {
+        "left": 0,
+        "top": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "baseUnit": 8,
+      "root": {
+        "path": "0",
+        "kind": "column",
+        "name": "root",
+        "requestedSize": {
+          "width": {
+            "mode": "fill",
+            "value": 1
+          },
+          "height": {
+            "mode": "fill",
+            "value": 1
+          }
+        },
+        "intrinsicSize": {
+          "width": 200,
+          "height": 323.6
+        },
+        "frame": {
+          "left": 0,
+          "top": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "children": [
+          {
+            "path": "0.0",
+            "kind": "column",
+            "name": "title-stack",
+            "requestedSize": {
+              "width": {
+                "mode": "fill",
+                "value": 1
+              },
+              "height": {
+                "mode": "hug"
+              }
+            },
+            "intrinsicSize": {
+              "width": 877.26,
+              "height": 102.8
+            },
+            "frame": {
+              "left": 100,
+              "top": 70,
+              "width": 1720,
+              "height": 162.8
+            },
+            "children": [
+              {
+                "path": "0.0.0",
+                "kind": "text",
+                "name": "slide-title",
+                "requestedSize": {
+                  "width": {
+                    "mode": "wrap",
+                    "max": 1640
+                  },
+                  "height": {
+                    "mode": "hug"
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 877.26,
+                  "height": 60
+                },
+                "frame": {
+                  "left": 100,
+                  "top": 70,
+                  "width": 877.26,
+                  "height": 120
+                },
+                "snappedFrame": {
+                  "left": 100,
+                  "top": 70,
+                  "width": 878,
+                  "height": 120
+                },
+                "children": [],
+                "text": "系统架构：Web + App + Spring Boot 服务",
+                "transform": "none",
+                "element": {
+                  "aid": "sh/mp0bi9s3",
+                  "id": "3",
+                  "kind": "shape"
+                }
+              },
+              {
+                "path": "0.0.1",
+                "kind": "text",
+                "name": "slide-subtitle",
+                "requestedSize": {
+                  "width": {
+                    "mode": "wrap",
+                    "max": 1320
+                  },
+                  "height": {
+                    "mode": "hug"
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 816,
+                  "height": 28.8
+                },
+                "frame": {
+                  "left": 100,
+                  "top": 204,
+                  "width": 816,
+                  "height": 28.8
+                },
+                "snappedFrame": {
+                  "left": 100,
+                  "top": 204,
+                  "width": 816,
+                  "height": 30
+                },
+                "children": [],
+                "text": "论文内容被拆解为四层可讲元素：终端、接口、业务服务、数据与智能支撑。",
+                "transform": "none",
+                "element": {
+                  "aid": "sh/tsvu9kni",
+                  "id": "4",
+                  "kind": "shape"
+                }
+              }
+            ],
+            "padding": {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "gap": 14,
+            "effectiveGap": 14,
+            "justifyOffset": 0,
+            "align": "start",
+            "justify": "start",
+            "contentFrame": {
+              "left": 100,
+              "top": 70,
+              "width": 1720,
+              "height": 162.8
+            },
+            "items": [
+              {
+                "path": "0.0.0",
+                "frame": {
+                  "left": 100,
+                  "top": 70,
+                  "width": 877.26,
+                  "height": 120
+                }
+              },
+              {
+                "path": "0.0.1",
+                "frame": {
+                  "left": 100,
+                  "top": 204,
+                  "width": 816,
+                  "height": 28.8
+                }
+              }
+            ]
+          },
+          {
+            "path": "0.1",
+            "kind": "grid",
+            "name": "arch-grid",
+            "requestedSize": {
+              "width": {
+                "mode": "fill",
+                "value": 1
+              },
+              "height": {
+                "mode": "fill",
+                "value": 1
+              }
+            },
+            "intrinsicSize": {
+              "width": 0,
+              "height": 54
+            },
+            "frame": {
+              "left": 100,
+              "top": 264.8,
+              "width": 1720,
+              "height": 696.4
+            },
+            "children": [
+              {
+                "path": "0.1.0",
+                "kind": "row",
+                "name": "layer-client",
+                "requestedSize": {
+                  "width": {
+                    "mode": "fill",
+                    "value": 1
+                  },
+                  "height": {
+                    "mode": "fill",
+                    "value": 1
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 648,
+                  "height": 72
+                },
+                "frame": {
+                  "left": 100,
+                  "top": 264.8,
+                  "width": 1720,
+                  "height": 160.6
+                },
+                "children": [
+                  {
+                    "path": "0.1.0.0",
+                    "kind": "panel",
+                    "name": "node-Vue Web 管理端",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fixed",
+                        "value": 300
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 72
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 32,
+                      "height": 54.4
+                    },
+                    "frame": {
+                      "left": 100,
+                      "top": 264.8,
+                      "width": 300,
+                      "height": 72
+                    },
+                    "snappedFrame": {
+                      "left": 100,
+                      "top": 264.8,
+                      "width": 300,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.0.0.0",
+                        "kind": "text",
+                        "name": "node-text-Vue Web 管理端",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 116,
+                          "top": 278.8,
+                          "width": 268,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 116,
+                          "top": 278,
+                          "width": 268,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "Vue Web 管理端",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/bm58z25k",
+                          "id": "6",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 14,
+                      "right": 16,
+                      "bottom": 14,
+                      "left": 16
+                    },
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 116,
+                      "top": 278.8,
+                      "width": 268,
+                      "height": 44
+                    },
+                    "element": {
+                      "aid": "sh/47y1kre1",
+                      "id": "5",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.0.1",
+                    "kind": "panel",
+                    "name": "node-Flutter 移动端",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fixed",
+                        "value": 300
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 72
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 32,
+                      "height": 54.4
+                    },
+                    "frame": {
+                      "left": 424,
+                      "top": 264.8,
+                      "width": 300,
+                      "height": 72
+                    },
+                    "snappedFrame": {
+                      "left": 424,
+                      "top": 264.8,
+                      "width": 300,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.0.1.0",
+                        "kind": "text",
+                        "name": "node-text-Flutter 移动端",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 440,
+                          "top": 278.8,
+                          "width": 268,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 440,
+                          "top": 278,
+                          "width": 268,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "Flutter 移动端",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/twra5gbq",
+                          "id": "8",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 14,
+                      "right": 16,
+                      "bottom": 14,
+                      "left": 16
+                    },
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 440,
+                      "top": 278.8,
+                      "width": 268,
+                      "height": 44
+                    },
+                    "element": {
+                      "aid": "sh/m1cfa9w3",
+                      "id": "7",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.0.2",
+                    "kind": "text",
+                    "name": "client-note",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 28.8
+                    },
+                    "frame": {
+                      "left": 748,
+                      "top": 264.8,
+                      "width": 1072,
+                      "height": 28.8
+                    },
+                    "snappedFrame": {
+                      "left": 748,
+                      "top": 264,
+                      "width": 1072,
+                      "height": 30
+                    },
+                    "children": [],
+                    "text": "多角色入口：管理员 / 监管 / 企业 / 机构 / 公众",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/4byhgn29",
+                      "id": "9",
+                      "kind": "shape"
+                    }
+                  }
+                ],
+                "padding": {
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                },
+                "gap": 24,
+                "effectiveGap": 24,
+                "justifyOffset": 0,
+                "align": "start",
+                "justify": "start",
+                "contentFrame": {
+                  "left": 100,
+                  "top": 264.8,
+                  "width": 1720,
+                  "height": 160.6
+                },
+                "items": [
+                  {
+                    "path": "0.1.0.0",
+                    "frame": {
+                      "left": 100,
+                      "top": 264.8,
+                      "width": 300,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.0.1",
+                    "frame": {
+                      "left": 424,
+                      "top": 264.8,
+                      "width": 300,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.0.2",
+                    "frame": {
+                      "left": 748,
+                      "top": 264.8,
+                      "width": 1072,
+                      "height": 28.8
+                    }
+                  }
+                ]
+              },
+              {
+                "path": "0.1.1",
+                "kind": "row",
+                "name": "layer-api",
+                "requestedSize": {
+                  "width": {
+                    "mode": "fill",
+                    "value": 1
+                  },
+                  "height": {
+                    "mode": "fill",
+                    "value": 1
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 568,
+                  "height": 72
+                },
+                "frame": {
+                  "left": 100,
+                  "top": 443.4,
+                  "width": 1720,
+                  "height": 160.6
+                },
+                "children": [
+                  {
+                    "path": "0.1.1.0",
+                    "kind": "panel",
+                    "name": "node-统一 API",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fixed",
+                        "value": 260
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 72
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 32,
+                      "height": 54.4
+                    },
+                    "frame": {
+                      "left": 100,
+                      "top": 443.4,
+                      "width": 260,
+                      "height": 72
+                    },
+                    "snappedFrame": {
+                      "left": 100,
+                      "top": 443.4,
+                      "width": 260,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.1.0.0",
+                        "kind": "text",
+                        "name": "node-text-统一 API",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 116,
+                          "top": 457.4,
+                          "width": 228,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 116,
+                          "top": 458,
+                          "width": 228,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "统一 API",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/bq1oryts",
+                          "id": "11",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 14,
+                      "right": 16,
+                      "bottom": 14,
+                      "left": 16
+                    },
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 116,
+                      "top": 457.4,
+                      "width": 228,
+                      "height": 44
+                    },
+                    "element": {
+                      "aid": "sh/m58z25kb",
+                      "id": "10",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.1.1",
+                    "kind": "panel",
+                    "name": "node-JWT + RBAC",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fixed",
+                        "value": 260
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 72
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 32,
+                      "height": 54.4
+                    },
+                    "frame": {
+                      "left": 384,
+                      "top": 443.4,
+                      "width": 260,
+                      "height": 72
+                    },
+                    "snappedFrame": {
+                      "left": 384,
+                      "top": 443.4,
+                      "width": 260,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.1.1.0",
+                        "kind": "text",
+                        "name": "node-text-JWT + RBAC",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 400,
+                          "top": 457.4,
+                          "width": 228,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 400,
+                          "top": 458,
+                          "width": 228,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "JWT + RBAC",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/twra5gbq",
+                          "id": "13",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 14,
+                      "right": 16,
+                      "bottom": 14,
+                      "left": 16
+                    },
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 400,
+                      "top": 457.4,
+                      "width": 228,
+                      "height": 44
+                    },
+                    "element": {
+                      "aid": "sh/4byhgn29",
+                      "id": "12",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.1.2",
+                    "kind": "text",
+                    "name": "api-note",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 28.8
+                    },
+                    "frame": {
+                      "left": 668,
+                      "top": 443.4,
+                      "width": 1152,
+                      "height": 28.8
+                    },
+                    "snappedFrame": {
+                      "left": 668,
+                      "top": 444,
+                      "width": 1152,
+                      "height": 30
+                    },
+                    "children": [],
+                    "text": "前端控制体验，后端拦截器完成真正授权校验",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/mhk3q5o7",
+                      "id": "14",
+                      "kind": "shape"
+                    }
+                  }
+                ],
+                "padding": {
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                },
+                "gap": 24,
+                "effectiveGap": 24,
+                "justifyOffset": 0,
+                "align": "start",
+                "justify": "start",
+                "contentFrame": {
+                  "left": 100,
+                  "top": 443.4,
+                  "width": 1720,
+                  "height": 160.6
+                },
+                "items": [
+                  {
+                    "path": "0.1.1.0",
+                    "frame": {
+                      "left": 100,
+                      "top": 443.4,
+                      "width": 260,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.1.1",
+                    "frame": {
+                      "left": 384,
+                      "top": 443.4,
+                      "width": 260,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.1.2",
+                    "frame": {
+                      "left": 668,
+                      "top": 443.4,
+                      "width": 1152,
+                      "height": 28.8
+                    }
+                  }
+                ]
+              },
+              {
+                "path": "0.1.2",
+                "kind": "row",
+                "name": "layer-service",
+                "requestedSize": {
+                  "width": {
+                    "mode": "fill",
+                    "value": 1
+                  },
+                  "height": {
+                    "mode": "fill",
+                    "value": 1
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 1182,
+                  "height": 72
+                },
+                "frame": {
+                  "left": 100,
+                  "top": 622,
+                  "width": 1720,
+                  "height": 160.6
+                },
+                "children": [
+                  {
+                    "path": "0.1.2.0",
+                    "kind": "panel",
+                    "name": "node-药品主数据",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fixed",
+                        "value": 220
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 72
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 32,
+                      "height": 54.4
+                    },
+                    "frame": {
+                      "left": 100,
+                      "top": 622,
+                      "width": 220,
+                      "height": 72
+                    },
+                    "snappedFrame": {
+                      "left": 100,
+                      "top": 622,
+                      "width": 220,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.2.0.0",
+                        "kind": "text",
+                        "name": "node-text-药品主数据",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 116,
+                          "top": 636,
+                          "width": 188,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 116,
+                          "top": 636,
+                          "width": 188,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "药品主数据",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/4nap4r65",
+                          "id": "16",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 14,
+                      "right": 16,
+                      "bottom": 14,
+                      "left": 16
+                    },
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 116,
+                      "top": 636,
+                      "width": 188,
+                      "height": 44
+                    },
+                    "element": {
+                      "aid": "sh/b2hwfyxo",
+                      "id": "15",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.2.1",
+                    "kind": "panel",
+                    "name": "node-生产批次",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fixed",
+                        "value": 220
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 72
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 32,
+                      "height": 54.4
+                    },
+                    "frame": {
+                      "left": 338,
+                      "top": 622,
+                      "width": 220,
+                      "height": 72
+                    },
+                    "snappedFrame": {
+                      "left": 338,
+                      "top": 622,
+                      "width": 220,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.2.1.0",
+                        "kind": "text",
+                        "name": "node-text-生产批次",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 354,
+                          "top": 636,
+                          "width": 188,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 354,
+                          "top": 636,
+                          "width": 188,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "生产批次",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/mp0bi9s3",
+                          "id": "18",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 14,
+                      "right": 16,
+                      "bottom": 14,
+                      "left": 16
+                    },
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 354,
+                      "top": 636,
+                      "width": 188,
+                      "height": 44
+                    },
+                    "element": {
+                      "aid": "sh/t83itgfm",
+                      "id": "17",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.2.2",
+                    "kind": "panel",
+                    "name": "node-采购销售库存",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fixed",
+                        "value": 250
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 72
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 32,
+                      "height": 54.4
+                    },
+                    "frame": {
+                      "left": 576,
+                      "top": 622,
+                      "width": 250,
+                      "height": 72
+                    },
+                    "snappedFrame": {
+                      "left": 576,
+                      "top": 622,
+                      "width": 250,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.2.2.0",
+                        "kind": "text",
+                        "name": "node-text-采购销售库存",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 592,
+                          "top": 636,
+                          "width": 218,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 592,
+                          "top": 636,
+                          "width": 218,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "采购销售库存",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/3ex0nuxc",
+                          "id": "20",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 14,
+                      "right": 16,
+                      "bottom": 14,
+                      "left": 16
+                    },
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 592,
+                      "top": 636,
+                      "width": 218,
+                      "height": 44
+                    },
+                    "element": {
+                      "aid": "sh/bat47y1k",
+                      "id": "19",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.2.3",
+                    "kind": "panel",
+                    "name": "node-监管任务",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fixed",
+                        "value": 220
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 72
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 32,
+                      "height": 54.4
+                    },
+                    "frame": {
+                      "left": 844,
+                      "top": 622,
+                      "width": 220,
+                      "height": 72
+                    },
+                    "snappedFrame": {
+                      "left": 844,
+                      "top": 622,
+                      "width": 220,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.2.3.0",
+                        "kind": "text",
+                        "name": "node-text-监管任务",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 860,
+                          "top": 636,
+                          "width": 188,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 860,
+                          "top": 636,
+                          "width": 188,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "监管任务",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/lkjm1cfa",
+                          "id": "22",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 14,
+                      "right": 16,
+                      "bottom": 14,
+                      "left": 16
+                    },
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 860,
+                      "top": 636,
+                      "width": 188,
+                      "height": 44
+                    },
+                    "element": {
+                      "aid": "sh/at47y1kr",
+                      "id": "21",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.2.4",
+                    "kind": "panel",
+                    "name": "node-AI 助手",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fixed",
+                        "value": 200
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 72
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 32,
+                      "height": 54.4
+                    },
+                    "frame": {
+                      "left": 1082,
+                      "top": 622,
+                      "width": 200,
+                      "height": 72
+                    },
+                    "snappedFrame": {
+                      "left": 1082,
+                      "top": 622,
+                      "width": 200,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.2.4.0",
+                        "kind": "text",
+                        "name": "node-text-AI 助手",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 1098,
+                          "top": 636,
+                          "width": 168,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 1098,
+                          "top": 636,
+                          "width": 168,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "AI 助手",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/32lszqtc",
+                          "id": "24",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 14,
+                      "right": 16,
+                      "bottom": 14,
+                      "left": 16
+                    },
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 1098,
+                      "top": 636,
+                      "width": 168,
+                      "height": 44
+                    },
+                    "element": {
+                      "aid": "sh/szqtcj6t",
+                      "id": "23",
+                      "kind": "shape"
+                    }
+                  }
+                ],
+                "padding": {
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                },
+                "gap": 18,
+                "effectiveGap": 18,
+                "justifyOffset": 0,
+                "align": "start",
+                "justify": "start",
+                "contentFrame": {
+                  "left": 100,
+                  "top": 622,
+                  "width": 1720,
+                  "height": 160.6
+                },
+                "items": [
+                  {
+                    "path": "0.1.2.0",
+                    "frame": {
+                      "left": 100,
+                      "top": 622,
+                      "width": 220,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.2.1",
+                    "frame": {
+                      "left": 338,
+                      "top": 622,
+                      "width": 220,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.2.2",
+                    "frame": {
+                      "left": 576,
+                      "top": 622,
+                      "width": 250,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.2.3",
+                    "frame": {
+                      "left": 844,
+                      "top": 622,
+                      "width": 220,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.2.4",
+                    "frame": {
+                      "left": 1082,
+                      "top": 622,
+                      "width": 200,
+                      "height": 72
+                    }
+                  }
+                ]
+              },
+              {
+                "path": "0.1.3",
+                "kind": "row",
+                "name": "layer-data",
+                "requestedSize": {
+                  "width": {
+                    "mode": "fill",
+                    "value": 1
+                  },
+                  "height": {
+                    "mode": "fill",
+                    "value": 1
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 672,
+                  "height": 72
+                },
+                "frame": {
+                  "left": 100,
+                  "top": 800.6,
+                  "width": 1720,
+                  "height": 160.6
+                },
+                "children": [
+                  {
+                    "path": "0.1.3.0",
+                    "kind": "panel",
+                    "name": "node-MySQL",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fixed",
+                        "value": 190
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 72
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 32,
+                      "height": 54.4
+                    },
+                    "frame": {
+                      "left": 100,
+                      "top": 800.6,
+                      "width": 190,
+                      "height": 72
+                    },
+                    "snappedFrame": {
+                      "left": 100,
+                      "top": 800.6,
+                      "width": 190,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.3.0.0",
+                        "kind": "text",
+                        "name": "node-text-MySQL",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 116,
+                          "top": 814.6,
+                          "width": 158,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 116,
+                          "top": 814,
+                          "width": 158,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "MySQL",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/l87ed8ba",
+                          "id": "26",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 14,
+                      "right": 16,
+                      "bottom": 14,
+                      "left": 16
+                    },
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 116,
+                      "top": 814.6,
+                      "width": 158,
+                      "height": 44
+                    },
+                    "element": {
+                      "aid": "sh/ahoza1gv",
+                      "id": "25",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.3.1",
+                    "kind": "panel",
+                    "name": "node-Redis",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fixed",
+                        "value": 190
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 72
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 32,
+                      "height": 54.4
+                    },
+                    "frame": {
+                      "left": 314,
+                      "top": 800.6,
+                      "width": 190,
+                      "height": 72
+                    },
+                    "snappedFrame": {
+                      "left": 314,
+                      "top": 800.6,
+                      "width": 190,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.3.1.0",
+                        "kind": "text",
+                        "name": "node-text-Redis",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 330,
+                          "top": 814.6,
+                          "width": 158,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 330,
+                          "top": 814,
+                          "width": 158,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "Redis",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/3q5o7qpg",
+                          "id": "28",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 14,
+                      "right": 16,
+                      "bottom": 14,
+                      "left": 16
+                    },
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 330,
+                      "top": 814.6,
+                      "width": 158,
+                      "height": 44
+                    },
+                    "element": {
+                      "aid": "sh/sneloj2t",
+                      "id": "27",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.3.2",
+                    "kind": "panel",
+                    "name": "node-审计日志",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fixed",
+                        "value": 220
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 72
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 32,
+                      "height": 54.4
+                    },
+                    "frame": {
+                      "left": 528,
+                      "top": 800.6,
+                      "width": 220,
+                      "height": 72
+                    },
+                    "snappedFrame": {
+                      "left": 528,
+                      "top": 800.6,
+                      "width": 220,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.3.2.0",
+                        "kind": "text",
+                        "name": "node-text-审计日志",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 544,
+                          "top": 814.6,
+                          "width": 188,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 544,
+                          "top": 814,
+                          "width": 188,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "审计日志",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/o7qpg3ex",
+                          "id": "30",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 14,
+                      "right": 16,
+                      "bottom": 14,
+                      "left": 16
+                    },
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 544,
+                      "top": 814.6,
+                      "width": 188,
+                      "height": 44
+                    },
+                    "element": {
+                      "aid": "sh/e9cvixcz",
+                      "id": "29",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.3.3",
+                    "kind": "text",
+                    "name": "data-note",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 28.8
+                    },
+                    "frame": {
+                      "left": 772,
+                      "top": 800.6,
+                      "width": 1048,
+                      "height": 28.8
+                    },
+                    "snappedFrame": {
+                      "left": 772,
+                      "top": 800,
+                      "width": 1048,
+                      "height": 30
+                    },
+                    "children": [],
+                    "text": "数据一致性、会话状态、操作留痕共同支撑监管可信度",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/dsji5sne",
+                      "id": "31",
+                      "kind": "shape"
+                    }
+                  }
+                ],
+                "padding": {
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                },
+                "gap": 24,
+                "effectiveGap": 24,
+                "justifyOffset": 0,
+                "align": "start",
+                "justify": "start",
+                "contentFrame": {
+                  "left": 100,
+                  "top": 800.6,
+                  "width": 1720,
+                  "height": 160.6
+                },
+                "items": [
+                  {
+                    "path": "0.1.3.0",
+                    "frame": {
+                      "left": 100,
+                      "top": 800.6,
+                      "width": 190,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.3.1",
+                    "frame": {
+                      "left": 314,
+                      "top": 800.6,
+                      "width": 190,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.3.2",
+                    "frame": {
+                      "left": 528,
+                      "top": 800.6,
+                      "width": 220,
+                      "height": 72
+                    }
+                  },
+                  {
+                    "path": "0.1.3.3",
+                    "frame": {
+                      "left": 772,
+                      "top": 800.6,
+                      "width": 1048,
+                      "height": 28.8
+                    }
+                  }
+                ]
+              }
+            ],
+            "padding": {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "columnGap": 0,
+            "rowGap": 18,
+            "alignItems": "stretch",
+            "justifyItems": "stretch",
+            "contentFrame": {
+              "left": 100,
+              "top": 264.8,
+              "width": 1720,
+              "height": 696.4
+            },
+            "columns": [
+              {
+                "mode": "fr",
+                "value": 1
+              }
+            ],
+            "rows": [
+              {
+                "mode": "fr",
+                "value": 1
+              },
+              {
+                "mode": "fr",
+                "value": 1
+              },
+              {
+                "mode": "fr",
+                "value": 1
+              },
+              {
+                "mode": "fr",
+                "value": 1
+              }
+            ],
+            "autoRows": "auto",
+            "resolvedRows": [
+              {
+                "mode": "fr",
+                "value": 1
+              },
+              {
+                "mode": "fr",
+                "value": 1
+              },
+              {
+                "mode": "fr",
+                "value": 1
+              },
+              {
+                "mode": "fr",
+                "value": 1
+              }
+            ],
+            "columnSizes": [
+              1720
+            ],
+            "rowSizes": [
+              160.6,
+              160.6,
+              160.6,
+              160.6
+            ],
+            "cells": [
+              {
+                "path": "0.1.0",
+                "column": 0,
+                "row": 0,
+                "columnSpan": 1,
+                "rowSpan": 1,
+                "cellFrame": {
+                  "left": 100,
+                  "top": 264.8,
+                  "width": 1720,
+                  "height": 160.6
+                }
+              },
+              {
+                "path": "0.1.1",
+                "column": 0,
+                "row": 1,
+                "columnSpan": 1,
+                "rowSpan": 1,
+                "cellFrame": {
+                  "left": 100,
+                  "top": 443.4,
+                  "width": 1720,
+                  "height": 160.6
+                }
+              },
+              {
+                "path": "0.1.2",
+                "column": 0,
+                "row": 2,
+                "columnSpan": 1,
+                "rowSpan": 1,
+                "cellFrame": {
+                  "left": 100,
+                  "top": 622,
+                  "width": 1720,
+                  "height": 160.6
+                }
+              },
+              {
+                "path": "0.1.3",
+                "column": 0,
+                "row": 3,
+                "columnSpan": 1,
+                "rowSpan": 1,
+                "cellFrame": {
+                  "left": 100,
+                  "top": 800.6,
+                  "width": 1720,
+                  "height": 160.6
+                }
+              }
+            ]
+          },
+          {
+            "path": "0.2",
+            "kind": "text",
+            "name": "footer",
+            "requestedSize": {
+              "width": {
+                "mode": "fill",
+                "value": 1
+              },
+              "height": {
+                "mode": "hug"
+              }
+            },
+            "intrinsicSize": {
+              "width": 0,
+              "height": 16.8
+            },
+            "frame": {
+              "left": 100,
+              "top": 993.2,
+              "width": 1720,
+              "height": 16.8
+            },
+            "snappedFrame": {
+              "left": 100,
+              "top": 994,
+              "width": 1720,
+              "height": 18
+            },
+            "children": [],
+            "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+            "transform": "none",
+            "element": {
+              "aid": "sh/61032lsz",
+              "id": "32",
+              "kind": "shape"
+            }
+          }
+        ],
+        "padding": {
+          "top": 70,
+          "right": 100,
+          "bottom": 70,
+          "left": 100
+        },
+        "gap": 32,
+        "effectiveGap": 32,
+        "justifyOffset": 0,
+        "align": "start",
+        "justify": "start",
+        "contentFrame": {
+          "left": 100,
+          "top": 70,
+          "width": 1720,
+          "height": 940
+        },
+        "items": [
+          {
+            "path": "0.0",
+            "frame": {
+              "left": 100,
+              "top": 70,
+              "width": 1720,
+              "height": 162.8
+            }
+          },
+          {
+            "path": "0.1",
+            "frame": {
+              "left": 100,
+              "top": 264.8,
+              "width": 1720,
+              "height": 696.4
+            }
+          },
+          {
+            "path": "0.2",
+            "frame": {
+              "left": 100,
+              "top": 993.2,
+              "width": 1720,
+              "height": 16.8
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

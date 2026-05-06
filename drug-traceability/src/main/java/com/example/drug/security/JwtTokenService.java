@@ -80,8 +80,9 @@ public class JwtTokenService {
     public void revokeAccessToken(String accessToken) {
         Claims claims = parseClaims(accessToken, true);
         Long uid = toLong(claims.get("uid"));
+        String sid = (String) claims.get("sid");
         authSessionService.blacklistToken(claims.getId(), getRemainingSeconds(claims));
-        authSessionService.removeSession(uid);
+        authSessionService.removeSession(uid, sid);
     }
 
     public long getRefreshExpireSeconds() {
@@ -112,31 +113,31 @@ public class JwtTokenService {
             if (allowExpired) {
                 return e.getClaims();
             }
-            throw new BusinessException(401, "Token已过期");
+            throw new BusinessException(401, "Token expired");
         } catch (Exception e) {
-            throw new BusinessException(401, "Token无效");
+            throw new BusinessException(401, "Token invalid");
         }
     }
 
     private void validateType(Claims claims, String expectedType) {
         String type = (String) claims.get("type");
         if (!expectedType.equals(type)) {
-            throw new BusinessException(401, "Token类型无效");
+            throw new BusinessException(401, "Token type invalid");
         }
     }
 
     private void ensureSessionValid(Claims claims) {
         String tokenId = claims.getId();
         if (authSessionService.isBlacklisted(tokenId)) {
-            throw new BusinessException(401, "Token已失效");
+            throw new BusinessException(401, "Token revoked");
         }
 
         Long uid = toLong(claims.get("uid"));
         String sid = (String) claims.get("sid");
-        String currentSession = authSessionService.getSession(uid);
-        if (currentSession == null || !currentSession.equals(sid)) {
-            throw new BusinessException(401, "会话已失效，请重新登录");
+        if (!authSessionService.hasSession(uid, sid)) {
+            throw new BusinessException(401, "Session expired, please login again");
         }
+        authSessionService.refreshSessionTtl(uid, refreshExpireSeconds);
     }
 
     private long getRemainingSeconds(Claims claims) {

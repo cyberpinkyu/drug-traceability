@@ -30,39 +30,30 @@ public class RegulatoryController {
 
     @Autowired
     private RegulatoryEnforcementService regulatoryEnforcementService;
-
     @Autowired
     private StatsService statsService;
-
     @Autowired
     private RegulatoryTaskService regulatoryTaskService;
-
     @Autowired
     private UserService userService;
-
     @Autowired
     private RoleService roleService;
-
     @Autowired
     private AdverseReactionService adverseReactionService;
-
     @Autowired
     private DrugInfoService drugInfoService;
 
     @RequireRole({"admin", "regulator"})
     @GetMapping("/enforcement")
     public Map<String, Object> getEnforcements() {
-        List<RegulatoryEnforcement> enforcements = regulatoryEnforcementService.list();
-        return MapUtils.of("code", 200, "data", enforcements);
+        return MapUtils.of("code", 200, "data", regulatoryEnforcementService.list());
     }
 
     @RequireRole({"admin", "regulator"})
     @PostMapping("/enforcement")
     public Map<String, Object> addEnforcement(@RequestBody RegulatoryEnforcement enforcement) {
         boolean success = regulatoryEnforcementService.save(enforcement);
-        return success
-            ? MapUtils.of("code", 200, "message", "添加成功")
-            : MapUtils.of("code", 500, "message", "添加失败");
+        return success ? MapUtils.of("code", 200, "message", "添加成功") : MapUtils.of("code", 500, "message", "添加失败");
     }
 
     @RequireRole({"admin", "regulator"})
@@ -70,18 +61,14 @@ public class RegulatoryController {
     public Map<String, Object> updateEnforcement(@PathVariable Long id, @RequestBody RegulatoryEnforcement enforcement) {
         enforcement.setId(id);
         boolean success = regulatoryEnforcementService.updateById(enforcement);
-        return success
-            ? MapUtils.of("code", 200, "message", "更新成功")
-            : MapUtils.of("code", 500, "message", "更新失败");
+        return success ? MapUtils.of("code", 200, "message", "更新成功") : MapUtils.of("code", 500, "message", "更新失败");
     }
 
     @RequireRole({"admin", "regulator"})
     @DeleteMapping("/enforcement/{id}")
     public Map<String, Object> deleteEnforcement(@PathVariable Long id) {
         boolean success = regulatoryEnforcementService.removeById(id);
-        return success
-            ? MapUtils.of("code", 200, "message", "删除成功")
-            : MapUtils.of("code", 500, "message", "删除失败");
+        return success ? MapUtils.of("code", 200, "message", "删除成功") : MapUtils.of("code", 500, "message", "删除失败");
     }
 
     @RequireRole({"admin", "regulator"})
@@ -157,16 +144,14 @@ public class RegulatoryController {
     public Map<String, Object> getRiskMap() {
         List<Map<String, Object>> points = new ArrayList<Map<String, Object>>();
         for (AdverseReaction reaction : adverseReactionService.list()) {
+            String hospital = reaction.getHospital() == null ? "未知机构" : reaction.getHospital();
+            DrugInfo drug = drugInfoService.getById(reaction.getDrugId());
             Map<String, Object> point = new HashMap<String, Object>();
             point.put("id", reaction.getId());
             point.put("riskLevel", normalizeSeverity(reaction.getSeverity()));
-            point.put("latitude", resolveLatitude(reaction.getHospital()));
-            point.put("longitude", resolveLongitude(reaction.getHospital()));
-
-            DrugInfo drug = drugInfoService.getById(reaction.getDrugId());
-            String drugName = drug == null ? "药品风险点" : drug.getName();
-            String hospital = reaction.getHospital() == null ? "未知机构" : reaction.getHospital();
-            point.put("name", hospital + " - " + drugName);
+            point.put("latitude", resolveLatitude(hospital));
+            point.put("longitude", resolveLongitude(hospital));
+            point.put("name", hospital + " - " + (drug == null ? "药品风险点" : drug.getName()));
             points.add(point);
         }
         return MapUtils.of("code", 200, "data", points);
@@ -180,22 +165,22 @@ public class RegulatoryController {
     }
 
     private double resolveLatitude(String hospital) {
-        if (hospital != null && hospital.contains("第一人民医院")) {
-            return 22.5431;
-        }
-        if (hospital != null && hospital.contains("儿童医院")) {
-            return 22.5510;
-        }
+        if (hospital.contains("广州")) return 23.1291;
+        if (hospital.contains("深圳")) return 22.5431;
+        if (hospital.contains("佛山")) return 23.0215;
+        if (hospital.contains("东莞")) return 23.0207;
+        if (hospital.contains("珠海")) return 22.2707;
+        if (hospital.contains("惠州")) return 23.1115;
         return 22.5431;
     }
 
     private double resolveLongitude(String hospital) {
-        if (hospital != null && hospital.contains("第一人民医院")) {
-            return 114.0579;
-        }
-        if (hospital != null && hospital.contains("儿童医院")) {
-            return 114.1095;
-        }
+        if (hospital.contains("广州")) return 113.2644;
+        if (hospital.contains("深圳")) return 114.0579;
+        if (hospital.contains("佛山")) return 113.1214;
+        if (hospital.contains("东莞")) return 113.7518;
+        if (hospital.contains("珠海")) return 113.5767;
+        if (hospital.contains("惠州")) return 114.4168;
         return 114.0579;
     }
 }

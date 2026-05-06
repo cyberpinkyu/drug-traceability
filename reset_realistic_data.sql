@@ -1,248 +1,288 @@
 SET NAMES utf8mb4;
 USE drug_traceability;
-
-CREATE TABLE IF NOT EXISTS `audit_operation_log` (
-  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
-  `actor_id` BIGINT(20) DEFAULT NULL,
-  `actor_username` VARCHAR(100) DEFAULT NULL,
-  `actor_role` VARCHAR(50) DEFAULT NULL,
-  `method` VARCHAR(10) NOT NULL,
-  `path` VARCHAR(300) NOT NULL,
-  `query_string` VARCHAR(500) DEFAULT NULL,
-  `status_code` INT(11) DEFAULT NULL,
-  `client_ip` VARCHAR(64) DEFAULT NULL,
-  `user_agent` VARCHAR(255) DEFAULT NULL,
-  `target_type` VARCHAR(64) DEFAULT NULL,
-  `target_id` BIGINT(20) DEFAULT NULL,
-  `request_body` TEXT,
-  `before_json` LONGTEXT,
-  `after_json` LONGTEXT,
-  `diff_json` LONGTEXT,
-  `occurred_at` DATETIME NOT NULL,
-  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  KEY `idx_actor_id` (`actor_id`),
-  KEY `idx_occurred_at` (`occurred_at`),
-  KEY `idx_method_path` (`method`, `path`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 SET FOREIGN_KEY_CHECKS = 0;
 
-TRUNCATE TABLE `audit_operation_log`;
-TRUNCATE TABLE `ai_message`;
-TRUNCATE TABLE `ai_conversation`;
-TRUNCATE TABLE `ai_tool_usage_log`;
-TRUNCATE TABLE `ai_knowledge_doc`;
-TRUNCATE TABLE `scan_log`;
-TRUNCATE TABLE `regulatory_enforcement`;
-TRUNCATE TABLE `regulatory_task`;
-TRUNCATE TABLE `alert_ticket`;
-TRUNCATE TABLE `message_notice`;
-TRUNCATE TABLE `trace_record`;
-TRUNCATE TABLE `adverse_reaction`;
-TRUNCATE TABLE `usage_record`;
-TRUNCATE TABLE `inventory`;
-TRUNCATE TABLE `sale_record`;
-TRUNCATE TABLE `procurement_record`;
-TRUNCATE TABLE `production_batch`;
-TRUNCATE TABLE `drug_info`;
-TRUNCATE TABLE `user`;
-TRUNCATE TABLE `role`;
+TRUNCATE TABLE audit_operation_log;
+TRUNCATE TABLE ai_message;
+TRUNCATE TABLE ai_conversation;
+TRUNCATE TABLE ai_tool_usage_log;
+TRUNCATE TABLE ai_knowledge_doc;
+TRUNCATE TABLE scan_log;
+TRUNCATE TABLE regulatory_enforcement;
+TRUNCATE TABLE regulatory_task;
+TRUNCATE TABLE alert_ticket;
+TRUNCATE TABLE message_notice;
+TRUNCATE TABLE trace_record;
+TRUNCATE TABLE adverse_reaction;
+TRUNCATE TABLE usage_record;
+TRUNCATE TABLE inventory;
+TRUNCATE TABLE sale_record;
+TRUNCATE TABLE procurement_record;
+TRUNCATE TABLE production_batch;
+TRUNCATE TABLE drug_info;
+TRUNCATE TABLE user;
+TRUNCATE TABLE role;
 
 SET FOREIGN_KEY_CHECKS = 1;
 
-INSERT INTO `role` (`id`, `name`, `code`, `description`) VALUES
-(1, '平台管理员', 'admin', '负责平台账户、基础资料和全链路监管'),
-(2, '监管人员', 'regulator', '负责风险研判、预警处置和执法任务'),
-(3, '生产企业', 'producer', '负责药品生产和批次建档'),
-(4, '流通企业', 'distributor', '负责药品采购、仓储和配送'),
-(5, '医疗机构', 'hospital', '负责院内库存、用药记录和不良反应上报'),
-(6, '公众用户', 'public', '负责公众查询和个人上报');
+INSERT INTO role (id, name, code, description) VALUES
+(1, '平台管理员', 'admin', '系统配置、基础数据与全局监管'),
+(2, '监管人员', 'regulator', '风险研判、任务派发和执法闭环'),
+(3, '生产企业', 'producer', '药品生产与批次建档'),
+(4, '流通企业', 'distributor', '药品采购、仓储和配送'),
+(5, '医疗机构', 'hospital', '院内库存、用药和不良反应上报'),
+(6, '公众用户', 'public', '扫码溯源和公众查询');
 
-INSERT INTO `user` (`id`, `username`, `password`, `name`, `role_id`, `organization`, `phone`, `email`, `status`) VALUES
-(1, 'admin', '123456', '平台管理员', 1, '南山区药品追溯平台', '13800138000', 'admin@trace.local', 1),
-(2, 'regulator', '123456', '李卫东', 2, '深圳市药品监督管理局', '13800138001', 'regulator@trace.local', 1),
-(3, 'producer', '123456', '陈立峰', 3, '华康制药有限公司', '13800138002', 'producer@trace.local', 1),
-(4, 'distributor', '123456', '王晓军', 4, '安平医药配送中心', '13800138003', 'distributor@trace.local', 1),
-(5, 'hospital', '123456', '刘敏', 5, '深圳市第一人民医院', '13800138004', 'hospital@trace.local', 1),
-(6, 'public', '123456', '张晓雨', 6, '个人用户', '13800138005', 'public@trace.local', 1),
-(7, 'regulator2', '123456', '周宁', 2, '深圳市药品监督管理局风险监测科', '13800138006', 'regulator2@trace.local', 1);
+INSERT INTO user (id, username, password, name, role_id, organization, phone, email, status) VALUES
+(1, 'admin', '123456', '平台管理员', 1, '广东省药品追溯监管平台', '13800000001', 'admin@trace.local', 1),
+(2, 'regulator', '123456', '李卫东', 2, '广东省药品监督管理局', '13800000002', 'regulator@trace.local', 1),
+(3, 'producer', '123456', '陈立峰', 3, '华南现代制药有限公司', '13800000003', 'producer@trace.local', 1),
+(4, 'distributor', '123456', '王晓晨', 4, '广东瑞康医药供应链有限公司', '13800000004', 'gz-distribution@trace.local', 1),
+(5, 'hospital', '123456', '刘敏', 5, '深圳市人民医院', '13800000005', 'sz-hospital@trace.local', 1),
+(6, 'public', '123456', '张晓雯', 6, '个人用户', '13800000006', 'public@trace.local', 1),
+(7, 'regulator2', '123456', '周宁', 2, '深圳市市场监督管理局药品处', '13800000007', 'sz-regulator@trace.local', 1),
+(8, 'producer2', '123456', '赵嘉明', 3, '岭南生物医药股份有限公司', '13800000008', 'producer2@trace.local', 1),
+(9, 'dist_foshan', '123456', '何志强', 4, '佛山广济医药物流有限公司', '13800000009', 'fs-distribution@trace.local', 1),
+(10, 'dist_dongguan', '123456', '梁思远', 4, '东莞安泽医药供应链有限公司', '13800000010', 'dg-distribution@trace.local', 1),
+(11, 'hospital_gz', '123456', '黄雅婷', 5, '中山大学附属第一医院', '13800000011', 'gz-hospital@trace.local', 1),
+(12, 'hospital_fs', '123456', '郑文博', 5, '佛山市第一人民医院', '13800000012', 'fs-hospital@trace.local', 1),
+(13, 'hospital_dg', '123456', '林秋月', 5, '东莞市人民医院', '13800000013', 'dg-hospital@trace.local', 1),
+(14, 'hospital_zh', '123456', '许嘉怡', 5, '珠海市人民医院', '13800000014', 'zh-hospital@trace.local', 1),
+(15, 'dist_huizhou', '123456', '叶景辉', 4, '惠州众健医药有限公司', '13800000015', 'hz-distribution@trace.local', 1),
+(16, 'hospital_hz', '123456', '陈若琳', 5, '惠州市中心人民医院', '13800000016', 'hz-hospital@trace.local', 1);
 
-INSERT INTO `drug_info` (`id`, `drug_code`, `name`, `specification`, `manufacturer`, `approval_number`, `category`, `unit`, `price`, `status`) VALUES
-(101, 'RX260401', '阿莫西林胶囊', '0.25g*24粒/盒', '华康制药有限公司', '国药准字H13023371', '抗感染', '盒', 25.80, 1),
-(102, 'RX260402', '布洛芬缓释胶囊', '0.3g*20粒/盒', '华康制药有限公司', '国药准字H10900089', '解热镇痛', '盒', 29.60, 1),
-(103, 'RX260403', '盐酸二甲双胍片', '0.5g*60片/瓶', '华康制药有限公司', '国药准字H20023367', '内分泌', '瓶', 18.90, 1),
-(104, 'RX260404', '氯雷他定片', '10mg*12片/盒', '华康制药有限公司', '国药准字H20000008', '抗过敏', '盒', 16.50, 1),
-(105, 'RX260405', '头孢克肟分散片', '0.1g*12片/盒', '华康制药有限公司', '国药准字H20080614', '抗感染', '盒', 36.00, 1),
-(106, 'RX260406', '奥美拉唑肠溶胶囊', '20mg*14粒/盒', '华康制药有限公司', '国药准字H20051408', '消化系统', '盒', 22.80, 1),
-(107, 'RX260407', '阿托伐他汀钙片', '20mg*7片/盒', '华康制药有限公司', '国药准字H20040217', '心血管', '盒', 42.50, 1),
-(108, 'RX260408', '蒙脱石散', '3g*10袋/盒', '华康制药有限公司', '国药准字H20040091', '消化系统', '盒', 19.80, 1);
+INSERT INTO drug_info (id, drug_code, name, specification, manufacturer, approval_number, category, unit, price, status) VALUES
+(101, 'RX260401', '阿莫西林胶囊', '0.25g*24粒/盒', '华南现代制药有限公司', '国药准字H13023371', '抗感染', '盒', 25.80, 1),
+(102, 'RX260402', '布洛芬缓释胶囊', '0.3g*20粒/盒', '华南现代制药有限公司', '国药准字H10900089', '解热镇痛', '盒', 29.60, 1),
+(103, 'RX260403', '盐酸二甲双胍片', '0.5g*60片/瓶', '华南现代制药有限公司', '国药准字H20023367', '内分泌', '瓶', 18.90, 1),
+(104, 'RX260404', '氯雷他定片', '10mg*12片/盒', '华南现代制药有限公司', '国药准字H20000008', '抗过敏', '盒', 16.50, 1),
+(105, 'RX260405', '头孢克肟分散片', '0.1g*12片/盒', '华南现代制药有限公司', '国药准字H20080614', '抗感染', '盒', 36.00, 1),
+(106, 'RX260406', '奥美拉唑肠溶胶囊', '20mg*14粒/盒', '华南现代制药有限公司', '国药准字H20051408', '消化系统', '盒', 22.80, 1),
+(107, 'RX260407', '阿托伐他汀钙片', '20mg*7片/盒', '华南现代制药有限公司', '国药准字H20040217', '心血管', '盒', 42.50, 1),
+(108, 'RX260408', '蒙脱石散', '3g*10袋/盒', '华南现代制药有限公司', '国药准字H20040091', '消化系统', '盒', 19.80, 1),
+(109, 'RX260409', '左氧氟沙星片', '0.5g*6片/盒', '岭南生物医药股份有限公司', '国药准字H20000258', '抗感染', '盒', 31.20, 1),
+(110, 'RX260410', '缬沙坦胶囊', '80mg*14粒/盒', '岭南生物医药股份有限公司', '国药准字H20040215', '心血管', '盒', 38.90, 1),
+(111, 'RX260411', '维生素C片', '100mg*100片/瓶', '岭南生物医药股份有限公司', '国药准字H44020774', '维生素矿物质', '瓶', 12.60, 1),
+(112, 'RX260412', '复方甘草片', '100片/瓶', '岭南生物医药股份有限公司', '国药准字H44022188', '呼吸系统', '瓶', 14.80, 1);
 
-INSERT INTO `production_batch` (`id`, `batch_number`, `drug_id`, `production_date`, `expiry_date`, `production_quantity`, `producer_id`, `status`) VALUES
-(1001, 'B260401A', 101, '2026-03-01', '2028-02-28', 12000, 3, 1),
-(1002, 'B260402A', 102, '2026-03-03', '2028-03-02', 15000, 3, 1),
-(1003, 'B260403A', 103, '2026-03-05', '2028-03-04', 18000, 3, 1),
-(1004, 'B260404A', 104, '2026-03-07', '2028-03-06', 9000, 3, 1),
-(1005, 'B260405A', 105, '2026-03-09', '2028-03-08', 14000, 3, 1),
-(1006, 'B260406A', 106, '2026-03-11', '2028-03-10', 11000, 3, 1),
-(1007, 'B260407A', 107, '2026-03-13', '2028-03-12', 16000, 3, 1),
-(1008, 'B260408A', 108, '2026-03-15', '2028-03-14', 10000, 3, 1);
+DROP TEMPORARY TABLE IF EXISTS tmp_batch_seed;
+CREATE TEMPORARY TABLE tmp_batch_seed (
+  seq INT PRIMARY KEY,
+  drug_id BIGINT,
+  batch_number VARCHAR(50),
+  producer_id BIGINT,
+  production_date DATE,
+  quantity INT,
+  price DECIMAL(10,2)
+);
 
-INSERT INTO `procurement_record` (`id`, `batch_id`, `buyer_id`, `supplier_id`, `quantity`, `purchase_date`, `purchase_price`, `status`) VALUES
-(2001, 1001, 4, 3, 4000, '2026-03-10', 19.20, 1),
-(2002, 1002, 4, 3, 5000, '2026-03-12', 22.60, 1),
-(2003, 1003, 4, 3, 6000, '2026-03-14', 12.80, 1),
-(2004, 1004, 4, 3, 3000, '2026-03-16', 10.90, 1),
-(2005, 1005, 4, 3, 4500, '2026-03-18', 27.50, 1),
-(2006, 1006, 4, 3, 3500, '2026-03-20', 17.20, 1),
-(2007, 1007, 4, 3, 5200, '2026-03-22', 33.80, 1),
-(2008, 1008, 4, 3, 2800, '2026-03-24', 14.60, 1);
+INSERT INTO tmp_batch_seed (seq, drug_id, batch_number, producer_id, production_date, quantity, price)
+SELECT n,
+       101 + ((n - 1) % 12),
+       CONCAT('B26', LPAD(MONTH(DATE_ADD('2026-01-05', INTERVAL n * 3 DAY)), 2, '0'), LPAD(n, 3, '0'), CHAR(64 + ((n - 1) % 3) + 1)),
+       CASE WHEN n % 4 = 0 THEN 8 ELSE 3 END,
+       DATE_ADD('2026-01-05', INTERVAL n * 3 DAY),
+       8000 + (n % 9) * 850 + (n % 5) * 300,
+       12 + (n % 10) * 2.3
+FROM (
+  SELECT 1 n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9 UNION ALL SELECT 10
+  UNION ALL SELECT 11 UNION ALL SELECT 12 UNION ALL SELECT 13 UNION ALL SELECT 14 UNION ALL SELECT 15 UNION ALL SELECT 16 UNION ALL SELECT 17 UNION ALL SELECT 18 UNION ALL SELECT 19 UNION ALL SELECT 20
+  UNION ALL SELECT 21 UNION ALL SELECT 22 UNION ALL SELECT 23 UNION ALL SELECT 24 UNION ALL SELECT 25 UNION ALL SELECT 26 UNION ALL SELECT 27 UNION ALL SELECT 28 UNION ALL SELECT 29 UNION ALL SELECT 30
+  UNION ALL SELECT 31 UNION ALL SELECT 32 UNION ALL SELECT 33 UNION ALL SELECT 34 UNION ALL SELECT 35 UNION ALL SELECT 36 UNION ALL SELECT 37 UNION ALL SELECT 38 UNION ALL SELECT 39 UNION ALL SELECT 40
+  UNION ALL SELECT 41 UNION ALL SELECT 42 UNION ALL SELECT 43 UNION ALL SELECT 44 UNION ALL SELECT 45 UNION ALL SELECT 46 UNION ALL SELECT 47 UNION ALL SELECT 48
+) nums;
 
-INSERT INTO `sale_record` (`id`, `batch_id`, `seller_id`, `buyer_id`, `quantity`, `sale_date`, `sale_price`, `status`) VALUES
-(3001, 1001, 4, 5, 1200, '2026-03-17', 25.80, 1),
-(3002, 1002, 4, 5, 1500, '2026-03-19', 29.60, 1),
-(3003, 1003, 4, 5, 2000, '2026-03-21', 18.90, 1),
-(3004, 1004, 4, 5, 1000, '2026-03-23', 16.50, 1),
-(3005, 1005, 4, 5, 1800, '2026-03-25', 36.00, 1),
-(3006, 1006, 4, 5, 1200, '2026-03-27', 22.80, 1),
-(3007, 1007, 4, 5, 1700, '2026-03-29', 42.50, 1),
-(3008, 1008, 4, 5, 900, '2026-03-31', 19.80, 1);
+UPDATE tmp_batch_seed SET batch_number = 'B260405A', drug_id = 105, production_date = '2026-03-09', quantity = 14000 WHERE seq = 21;
+UPDATE tmp_batch_seed SET batch_number = 'B260401A', drug_id = 101, production_date = '2026-03-01', quantity = 12000 WHERE seq = 18;
+UPDATE tmp_batch_seed SET batch_number = 'B260407A', drug_id = 107, production_date = '2026-03-13', quantity = 16000 WHERE seq = 22;
 
-INSERT INTO `inventory` (`id`, `batch_id`, `organization_id`, `quantity`, `last_update_date`, `status`) VALUES
-(4001, 1001, 3, 8000, '2026-03-17', 1),
-(4002, 1001, 4, 2800, '2026-03-17', 1),
-(4003, 1001, 5, 1200, '2026-03-17', 1),
-(4004, 1002, 3, 10000, '2026-03-19', 1),
-(4005, 1002, 4, 3500, '2026-03-19', 1),
-(4006, 1002, 5, 1500, '2026-03-19', 1),
-(4007, 1003, 3, 12000, '2026-03-21', 1),
-(4008, 1003, 4, 4000, '2026-03-21', 1),
-(4009, 1003, 5, 2000, '2026-03-21', 1),
-(4010, 1004, 3, 6000, '2026-03-23', 1),
-(4011, 1004, 4, 2000, '2026-03-23', 1),
-(4012, 1004, 5, 1000, '2026-03-23', 1),
-(4013, 1005, 3, 9500, '2026-03-25', 1),
-(4014, 1005, 4, 2700, '2026-03-25', 1),
-(4015, 1005, 5, 1800, '2026-03-25', 1),
-(4016, 1006, 3, 7500, '2026-03-27', 1),
-(4017, 1006, 4, 2300, '2026-03-27', 1),
-(4018, 1006, 5, 1200, '2026-03-27', 1),
-(4019, 1007, 3, 10800, '2026-03-29', 1),
-(4020, 1007, 4, 3500, '2026-03-29', 1),
-(4021, 1007, 5, 1700, '2026-03-29', 1),
-(4022, 1008, 3, 7200, '2026-03-31', 1),
-(4023, 1008, 4, 1900, '2026-03-31', 1),
-(4024, 1008, 5, 900, '2026-03-31', 1);
+INSERT INTO production_batch (id, batch_number, drug_id, production_date, expiry_date, production_quantity, producer_id, status)
+SELECT 1000 + seq, batch_number, drug_id, production_date, DATE_ADD(production_date, INTERVAL 24 MONTH), quantity, producer_id, 1
+FROM tmp_batch_seed;
 
-INSERT INTO `usage_record` (`id`, `drug_id`, `patient_name`, `dosage`, `frequency`, `usage_date`, `doctor_id`, `hospital`, `status`, `created_at`) VALUES
-(5001, 101, '赵云海', '0.5g', '每日3次', '2026-03-27', 5, '深圳市第一人民医院', 1, '2026-03-27 09:10:00'),
-(5002, 102, '林晓燕', '0.3g', '必要时每8小时1次', '2026-03-28', 5, '深圳市第一人民医院', 1, '2026-03-28 11:25:00'),
-(5003, 103, '陈建国', '0.5g', '每日2次', '2026-03-29', 5, '深圳市第一人民医院', 1, '2026-03-29 08:40:00'),
-(5004, 106, '黄丽君', '20mg', '每日1次', '2026-03-31', 5, '深圳市第一人民医院', 1, '2026-03-31 14:10:00'),
-(5005, 107, '宋伟', '20mg', '每晚1次', '2026-04-02', 5, '深圳市第一人民医院', 1, '2026-04-02 10:30:00'),
-(5006, 108, '谢婷婷', '1袋', '每日3次', '2026-04-04', 5, '深圳市第一人民医院', 1, '2026-04-04 16:20:00');
+INSERT INTO procurement_record (id, batch_id, buyer_id, supplier_id, quantity, purchase_date, purchase_price, status)
+SELECT 2000 + seq * 10 + route,
+       1000 + seq,
+       CASE route WHEN 1 THEN 4 WHEN 2 THEN 9 WHEN 3 THEN 10 ELSE 15 END,
+       producer_id,
+       FLOOR(quantity * (0.20 + route * 0.035)),
+       DATE_ADD(production_date, INTERVAL 5 + route DAY),
+       price,
+       1
+FROM tmp_batch_seed
+JOIN (SELECT 1 route UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4) routes;
 
-INSERT INTO `adverse_reaction` (`id`, `drug_id`, `patient_name`, `reaction_description`, `severity`, `hospital`, `doctor_name`, `reporter_id`, `status`, `created_at`) VALUES
-(6001, 105, '刘先生', '服药后出现全身散在红疹和轻度喉部不适，门诊留观后缓解。', 'high', '深圳市第一人民医院', '刘敏', 5, 4, '2026-04-01 09:20:00'),
-(6002, 102, '张女士', '服药后出现胃部不适和短暂头晕，调整餐后服用后改善。', 'medium', '深圳市第一人民医院', '刘敏', 5, 3, '2026-04-03 15:40:00'),
-(6003, 108, '陈先生', '服药后出现轻度便秘，停药观察后恢复。', 'low', '深圳市第一人民医院', '刘敏', 5, 1, '2026-04-05 10:15:00'),
-(6004, 107, '王女士', '患者自行加量后出现肌肉酸痛和乏力，已建议复诊复查。', 'high', '深圳市第一人民医院', '刘敏', 6, 2, '2026-04-06 13:35:00');
+INSERT INTO sale_record (id, batch_id, seller_id, buyer_id, quantity, sale_date, sale_price, status)
+SELECT 3000 + seq * 10 + route,
+       1000 + seq,
+       CASE route WHEN 1 THEN 4 WHEN 2 THEN 9 WHEN 3 THEN 10 ELSE 15 END,
+       CASE route WHEN 1 THEN 11 WHEN 2 THEN 12 WHEN 3 THEN 13 ELSE 16 END,
+       FLOOR(quantity * (0.08 + route * 0.02)),
+       DATE_ADD(production_date, INTERVAL 13 + route * 2 DAY),
+       price * 1.28,
+       1
+FROM tmp_batch_seed
+JOIN (SELECT 1 route UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4) routes;
 
-INSERT INTO `trace_record` (`id`, `drug_code`, `batch_number`, `trace_step`, `step_time`, `organization`, `description`, `status`) VALUES
-(7001, 'RX260401', 'B260401A', '原料入厂', '2026-03-01 08:00:00', '华康制药有限公司', '原料批次核验完成', 1),
-(7002, 'RX260401', 'B260401A', '生产投料', '2026-03-01 13:20:00', '华康制药有限公司', '生产线A完成投料', 1),
-(7003, 'RX260401', 'B260401A', '成品检验', '2026-03-02 10:00:00', '华康制药有限公司', '微生物与含量检测合格', 1),
-(7004, 'RX260401', 'B260401A', '成品入库', '2026-03-03 09:30:00', '华康制药有限公司', '批次入成品仓', 1),
-(7005, 'RX260401', 'B260401A', '配送出库', '2026-03-10 15:00:00', '安平医药配送中心', '首批4000盒发往流通中心', 1),
-(7006, 'RX260401', 'B260401A', '医院收货', '2026-03-17 10:40:00', '深圳市第一人民医院', '1200盒完成入院验收', 1),
-(7007, 'RX260402', 'B260402A', '原料入厂', '2026-03-03 08:10:00', '华康制药有限公司', '原料批次核验完成', 1),
-(7008, 'RX260402', 'B260402A', '生产投料', '2026-03-03 14:10:00', '华康制药有限公司', '生产线B完成投料', 1),
-(7009, 'RX260402', 'B260402A', '成品检验', '2026-03-04 10:20:00', '华康制药有限公司', '溶出度和含量检测合格', 1),
-(7010, 'RX260402', 'B260402A', '成品入库', '2026-03-05 09:20:00', '华康制药有限公司', '批次入成品仓', 1),
-(7011, 'RX260402', 'B260402A', '配送出库', '2026-03-12 16:10:00', '安平医药配送中心', '首批5000盒发往流通中心', 1),
-(7012, 'RX260402', 'B260402A', '医院收货', '2026-03-19 09:50:00', '深圳市第一人民医院', '1500盒完成入院验收', 1),
-(7013, 'RX260403', 'B260403A', '原料入厂', '2026-03-05 08:05:00', '华康制药有限公司', '原料批次核验完成', 1),
-(7014, 'RX260403', 'B260403A', '生产投料', '2026-03-05 14:30:00', '华康制药有限公司', '糖尿病用药生产批次启动', 1),
-(7015, 'RX260403', 'B260403A', '成品检验', '2026-03-06 11:00:00', '华康制药有限公司', '含量与脆碎度检测合格', 1),
-(7016, 'RX260403', 'B260403A', '成品入库', '2026-03-07 10:15:00', '华康制药有限公司', '批次入成品仓', 1),
-(7017, 'RX260403', 'B260403A', '配送出库', '2026-03-14 14:40:00', '安平医药配送中心', '首批6000瓶发往流通中心', 1),
-(7018, 'RX260403', 'B260403A', '医院收货', '2026-03-21 10:10:00', '深圳市第一人民医院', '2000瓶完成入院验收', 1),
-(7019, 'RX260404', 'B260404A', '原料入厂', '2026-03-07 08:00:00', '华康制药有限公司', '原料批次核验完成', 1),
-(7020, 'RX260404', 'B260404A', '生产投料', '2026-03-07 13:10:00', '华康制药有限公司', '过敏类药物生产开始', 1),
-(7021, 'RX260404', 'B260404A', '成品检验', '2026-03-08 10:05:00', '华康制药有限公司', '崩解时限检测合格', 1),
-(7022, 'RX260404', 'B260404A', '成品入库', '2026-03-09 09:00:00', '华康制药有限公司', '批次入成品仓', 1),
-(7023, 'RX260404', 'B260404A', '配送出库', '2026-03-16 15:30:00', '安平医药配送中心', '首批3000盒发往流通中心', 1),
-(7024, 'RX260404', 'B260404A', '医院收货', '2026-03-23 10:20:00', '深圳市第一人民医院', '1000盒完成入院验收', 1),
-(7025, 'RX260405', 'B260405A', '原料入厂', '2026-03-09 08:15:00', '华康制药有限公司', '原料批次核验完成', 1),
-(7026, 'RX260405', 'B260405A', '生产投料', '2026-03-09 13:50:00', '华康制药有限公司', '抗菌药批次投料完成', 1),
-(7027, 'RX260405', 'B260405A', '成品检验', '2026-03-10 10:30:00', '华康制药有限公司', '含量与均匀度检测合格', 1),
-(7028, 'RX260405', 'B260405A', '成品入库', '2026-03-11 09:45:00', '华康制药有限公司', '批次入成品仓', 1),
-(7029, 'RX260405', 'B260405A', '配送出库', '2026-03-18 15:20:00', '安平医药配送中心', '首批4500盒发往流通中心', 1),
-(7030, 'RX260405', 'B260405A', '医院收货', '2026-03-25 10:30:00', '深圳市第一人民医院', '1800盒完成入院验收', 1),
-(7031, 'RX260406', 'B260406A', '原料入厂', '2026-03-11 08:10:00', '华康制药有限公司', '原料批次核验完成', 1),
-(7032, 'RX260406', 'B260406A', '生产投料', '2026-03-11 14:10:00', '华康制药有限公司', '消化系统用药批次投料完成', 1),
-(7033, 'RX260406', 'B260406A', '成品检验', '2026-03-12 11:20:00', '华康制药有限公司', '含量与崩解检测合格', 1),
-(7034, 'RX260406', 'B260406A', '成品入库', '2026-03-13 09:25:00', '华康制药有限公司', '批次入成品仓', 1),
-(7035, 'RX260406', 'B260406A', '配送出库', '2026-03-20 14:50:00', '安平医药配送中心', '首批3500盒发往流通中心', 1),
-(7036, 'RX260406', 'B260406A', '医院收货', '2026-03-27 10:10:00', '深圳市第一人民医院', '1200盒完成入院验收', 1),
-(7037, 'RX260407', 'B260407A', '原料入厂', '2026-03-13 08:05:00', '华康制药有限公司', '原料批次核验完成', 1),
-(7038, 'RX260407', 'B260407A', '生产投料', '2026-03-13 13:35:00', '华康制药有限公司', '心血管用药批次投料完成', 1),
-(7039, 'RX260407', 'B260407A', '成品检验', '2026-03-14 10:45:00', '华康制药有限公司', '含量与溶出检测合格', 1),
-(7040, 'RX260407', 'B260407A', '成品入库', '2026-03-15 09:40:00', '华康制药有限公司', '批次入成品仓', 1),
-(7041, 'RX260407', 'B260407A', '配送出库', '2026-03-22 15:10:00', '安平医药配送中心', '首批5200盒发往流通中心', 1),
-(7042, 'RX260407', 'B260407A', '医院收货', '2026-03-29 10:00:00', '深圳市第一人民医院', '1700盒完成入院验收', 1),
-(7043, 'RX260408', 'B260408A', '原料入厂', '2026-03-15 08:00:00', '华康制药有限公司', '原料批次核验完成', 1),
-(7044, 'RX260408', 'B260408A', '生产投料', '2026-03-15 13:00:00', '华康制药有限公司', '胃肠道用药批次投料完成', 1),
-(7045, 'RX260408', 'B260408A', '成品检验', '2026-03-16 10:10:00', '华康制药有限公司', '微生物限度检测合格', 1),
-(7046, 'RX260408', 'B260408A', '成品入库', '2026-03-17 09:15:00', '华康制药有限公司', '批次入成品仓', 1),
-(7047, 'RX260408', 'B260408A', '配送出库', '2026-03-24 15:00:00', '安平医药配送中心', '首批2800盒发往流通中心', 1),
-(7048, 'RX260408', 'B260408A', '医院收货', '2026-03-31 09:40:00', '深圳市第一人民医院', '900盒完成入院验收', 1);
+INSERT INTO sale_record (id, batch_id, seller_id, buyer_id, quantity, sale_date, sale_price, status)
+SELECT 3600 + seq,
+       1000 + seq,
+       4,
+       5,
+       FLOOR(quantity * 0.07),
+       DATE_ADD(production_date, INTERVAL 18 DAY),
+       price * 1.32,
+       1
+FROM tmp_batch_seed
+WHERE seq % 2 = 0;
 
-INSERT INTO `message_notice` (`id`, `title`, `content`, `channel`, `receiver_id`, `receiver_contact`, `biz_type`, `biz_id`, `status`, `sent_at`, `read_at`) VALUES
-(8001, '高风险不良反应已结案', '头孢克肟分散片相关不良反应已完成现场核查与闭环处置。', 'site', 2, 'regulator@trace.local', 'adverse_reaction', 6001, 1, '2026-04-02 10:00:00', '2026-04-02 10:25:00'),
-(8002, '需要复核院内加量用药记录', '请复核阿托伐他汀钙片患者加量使用后的风险说明和随访结果。', 'site', 7, 'regulator2@trace.local', 'adverse_reaction', 6004, 0, '2026-04-06 15:00:00', NULL),
-(8003, '三月批次流向报表已生成', '三月份核心批次流向报表已生成，可在监管大屏和报表中心查看。', 'site', 1, 'admin@trace.local', 'report', 10001, 1, '2026-04-01 08:30:00', '2026-04-01 09:00:00'),
-(8004, '扫码验签异常已自动预警', '批次 B260405A 存在一次离线扫码后补传记录，请监管端关注。', 'site', 2, 'regulator@trace.local', 'scan_log', 9703, 0, '2026-04-07 09:20:00', NULL);
+INSERT INTO inventory (id, batch_id, organization_id, quantity, last_update_date, status)
+SELECT 4000 + seq * 100 + org_id,
+       1000 + seq,
+       org_id,
+       CASE
+         WHEN org_id = producer_id THEN FLOOR(quantity * 0.22)
+         WHEN org_id IN (4, 9, 10, 15) THEN FLOOR(quantity * 0.09 + (seq % 5) * 70)
+         ELSE FLOOR(quantity * 0.04 + (seq % 4) * 40)
+       END,
+       DATE_ADD(production_date, INTERVAL 24 DAY),
+       1
+FROM tmp_batch_seed
+JOIN (
+  SELECT 3 org_id UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 8 UNION ALL SELECT 9 UNION ALL SELECT 10
+  UNION ALL SELECT 11 UNION ALL SELECT 12 UNION ALL SELECT 13 UNION ALL SELECT 14 UNION ALL SELECT 15 UNION ALL SELECT 16
+) orgs
+WHERE org_id = producer_id OR org_id IN (4, 5, 9, 10, 11, 12, 13, 14, 15, 16);
 
-INSERT INTO `alert_ticket` (`id`, `title`, `source_type`, `source_id`, `severity`, `status`, `assignee_id`, `description`, `closed_result`, `closed_at`) VALUES
-(9001, '头孢克肟分散片高风险不良反应', 'adverse', 6001, 'high', 2, 2, '院内上报患者出现皮疹与喉部不适，需要核查批次流向和院内处置。', '已核对批次 B260405A 来源、库存与患者用药记录，未发现假劣药风险。', '2026-04-02 11:20:00'),
-(9002, '阿托伐他汀钙片异常加量提示', 'adverse', 6004, 'high', 1, 7, '公众用户上报疑似加量后不良反应，建议核查是否存在超说明书使用。', NULL, NULL),
-(9003, '批次 B260405A 扫码验签离线补传', 'scan', 9703, 'medium', 0, NULL, '该批次出现离线扫码后补传记录，需判断是否为院内弱网场景。', NULL, NULL),
-(9004, '医院库存临期复核提醒', 'batch', 1001, 'low', 1, 2, '请对院内阿莫西林胶囊批次库存效期和先到期先出执行情况进行抽查。', NULL, NULL);
+INSERT INTO usage_record (id, drug_id, patient_name, dosage, frequency, usage_date, doctor_id, hospital, status, created_at)
+SELECT 5000 + seq * 10 + route,
+       drug_id,
+       ELT(((seq + route) % 12) + 1, '赵云海', '林晓彤', '陈建国', '黄丽君', '宋伟', '谢婉婷', '周明', '罗嘉欣', '吴国强', '梁敏', '何思源', '郑芳'),
+       ELT(((seq + route) % 5) + 1, '0.25g', '0.5g', '10mg', '20mg', '1袋'),
+       ELT(((seq + route) % 4) + 1, '每日1次', '每日2次', '每日3次', '必要时服用'),
+       DATE_ADD(production_date, INTERVAL 24 + route DAY),
+       CASE route WHEN 1 THEN 11 WHEN 2 THEN 12 WHEN 3 THEN 13 ELSE 16 END,
+       CASE route WHEN 1 THEN '广州中山大学附属第一医院' WHEN 2 THEN '佛山市第一人民医院' WHEN 3 THEN '东莞市人民医院' ELSE '惠州市中心人民医院' END,
+       1,
+       CONCAT(DATE_ADD(production_date, INTERVAL 24 + route DAY), ' ', LPAD(8 + route, 2, '0'), ':20:00')
+FROM tmp_batch_seed
+JOIN (SELECT 1 route UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4) routes
+WHERE seq <= 36;
 
-INSERT INTO `regulatory_task` (`id`, `report_id`, `assignee_id`, `suspected_source`, `suspected_org_id`, `conclusion_source`, `conclusion_org_id`, `verified`, `investigation_result`, `status`, `dispatched_at`, `investigated_at`, `enforced_at`) VALUES
-(9501, 6001, 2, 'hospital', 5, 'hospital', 5, 1, '已核查该患者用药记录、批次来源及库存台账，确认系个体过敏反应，院方处置规范。', 3, '2026-04-01 10:00:00', '2026-04-02 09:40:00', '2026-04-02 11:10:00'),
-(9502, 6002, 7, 'hospital', 5, 'hospital', 5, 0, '核查发现为常见胃部刺激反应，已指导院方加强餐后服药提示，无需行政处罚。', 2, '2026-04-03 16:10:00', '2026-04-04 10:15:00', NULL);
+INSERT INTO adverse_reaction (id, drug_id, patient_name, reaction_description, severity, hospital, doctor_name, reporter_id, status, created_at)
+SELECT 6000 + seq,
+       drug_id,
+       ELT((seq % 10) + 1, '刘先生', '张女士', '陈先生', '王女士', '孙先生', '赵女士', '李先生', '黄女士', '周先生', '许女士'),
+       ELT((seq % 6) + 1, '服药后出现皮疹，停药观察后缓解。', '用药后出现胃部不适，调整餐后服用后改善。', '出现轻度头晕，门诊复核后继续观察。', '出现喉部不适，已完成过敏史复核。', '疑似剂量相关肌肉酸痛，已建议复诊。', '出现短暂腹泻，补液后好转。'),
+       CASE WHEN seq % 7 IN (0, 1) THEN 'high' WHEN seq % 7 IN (2, 3, 4) THEN 'medium' ELSE 'low' END,
+       ELT((seq % 6) + 1, '深圳市人民医院', '中山大学附属第一医院', '佛山市第一人民医院', '东莞市人民医院', '珠海市人民医院', '惠州市中心人民医院'),
+       ELT((seq % 6) + 1, '刘敏', '黄雅婷', '郑文博', '林秋月', '许嘉怡', '陈若琳'),
+       ELT((seq % 6) + 1, 5, 11, 12, 13, 14, 16),
+       CASE WHEN seq % 4 = 0 THEN 4 WHEN seq % 4 = 1 THEN 3 WHEN seq % 4 = 2 THEN 2 ELSE 1 END,
+       CONCAT(DATE_ADD(production_date, INTERVAL 28 + (seq % 9) DAY), ' ', LPAD(9 + (seq % 8), 2, '0'), ':15:00')
+FROM tmp_batch_seed
+WHERE seq <= 30;
 
-INSERT INTO `regulatory_enforcement` (`id`, `inspector_id`, `organization_id`, `inspection_type`, `inspection_result`, `description`, `inspection_date`, `status`) VALUES
-(9601, 2, 5, '专项核查', '已完成闭环整改', '针对头孢克肟分散片高风险不良反应开展现场核查，院方已完善过敏史核验与药学宣教。', '2026-04-02 11:00:00', 1),
-(9602, 7, 4, '日常巡查', '记录规范', '抽查安平医药配送中心 3 月重点批次出入库与冷链记录，台账完整。', '2026-04-05 14:30:00', 1);
+INSERT INTO trace_record (id, drug_code, batch_number, trace_step, step_time, organization, description, status)
+SELECT 7000 + seq * 10 + step_no,
+       d.drug_code,
+       b.batch_number,
+       ELT(step_no, '原料入厂', '生产投料', '成品检验', '成品入库', '配送出库', '医疗机构验收', '院内使用', '风险监测'),
+       CASE step_no
+         WHEN 1 THEN CONCAT(b.production_date, ' 08:30:00')
+         WHEN 2 THEN CONCAT(b.production_date, ' 13:20:00')
+         WHEN 3 THEN CONCAT(DATE_ADD(b.production_date, INTERVAL 1 DAY), ' 10:10:00')
+         WHEN 4 THEN CONCAT(DATE_ADD(b.production_date, INTERVAL 2 DAY), ' 09:40:00')
+         WHEN 5 THEN CONCAT(DATE_ADD(b.production_date, INTERVAL 8 DAY), ' 15:10:00')
+         WHEN 6 THEN CONCAT(DATE_ADD(b.production_date, INTERVAL 16 DAY), ' 09:25:00')
+         WHEN 7 THEN CONCAT(DATE_ADD(b.production_date, INTERVAL 25 DAY), ' 10:30:00')
+         ELSE CONCAT(DATE_ADD(b.production_date, INTERVAL 32 DAY), ' 11:00:00')
+       END,
+       ELT(step_no, u.organization, u.organization, u.organization, u.organization, '广东瑞康医药供应链有限公司', '深圳市人民医院', '深圳市人民医院', '广东省药品监督管理局'),
+       ELT(step_no, '完成原辅料到货验收和供应商资质核验', '按生产指令完成投料和过程记录', '关键质量指标检验合格', '成品入库并生成追溯码', '冷链/常温运输记录完整', '院内扫码验收入库', '完成患者用药登记', '监管端完成风险复核'),
+       1
+FROM tmp_batch_seed b
+JOIN drug_info d ON d.id = b.drug_id
+JOIN user u ON u.id = b.producer_id
+JOIN (SELECT 1 step_no UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8) steps;
 
-INSERT INTO `scan_log` (`id`, `trace_code`, `device_id`, `signature`, `request_ts`, `verify_passed`, `offline_flag`, `source_ip`, `created_at`) VALUES
-(9701, 'B260401A', 'web-regulator', 'ok-sign-9701', 1775606400000, 1, 0, '127.0.0.1', '2026-04-06 09:00:00'),
-(9702, 'B260403A', 'app-public', 'ok-sign-9702', 1775692800000, 1, 0, '127.0.0.1', '2026-04-07 10:12:00'),
-(9703, 'B260405A', 'app-hospital', 'retry-sign-9703', 1775696400000, 1, 1, '127.0.0.1', '2026-04-07 11:05:00'),
-(9704, 'B260408A', 'web-regulator', 'bad-sign-9704', 1775700000000, 0, 0, '127.0.0.1', '2026-04-07 12:10:00');
+INSERT INTO scan_log (id, trace_code, device_id, signature, request_ts, verify_passed, offline_flag, source_ip, created_at)
+SELECT 9700 + seq,
+       batch_number,
+       ELT((seq % 4) + 1, 'web-regulator', 'app-public', 'app-hospital', 'app-regulator'),
+       CONCAT('sample-sign-', seq),
+       UNIX_TIMESTAMP(DATE_ADD(production_date, INTERVAL 30 DAY)) * 1000,
+       CASE WHEN seq % 13 = 0 THEN 0 ELSE 1 END,
+       CASE WHEN seq % 11 = 0 THEN 1 ELSE 0 END,
+       '127.0.0.1',
+       CONCAT(DATE_ADD(production_date, INTERVAL 30 DAY), ' 09:00:00')
+FROM tmp_batch_seed;
 
-INSERT INTO `ai_conversation` (`conversation_id`, `user_id`, `title`, `created_at`, `updated_at`) VALUES
+INSERT INTO alert_ticket (id, title, source_type, source_id, severity, status, assignee_id, description, closed_result, closed_at)
+SELECT 9000 + id - 6000,
+       CONCAT('不良反应复核：', patient_name),
+       'adverse',
+       id,
+       severity,
+       CASE WHEN status >= 3 THEN 2 ELSE 1 END,
+       CASE WHEN hospital LIKE '%深圳%' THEN 7 ELSE 2 END,
+       reaction_description,
+       CASE WHEN status >= 3 THEN '已核对批次流向和院内处置记录，未发现假劣药风险。' ELSE NULL END,
+       CASE WHEN status >= 3 THEN DATE_ADD(created_at, INTERVAL 1 DAY) ELSE NULL END
+FROM adverse_reaction
+WHERE id <= 6018;
+
+INSERT INTO message_notice (id, title, content, channel, receiver_id, receiver_contact, biz_type, biz_id, status, sent_at, read_at)
+SELECT 8000 + id - 6000,
+       CONCAT('风险上报提醒：', severity),
+       CONCAT(hospital, '上报不良反应，需核查批次流向和库存。'),
+       'site',
+       CASE WHEN hospital LIKE '%深圳%' THEN 7 ELSE 2 END,
+       CASE WHEN hospital LIKE '%深圳%' THEN 'sz-regulator@trace.local' ELSE 'regulator@trace.local' END,
+       'adverse_reaction',
+       id,
+       CASE WHEN status >= 3 THEN 1 ELSE 0 END,
+       created_at,
+       CASE WHEN status >= 3 THEN DATE_ADD(created_at, INTERVAL 2 HOUR) ELSE NULL END
+FROM adverse_reaction
+WHERE id <= 6020;
+
+INSERT INTO regulatory_task (id, report_id, assignee_id, suspected_source, suspected_org_id, conclusion_source, conclusion_org_id, verified, investigation_result, status, dispatched_at, investigated_at, enforced_at)
+SELECT 9500 + id - 6000,
+       id,
+       CASE WHEN hospital LIKE '%深圳%' THEN 7 ELSE 2 END,
+       'hospital',
+       reporter_id,
+       'hospital',
+       reporter_id,
+       CASE WHEN status >= 3 THEN 1 ELSE 0 END,
+       CASE WHEN status >= 3 THEN '已核查用药记录、库存记录和批次流向，处置流程完整。' ELSE '待完成现场核查和处置闭环。' END,
+       CASE WHEN status >= 3 THEN 3 ELSE 1 END,
+       created_at,
+       CASE WHEN status >= 3 THEN DATE_ADD(created_at, INTERVAL 1 DAY) ELSE NULL END,
+       CASE WHEN status = 4 THEN DATE_ADD(created_at, INTERVAL 2 DAY) ELSE NULL END
+FROM adverse_reaction
+WHERE id <= 6012;
+
+INSERT INTO regulatory_enforcement (id, inspector_id, organization_id, inspection_type, inspection_result, description, inspection_date, status)
+VALUES
+(9601, 2, 11, '专项核查', '完成整改', '核查抗感染类药品批次流向、不良反应上报和院内处置记录。', '2026-03-28 10:00:00', 1),
+(9602, 7, 5, '飞行检查', '记录完整', '抽查扫码验收、院内用药登记和库存台账。', '2026-04-02 15:00:00', 1),
+(9603, 2, 4, '日常巡查', '未发现异常', '核查配送中心出入库记录和温湿度记录。', '2026-04-06 09:30:00', 1),
+(9604, 7, 13, '风险复核', '持续跟踪', '针对高风险上报开展院内病例复核。', '2026-04-10 14:20:00', 1);
+
+INSERT INTO ai_conversation (conversation_id, user_id, title, created_at, updated_at) VALUES
 (9801, 2, '三月重点批次风险复盘', '2026-04-03 09:00:00', '2026-04-03 09:12:00'),
-(9802, 5, '院内常用药库存建议', '2026-04-04 14:00:00', '2026-04-04 14:10:00'),
-(9803, 6, '布洛芬用药咨询', '2026-04-05 20:00:00', '2026-04-05 20:08:00');
+(9802, 5, '院内常用药库存建议', '2026-04-04 14:00:00', '2026-04-04 14:10:00');
 
-INSERT INTO `ai_message` (`message_id`, `conversation_id`, `role`, `content`, `created_at`) VALUES
-(9901, 9801, 'user', '请总结三月份高风险批次和不良反应处理情况。', '2026-04-03 09:00:00'),
-(9902, 9801, 'assistant', '三月份重点高风险记录为头孢克肟分散片批次 B260405A，已完成院内核查和监管闭环。', '2026-04-03 09:03:00'),
+INSERT INTO ai_message (message_id, conversation_id, role, content, created_at) VALUES
+(9901, 9801, 'user', '请总结三月高风险批次和不良反应处置情况。', '2026-04-03 09:00:00'),
+(9902, 9801, 'assistant', '三月重点关注头孢克肟分散片批次 B260405A，已完成批次流向、院内库存和不良反应闭环核查。', '2026-04-03 09:03:00'),
 (9903, 9802, 'user', '结合近期用量，哪些药品需要优先补货？', '2026-04-04 14:00:00'),
-(9904, 9802, 'assistant', '当前建议优先关注阿莫西林胶囊、头孢克肟分散片和蒙脱石散的院内库存周转。', '2026-04-04 14:04:00'),
-(9905, 9803, 'user', '布洛芬和奥美拉唑可以一起服用吗？', '2026-04-05 20:00:00'),
-(9906, 9803, 'assistant', '一般可在医生指导下一起使用，布洛芬建议餐后服用，胃部不适明显时及时就医。', '2026-04-05 20:03:00');
+(9904, 9802, 'assistant', '建议优先关注阿莫西林胶囊、头孢克肟分散片和蒙脱石散的院内库存周转。', '2026-04-04 14:04:00');
 
-INSERT INTO `ai_knowledge_doc` (`doc_id`, `content`, `source`, `created_at`, `updated_at`) VALUES
-(9951, '阿莫西林胶囊适用于敏感菌所致呼吸道、泌尿道及皮肤软组织感染，服药前应明确青霉素过敏史。', '药品说明书整理', '2026-04-01 08:00:00', '2026-04-01 08:00:00'),
-(9952, '布洛芬缓释胶囊用于缓解疼痛和退热，长期或超量使用可能增加胃肠道不良反应风险。', '药品说明书整理', '2026-04-01 08:05:00', '2026-04-01 08:05:00'),
-(9953, '头孢克肟分散片应关注过敏反应史，出现皮疹、呼吸道不适等症状需及时停药并就医。', '药品说明书整理', '2026-04-01 08:10:00', '2026-04-01 08:10:00');
+INSERT INTO ai_knowledge_doc (doc_id, content, source, created_at, updated_at) VALUES
+(10001, '抗感染类药品应重点关注批次流向、不良反应聚集和库存周转异常。', '监管知识库', '2026-04-01 08:00:00', '2026-04-01 08:00:00'),
+(10002, '扫码溯源结果应包含生产、检验、仓储、配送、验收、使用和风险监测节点。', '追溯规范', '2026-04-01 08:05:00', '2026-04-01 08:05:00');
 
-INSERT INTO `ai_tool_usage_log` (`log_id`, `tool_name`, `parameters`, `result`, `user_id`, `created_at`) VALUES
-(9961, 'search_drug', '{"keyword":"头孢克肟分散片"}', '{"matched":"RX260405","category":"抗感染"}', 2, '2026-04-03 09:01:00'),
-(9962, 'risk_summary', '{"month":"2026-03"}', '{"highRisk":2,"mediumRisk":1,"lowRisk":1}', 2, '2026-04-03 09:02:00'),
-(9963, 'inventory_advice', '{"organizationId":5}', '{"priority":["RX260401","RX260405","RX260408"]}', 5, '2026-04-04 14:02:00');
+DROP TEMPORARY TABLE IF EXISTS tmp_batch_seed;

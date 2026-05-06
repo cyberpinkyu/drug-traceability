@@ -66,7 +66,7 @@ INSERT INTO tmp_flow_10 VALUES
 
 -- drug_info
 INSERT INTO drug_info (drug_code, name, specification, manufacturer, approval_number, category, unit, price, status)
-SELECT t.drug_code, t.drug_name, t.specification, '华康制药有限公司', t.approval_number, t.category, t.unit, t.price, 1
+SELECT t.drug_code, t.drug_name, t.specification, '华南现代制药有限公司', t.approval_number, t.category, t.unit, t.price, 1
 FROM tmp_flow_10 t
 WHERE NOT EXISTS (SELECT 1 FROM drug_info d WHERE d.drug_code = t.drug_code);
 
@@ -139,7 +139,7 @@ WHERE t.reaction_desc IS NOT NULL
 
 -- trace_record (6 steps each)
 INSERT INTO trace_record (drug_code, batch_number, trace_step, step_time, organization, description, status)
-SELECT t.drug_code, t.batch_number, 'raw_material_check', CONCAT(t.production_date, ' 08:30:00'), '华康制药有限公司', '原料入厂并完成检验', 1
+SELECT t.drug_code, t.batch_number, 'raw_material_check', CONCAT(t.production_date, ' 08:30:00'), '华南现代制药有限公司', '原料入厂并完成检验', 1
 FROM tmp_flow_10 t
 WHERE NOT EXISTS (
   SELECT 1 FROM trace_record r
@@ -147,7 +147,7 @@ WHERE NOT EXISTS (
 );
 
 INSERT INTO trace_record (drug_code, batch_number, trace_step, step_time, organization, description, status)
-SELECT t.drug_code, t.batch_number, 'production_process', CONCAT(t.production_date, ' 14:00:00'), '华康制药有限公司', '生产线按SOP完成加工包装', 1
+SELECT t.drug_code, t.batch_number, 'production_process', CONCAT(t.production_date, ' 14:00:00'), '华南现代制药有限公司', '生产线按SOP完成加工包装', 1
 FROM tmp_flow_10 t
 WHERE NOT EXISTS (
   SELECT 1 FROM trace_record r
@@ -155,7 +155,7 @@ WHERE NOT EXISTS (
 );
 
 INSERT INTO trace_record (drug_code, batch_number, trace_step, step_time, organization, description, status)
-SELECT t.drug_code, t.batch_number, 'quality_release', CONCAT(DATE_ADD(t.production_date, INTERVAL 1 DAY), ' 10:20:00'), '华康制药有限公司', '批次抽检合格并放行', 1
+SELECT t.drug_code, t.batch_number, 'quality_release', CONCAT(DATE_ADD(t.production_date, INTERVAL 1 DAY), ' 10:20:00'), '华南现代制药有限公司', '批次抽检合格并放行', 1
 FROM tmp_flow_10 t
 WHERE NOT EXISTS (
   SELECT 1 FROM trace_record r

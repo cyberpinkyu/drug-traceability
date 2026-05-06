@@ -3,27 +3,27 @@
     <div class="screen-header panel-card">
       <div>
         <h2>监管态势大屏</h2>
-        <p>地图 · 趋势 · 告警</p>
+        <p>采购、销售、生产、库存与区域流通态势</p>
       </div>
       <div class="header-time">{{ nowText }}</div>
     </div>
 
     <div class="metric-grid">
       <div class="metric-box panel-card">
-        <div class="metric-label">流通总量</div>
-        <div class="metric-value">{{ circulationTotal }}</div>
+        <div class="metric-label">采购总量</div>
+        <div class="metric-value">{{ circulation.totalProcurementQuantity || 0 }}</div>
+      </div>
+      <div class="metric-box panel-card">
+        <div class="metric-label">销售总量</div>
+        <div class="metric-value">{{ circulation.totalSaleQuantity || 0 }}</div>
       </div>
       <div class="metric-box panel-card">
         <div class="metric-label">库存总量</div>
-        <div class="metric-value">{{ inventoryTotal }}</div>
+        <div class="metric-value">{{ inventory.totalQuantity || 0 }}</div>
       </div>
       <div class="metric-box panel-card">
-        <div class="metric-label">风险总量</div>
+        <div class="metric-label">风险上报数</div>
         <div class="metric-value text-danger">{{ riskTotal }}</div>
-      </div>
-      <div class="metric-box panel-card">
-        <div class="metric-label">追溯链路数</div>
-        <div class="metric-value">{{ traceFlowCount }}</div>
       </div>
     </div>
 
@@ -45,8 +45,8 @@
       </div>
 
       <div class="center-column panel-card">
-        <div class="map-title">区域态势地图</div>
-        <div ref="mapRef" class="map-canvas"></div>
+        <div class="map-title">广东区域态势地图</div>
+        <div ref="mapRef" class="map-board"></div>
         <div v-if="mapLoadError" class="map-error">{{ mapLoadError }}</div>
       </div>
 
@@ -60,16 +60,18 @@
 
         <el-card class="panel-card alert-card">
           <template #header>
-            <div class="chart-title">告警列表</div>
+            <div class="chart-title">近期告警</div>
           </template>
           <div class="alert-list">
-            <div class="alert-item" v-for="(a, idx) in alertList" :key="idx">
-              <div class="alert-level" :class="`lv-${a.level}`">{{ a.levelText }}</div>
+            <div class="alert-item" v-for="(a, idx) in alerts" :key="idx">
+              <div class="alert-level" :class="`lv-${normalizeLevel(a.level)}`">
+                {{ levelText(a.level) }}
+              </div>
               <div class="alert-body">
                 <div class="alert-title">{{ a.title }}</div>
                 <div class="alert-desc">{{ a.desc }}</div>
               </div>
-              <div class="alert-time">{{ a.time }}</div>
+              <div class="alert-time">{{ formatTime(a.time) }}</div>
             </div>
           </div>
         </el-card>
@@ -82,13 +84,16 @@
 import api from '@/api/client'
 import * as echarts from 'echarts'
 
-const GD_CITY_POINTS = [
-  { name: '广州', lnglat: [113.2644, 23.1291] },
-  { name: '深圳', lnglat: [114.0579, 22.5431] },
-  { name: '佛山', lnglat: [113.1214, 23.0215] },
-  { name: '东莞', lnglat: [113.7518, 23.0207] },
-  { name: '珠海', lnglat: [113.5767, 22.2707] }
-]
+const CITY_POINTS = {
+  广州: [113.2644, 23.1291],
+  深圳: [114.0579, 22.5431],
+  佛山: [113.1214, 23.0215],
+  东莞: [113.7518, 23.0207],
+  珠海: [113.5767, 22.2707],
+  惠州: [114.4168, 23.1115],
+  中山: [113.3928, 22.5176],
+  江门: [113.0819, 22.5787]
+}
 
 let amapScriptPromise = null
 
@@ -102,10 +107,7 @@ function loadAmapScript(key, securityJsCode) {
     const script = document.createElement('script')
     script.src = `https://webapi.amap.com/maps?v=2.0&key=${encodeURIComponent(key)}&plugin=AMap.DistrictSearch`
     script.async = true
-    script.onload = () => {
-      if (window.AMap) resolve(window.AMap)
-      else reject(new Error('地图脚本加载失败'))
-    }
+    script.onload = () => window.AMap ? resolve(window.AMap) : reject(new Error('地图脚本加载失败'))
     script.onerror = () => reject(new Error('地图脚本加载失败'))
     document.head.appendChild(script)
   })
@@ -118,32 +120,35 @@ export default {
     return {
       nowText: '',
       timer: null,
-      circulationRaw: {},
-      inventoryRaw: {},
-      riskRaw: {},
-      circulationTotal: 0,
-      inventoryTotal: 0,
-      riskTotal: 0,
-      traceFlowCount: 0,
-      trendSeries: [],
-      inventorySeries: [],
-      regionStats: [],
-      alertList: [],
+      circulation: {},
+      inventory: {},
+      risk: {},
       trendChart: null,
       inventoryChart: null,
       riskChart: null,
       map: null,
-      mapPolygons: [],
       mapMarkers: [],
       mapLabels: [],
+      mapPolygons: [],
       mapLoadError: ''
+    }
+  },
+  computed: {
+    riskTotal() {
+      return Number(this.risk.highRiskCount || 0) + Number(this.risk.mediumRiskCount || 0) + Number(this.risk.lowRiskCount || 0)
+    },
+    alerts() {
+      return Array.isArray(this.risk.recentAlerts) ? this.risk.recentAlerts : []
+    },
+    regionStats() {
+      return Array.isArray(this.circulation.regionStats) ? this.circulation.regionStats : []
     }
   },
   async mounted() {
     this.tickTime()
     this.timer = setInterval(this.tickTime, 1000)
     await this.load()
-    this.initGuangdongMap()
+    await this.initMap()
     window.addEventListener('resize', this.onResize)
   },
   beforeUnmount() {
@@ -164,59 +169,37 @@ export default {
         api.get('/api/regulatory/stats/inventory'),
         api.get('/api/regulatory/stats/risk')
       ])
-
-      this.circulationRaw = circulationRes?.data?.data || {}
-      this.inventoryRaw = inventoryRes?.data?.data || {}
-      this.riskRaw = riskRes?.data?.data || {}
-
-      const circulationEntries = this.collectNumericEntries(this.circulationRaw)
-      const inventoryEntries = this.collectNumericEntries(this.inventoryRaw)
-      const riskEntries = this.collectNumericEntries(this.riskRaw)
-
-      this.circulationTotal = this.sumEntries(circulationEntries)
-      this.inventoryTotal = this.sumEntries(inventoryEntries)
-      this.riskTotal = this.sumEntries(riskEntries)
-      this.traceFlowCount = Math.max(this.circulationTotal - this.riskTotal, 0)
-
-      this.trendSeries = this.toTopEntries(circulationEntries, 6, 'T')
-      this.inventorySeries = this.toTopEntries(inventoryEntries, 5, 'ORG')
-      this.regionStats = this.toTopEntries(circulationEntries, 5, '区域').map((x) => ({
-        name: x.label,
-        value: x.value
-      }))
-      this.alertList = this.buildAlerts(riskEntries)
-
+      this.circulation = circulationRes?.data?.data || {}
+      this.inventory = inventoryRes?.data?.data || {}
+      this.risk = riskRes?.data?.data || {}
       this.renderTrend()
       this.renderInventory()
       this.renderRisk()
       this.renderMapOverlay()
     },
-    async initGuangdongMap() {
+    async initMap() {
       this.mapLoadError = ''
       const key = import.meta.env.VITE_AMAP_KEY
       const securityJsCode = import.meta.env.VITE_AMAP_SECURITY_CODE
       if (!key) {
-        this.mapLoadError = '未配置 VITE_AMAP_KEY，无法加载地图'
+        this.mapLoadError = '未配置高德地图 Key'
         return
       }
 
       try {
         const AMap = await loadAmapScript(key, securityJsCode)
         if (!this.$refs.mapRef) return
-
         this.map = new AMap.Map(this.$refs.mapRef, {
           center: [113.2665, 23.1322],
           zoom: 7,
           resizeEnable: true,
           mapStyle: 'amap://styles/whitesmoke',
-          zooms: [6, 11]
+          zooms: [6, 10]
         })
-        // 强制限定在广东视野范围，避免初始落到北京等默认城市
-        const gdSouthWest = new AMap.LngLat(109.6, 20.1)
-        const gdNorthEast = new AMap.LngLat(117.4, 25.6)
-        this.map.setLimitBounds(new AMap.Bounds(gdSouthWest, gdNorthEast))
-        this.map.setCenter([113.2665, 23.1322])
-        this.map.setZoom(7)
+
+        const southWest = new AMap.LngLat(109.5, 20.0)
+        const northEast = new AMap.LngLat(117.5, 25.7)
+        this.map.setLimitBounds(new AMap.Bounds(southWest, northEast))
 
         const district = new AMap.DistrictSearch({
           level: 'province',
@@ -226,237 +209,135 @@ export default {
 
         district.search('广东省', (status, result) => {
           if (status !== 'complete' || !result?.districtList?.length) {
-            this.mapLoadError = '广东区域边界加载失败，已切换为广东点位模式'
-            this.map.setCenter([113.2665, 23.1322])
-            this.map.setZoom(7)
+            this.mapLoadError = '广东省边界加载失败'
             this.renderMapOverlay()
             return
           }
-
-          const districtInfo = result.districtList[0]
-          const boundaries = districtInfo.boundaries || []
-
-          this.mapPolygons.forEach((p) => this.map.remove(p))
+          const info = result.districtList[0]
+          const boundaries = info.boundaries || []
+          this.mapPolygons.forEach((item) => this.map.remove(item))
           this.mapPolygons = boundaries.map((path) => new AMap.Polygon({
             path,
             strokeColor: '#2563eb',
             strokeWeight: 2,
             fillColor: '#93c5fd',
-            fillOpacity: 0.2
+            fillOpacity: 0.18
           }))
           this.map.add(this.mapPolygons)
-          this.map.setBounds(districtInfo.bounds)
-          this.map.setCenter([113.2665, 23.1322])
-          this.map.setZoom(7)
+          this.map.setBounds(info.bounds)
           this.renderMapOverlay()
         })
       } catch (_) {
-        this.mapLoadError = '地图服务加载失败，请检查 key 与安全密钥配置'
+        this.mapLoadError = '地图服务加载失败，请检查 Key 配置'
       }
     },
     renderMapOverlay() {
       if (!this.map || !window.AMap) return
       const AMap = window.AMap
-
-      this.mapMarkers.forEach((m) => this.map.remove(m))
-      this.mapLabels.forEach((l) => this.map.remove(l))
+      this.mapMarkers.forEach((item) => this.map.remove(item))
+      this.mapLabels.forEach((item) => this.map.remove(item))
       this.mapMarkers = []
       this.mapLabels = []
 
-      const fallbackValues = [120, 98, 86, 75, 66]
-      const values = this.regionStats.length
-        ? this.regionStats.map((x) => Number(x.value) || 0)
-        : fallbackValues
-      const max = Math.max(...values, 1)
-
-      GD_CITY_POINTS.forEach((city, idx) => {
-        const value = values[idx] ?? 0
-        const radius = 10 + Math.round((value / max) * 18)
-
+      const max = Math.max(...this.regionStats.map((x) => Number(x.value) || 0), 1)
+      this.regionStats.forEach((item) => {
+        const point = CITY_POINTS[item.name]
+        if (!point) return
+        const value = Number(item.value) || 0
         const marker = new AMap.CircleMarker({
-          center: city.lnglat,
-          radius,
+          center: point,
+          radius: 5,
           strokeColor: '#1d4ed8',
-          strokeWeight: 2,
-          strokeOpacity: 0.9,
-          fillColor: '#60a5fa',
-          fillOpacity: 0.55
+          strokeWeight: 1,
+          strokeOpacity: 1,
+          fillColor: '#2563eb',
+          fillOpacity: 0.95,
+          zIndex: 120
         })
-        this.map.add(marker)
-        this.mapMarkers.push(marker)
-
         const label = new AMap.Text({
-          text: `${city.name} ${value}`,
+          text: `${item.name} ${value}`,
+          position: point,
           anchor: 'top-center',
-          position: city.lnglat,
-          offset: new AMap.Pixel(0, -radius - 8),
+          offset: new AMap.Pixel(0, -14),
           style: {
             border: '1px solid #bfdbfe',
-            background: '#eff6ff',
+            background: 'rgba(255,255,255,0.96)',
             color: '#1e3a8a',
-            borderRadius: '6px',
-            padding: '2px 6px',
-            fontSize: '12px'
-          }
+            borderRadius: '8px',
+            padding: '4px 8px',
+            fontSize: '12px',
+            fontWeight: '700',
+            boxShadow: '0 8px 20px rgba(37,99,235,0.14)'
+          },
+          zIndex: 130
         })
+        label.on('mouseover', () => {
+          label.setzIndex(300)
+        })
+        label.on('mouseout', () => {
+          label.setzIndex(130)
+        })
+        this.map.add(marker)
         this.map.add(label)
+        this.mapMarkers.push(marker)
         this.mapLabels.push(label)
       })
     },
     tickTime() {
-      const now = new Date()
-      this.nowText = now.toLocaleString('zh-CN', { hour12: false })
-    },
-    collectNumericEntries(obj, parent = '') {
-      const result = []
-      if (obj == null) return result
-      if (typeof obj === 'number' && Number.isFinite(obj)) {
-        result.push({ key: parent || 'value', value: obj })
-        return result
-      }
-      if (Array.isArray(obj)) {
-        obj.forEach((v, idx) => {
-          result.push(...this.collectNumericEntries(v, parent ? `${parent}-${idx + 1}` : `${idx + 1}`))
-        })
-        return result
-      }
-      if (typeof obj === 'object') {
-        Object.keys(obj).forEach((k) => {
-          const childKey = parent ? `${parent}-${k}` : k
-          result.push(...this.collectNumericEntries(obj[k], childKey))
-        })
-      }
-      return result
-    },
-    sumEntries(entries) {
-      if (!entries.length) return 0
-      return entries.reduce((s, x) => s + (Number(x.value) || 0), 0)
-    },
-    toTopEntries(entries, limit, fallbackPrefix) {
-      if (!entries.length) {
-        return Array.from({ length: Math.min(limit, 3) }).map((_, idx) => ({
-          label: `${fallbackPrefix}${idx + 1}`,
-          value: 0
-        }))
-      }
-      return [...entries]
-        .sort((a, b) => b.value - a.value)
-        .slice(0, limit)
-        .map((x, idx) => ({
-          label: this.compactLabel(x.key, `${fallbackPrefix}${idx + 1}`),
-          value: Number(x.value) || 0
-        }))
-    },
-    compactLabel(label, fallback) {
-      if (!label) return fallback
-      const pieces = String(label).split('-')
-      return pieces[pieces.length - 1].slice(0, 10) || fallback
-    },
-    buildAlerts(riskEntries) {
-      const base = this.toTopEntries(riskEntries, 6, '风险项')
-      const now = new Date()
-      return base.map((x, idx) => {
-        const level = idx < 1 ? 'high' : idx < 3 ? 'mid' : 'low'
-        const d = new Date(now.getTime() - idx * 3600 * 1000)
-        return {
-          level,
-          levelText: level === 'high' ? '高' : level === 'mid' ? '中' : '低',
-          title: `${x.label} 告警`,
-          desc: `风险值 ${x.value}，建议人工复核流通与库存记录`,
-          time: d.toLocaleTimeString('zh-CN', { hour12: false })
-        }
-      })
+      this.nowText = new Date().toLocaleString('zh-CN', { hour12: false })
     },
     renderTrend() {
-      if (!this.$refs.trendRef) return
+      const rows = Array.isArray(this.circulation.trend) ? this.circulation.trend : []
       if (!this.trendChart) this.trendChart = echarts.init(this.$refs.trendRef)
-
       this.trendChart.setOption({
         tooltip: { trigger: 'axis' },
-        grid: { left: 36, right: 20, top: 20, bottom: 30 },
-        xAxis: {
-          type: 'category',
-          data: this.trendSeries.map((x) => x.label),
-          axisLabel: { color: '#5b6b84' }
-        },
-        yAxis: {
-          type: 'value',
-          axisLabel: { color: '#5b6b84' },
-          splitLine: { lineStyle: { color: '#e6edf7' } }
-        },
+        legend: { top: 0 },
+        grid: { left: 40, right: 18, top: 36, bottom: 30 },
+        xAxis: { type: 'category', data: rows.map((x) => x.month) },
+        yAxis: { type: 'value' },
         series: [
-          {
-            type: 'line',
-            smooth: true,
-            symbolSize: 8,
-            areaStyle: {
-              color: 'rgba(37,99,235,0.18)'
-            },
-            lineStyle: { width: 3, color: '#2563eb' },
-            itemStyle: { color: '#2563eb' },
-            data: this.trendSeries.map((x) => x.value)
-          }
+          { name: '采购量', type: 'line', smooth: true, data: rows.map((x) => x.procurement), itemStyle: { color: '#2563eb' } },
+          { name: '销售量', type: 'line', smooth: true, data: rows.map((x) => x.sale), itemStyle: { color: '#0f766e' } },
+          { name: '生产量', type: 'bar', data: rows.map((x) => x.production), itemStyle: { color: '#d97706' } }
         ]
       })
     },
     renderInventory() {
-      if (!this.$refs.inventoryRef) return
+      const rows = Array.isArray(this.inventory.byCategory) ? this.inventory.byCategory : []
       if (!this.inventoryChart) this.inventoryChart = echarts.init(this.$refs.inventoryRef)
-
       this.inventoryChart.setOption({
-        tooltip: { trigger: 'axis' },
-        grid: { left: 54, right: 18, top: 16, bottom: 20 },
-        xAxis: {
-          type: 'value',
-          axisLabel: { color: '#5b6b84' },
-          splitLine: { lineStyle: { color: '#e6edf7' } }
-        },
-        yAxis: {
-          type: 'category',
-          axisLabel: { color: '#5b6b84' },
-          data: this.inventorySeries.map((x) => x.label)
-        },
-        series: [
-          {
-            type: 'bar',
-            data: this.inventorySeries.map((x) => x.value),
-            itemStyle: {
-              color: '#0f766e',
-              borderRadius: [0, 8, 8, 0]
-            }
-          }
-        ]
+        tooltip: { trigger: 'item' },
+        series: [{ type: 'pie', radius: ['38%', '68%'], data: rows.map((x) => ({ name: x.name, value: x.value })) }]
       })
     },
     renderRisk() {
-      if (!this.$refs.riskRef) return
       if (!this.riskChart) this.riskChart = echarts.init(this.$refs.riskRef)
-
-      const high = Math.ceil(this.riskTotal * 0.22)
-      const mid = Math.ceil(this.riskTotal * 0.33)
-      const low = Math.max(this.riskTotal - high - mid, 0)
-
       this.riskChart.setOption({
         tooltip: { trigger: 'item' },
-        legend: { bottom: 0, textStyle: { color: '#5b6b84' } },
-        series: [
-          {
-            type: 'pie',
-            radius: ['45%', '72%'],
-            itemStyle: {
-              borderColor: '#fff',
-              borderWidth: 2,
-              borderRadius: 6
-            },
-            label: { formatter: '{b}: {c}' },
-            data: [
-              { value: high, name: '高风险', itemStyle: { color: '#dc2626' } },
-              { value: mid, name: '中风险', itemStyle: { color: '#d97706' } },
-              { value: low, name: '低风险', itemStyle: { color: '#2563eb' } }
-            ]
-          }
-        ]
+        series: [{
+          type: 'pie',
+          radius: ['42%', '72%'],
+          data: [
+            { name: '高风险', value: Number(this.risk.highRiskCount || 0), itemStyle: { color: '#dc2626' } },
+            { name: '中风险', value: Number(this.risk.mediumRiskCount || 0), itemStyle: { color: '#d97706' } },
+            { name: '低风险', value: Number(this.risk.lowRiskCount || 0), itemStyle: { color: '#2563eb' } }
+          ]
+        }]
       })
+    },
+    normalizeLevel(level) {
+      if (level === 'high') return 'high'
+      if (level === 'medium') return 'mid'
+      return 'low'
+    },
+    levelText(level) {
+      if (level === 'high') return '高'
+      if (level === 'medium') return '中'
+      return '低'
+    },
+    formatTime(value) {
+      if (!value) return '-'
+      return String(value).replace('T', ' ').slice(0, 16)
     },
     onResize() {
       this.trendChart?.resize()
@@ -469,187 +350,37 @@ export default {
 </script>
 
 <style scoped>
-.screen-wrap {
-  padding: 12px;
-}
-
-.screen-header {
-  border: 1px solid var(--border);
-  padding: 14px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.screen-header h2 {
-  margin: 0;
-  font-size: 24px;
-  letter-spacing: 1px;
-}
-
-.screen-header p {
-  margin: 4px 0 0;
-  color: var(--text-secondary);
-  font-size: 13px;
-}
-
-.header-time {
-  font-family: Consolas, Monaco, monospace;
-  color: #1e3a8a;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.metric-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.metric-box {
-  border: 1px solid var(--border);
-  padding: 12px 14px;
-}
-
-.text-danger {
-  color: #dc2626;
-}
-
-.content-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 1.2fr 0.95fr;
-  gap: 12px;
-  min-height: calc(100vh - 250px);
-}
-
-.left-column,
-.right-column {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 12px;
-}
-
-.chart-card {
-  border: 1px solid var(--border);
-}
-
-.chart-title {
-  font-weight: 700;
-  color: var(--text-main);
-}
-
-.chart-lg {
-  height: 290px;
-}
-
-.chart-sm {
-  height: 240px;
-}
-
-.center-column {
-  position: relative;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 20% 25%, rgba(37,99,235,0.12), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(15,118,110,0.14), transparent 46%),
-    #f8fbff;
-}
-
-.map-title {
-  padding: 14px 14px 0;
-  font-weight: 700;
-}
-
-.map-canvas {
-  height: calc(100% - 40px);
-  margin: 8px;
-  border-radius: 12px;
-  border: 1px solid #dbe7f6;
-  overflow: hidden;
-}
-
-.map-error {
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 14px;
-  background: rgba(220, 38, 38, 0.08);
-  color: #b91c1c;
-  border: 1px solid rgba(220, 38, 38, 0.25);
-  border-radius: 8px;
-  font-size: 12px;
-  padding: 8px 10px;
-}
-
-.alert-card {
-  border: 1px solid var(--border);
-}
-
-.alert-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-height: 238px;
-  overflow: auto;
-}
-
-.alert-item {
-  display: grid;
-  grid-template-columns: 38px 1fr auto;
-  gap: 10px;
-  align-items: center;
-  padding: 8px;
-  border: 1px solid #e3ebf6;
-  border-radius: 10px;
-  background: #f9fcff;
-}
-
-.alert-level {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-}
-
+.screen-wrap { padding: 12px; }
+.screen-header { border: 1px solid var(--border); padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.screen-header h2 { margin: 0; font-size: 24px; }
+.screen-header p { margin: 4px 0 0; color: var(--text-secondary); }
+.header-time { font-family: Consolas, Monaco, monospace; color: #1e3a8a; font-weight: 700; }
+.metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 12px; }
+.metric-box { padding: 12px 14px; border: 1px solid var(--border); }
+.metric-label { color: var(--text-secondary); font-size: 13px; }
+.metric-value { font-size: 28px; font-weight: 700; margin-top: 8px; }
+.text-danger { color: #dc2626; }
+.content-grid { display: grid; grid-template-columns: 1.1fr 1fr 0.95fr; gap: 12px; }
+.left-column, .right-column { display: grid; grid-template-rows: 1fr 1fr; gap: 12px; }
+.chart-card, .center-column, .alert-card { border: 1px solid var(--border); }
+.chart-title, .map-title { font-weight: 700; }
+.chart-lg { height: 300px; }
+.chart-sm { height: 240px; }
+.center-column { position: relative; padding: 14px; border-radius: 14px; background: linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%); }
+.map-board { height: calc(100% - 30px); min-height: 520px; margin-top: 12px; border-radius: 16px; overflow: hidden; border: 1px solid #dbe7f6; }
+.map-error { position: absolute; left: 18px; right: 18px; bottom: 16px; padding: 10px 12px; background: rgba(220, 38, 38, 0.08); border: 1px solid rgba(220, 38, 38, 0.2); border-radius: 10px; color: #b91c1c; font-size: 12px; }
+.alert-list { display: flex; flex-direction: column; gap: 10px; max-height: 238px; overflow: auto; }
+.alert-item { display: grid; grid-template-columns: 38px 1fr auto; gap: 10px; align-items: center; padding: 8px; border: 1px solid #e3ebf6; border-radius: 10px; background: #f9fcff; }
+.alert-level { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 700; }
 .lv-high { background: #dc2626; }
 .lv-mid { background: #d97706; }
 .lv-low { background: #2563eb; }
-
-.alert-title {
-  font-weight: 700;
-  font-size: 13px;
-}
-
-.alert-desc {
-  color: var(--text-secondary);
-  font-size: 12px;
-  margin-top: 2px;
-}
-
-.alert-time {
-  color: #64748b;
-  font-size: 12px;
-  font-family: Consolas, Monaco, monospace;
-}
-
+.alert-title { font-weight: 700; font-size: 13px; }
+.alert-desc { color: var(--text-secondary); font-size: 12px; margin-top: 2px; }
+.alert-time { color: #64748b; font-size: 12px; font-family: Consolas, Monaco, monospace; }
 @media (max-width: 1400px) {
-  .content-grid {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .left-column,
-  .right-column {
-    grid-template-rows: auto;
-  }
+  .metric-grid, .content-grid { grid-template-columns: 1fr; }
+  .left-column, .right-column { grid-template-rows: auto; }
+  .map-board { min-height: 360px; }
 }
 </style>

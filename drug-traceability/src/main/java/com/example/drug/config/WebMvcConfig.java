@@ -31,7 +31,15 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authInterceptor)
             .addPathPatterns("/**")
-            .excludePathPatterns("/auth/login", "/auth/register", "/auth/refresh");
+            .excludePathPatterns(
+                "/auth/login",
+                "/auth/register",
+                "/auth/refresh",
+                "/trace/public/**",
+                "/trace/batch/number/**",
+                "/drug/info/code/**",
+                "/drug/info/search"
+            );
 
         registry.addInterceptor(auditLogInterceptor)
             .addPathPatterns("/**");

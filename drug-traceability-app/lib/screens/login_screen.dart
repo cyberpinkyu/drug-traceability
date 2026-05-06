@@ -61,10 +61,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         phone: userData['phone']?.toString() ?? '',
         role: userData['roleCode']?.toString() ?? _selectedRole,
         token: userData['token']?.toString() ?? '',
+        refreshToken: userData['refreshToken']?.toString() ?? '',
       );
 
       if (kIsWeb) {
         _apiService.setWebToken(user.token);
+        _apiService.setWebRefreshToken(user.refreshToken);
       } else {
         final userBox = await Hive.openBox<User>('userBox');
         await userBox.put('currentUser', user);

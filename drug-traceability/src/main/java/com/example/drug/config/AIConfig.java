@@ -9,6 +9,12 @@ public class AIConfig {
     @Value("${ai.deepseek.api-key}")
     private String deepseekApiKey;
 
+    @Value("${ai.deepseek.base-url:https://api.deepseek.com}")
+    private String deepseekBaseUrl;
+
+    @Value("${ai.deepseek.model:deepseek-chat}")
+    private String deepseekModel;
+
     @Value("${ai.embedding.model}")
     private String embeddingModel;
 
@@ -23,6 +29,14 @@ public class AIConfig {
 
     public String getDeepseekApiKey() {
         return deepseekApiKey;
+    }
+
+    public String getDeepseekBaseUrl() {
+        return deepseekBaseUrl;
+    }
+
+    public String getDeepseekModel() {
+        return deepseekModel;
     }
 
     public String getEmbeddingModel() {

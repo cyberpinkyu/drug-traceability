@@ -7,6 +7,9 @@ import com.example.drug.entity.AIConversation;
 import com.example.drug.entity.AIMessage;
 import com.example.drug.service.AIConversationService;
 import com.example.drug.service.AIMessageService;
+import com.example.drug.service.AIService;
+import com.example.drug.service.ReadonlyDatabaseQaService;
+import com.example.drug.service.ReadonlyDatabaseQaService.DbAnswerContext;
 import com.example.drug.utils.MapUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,15 +28,20 @@ public class AIController {
     @Autowired
     private AIMessageService messageService;
 
+    @Autowired
+    private AIService aiService;
+
+    @Autowired
+    private ReadonlyDatabaseQaService readonlyDatabaseQaService;
+
     @RequireRole({"admin", "producer", "enterprise", "institution", "regulator", "public"})
     @PostMapping("/chat")
     public Map<String, Object> chat(@RequestBody Map<String, Object> params) {
         String message = (String) params.get("message");
         Object conversationIdRaw = params.get("conversationId");
-        Map<String, Object> context = (Map<String, Object>) params.get("context");
 
         if (message == null || message.trim().isEmpty()) {
-            return MapUtils.of("code", 400, "message", "消息不能为空");
+            return MapUtils.of("code", 400, "message", "message cannot be empty");
         }
 
         try {
@@ -52,7 +60,7 @@ public class AIController {
                     .eq("user_id", UserContext.getCurrentUserId())
                     .last("LIMIT 1");
                 if (conversationService.getOne(ownerCheck) == null) {
-                    return MapUtils.of("code", 403, "message", "无权访问该会话");
+                    return MapUtils.of("code", 403, "message", "conversation access denied");
                 }
             }
 
@@ -63,7 +71,11 @@ public class AIController {
             userMessage.setCreateTime(LocalDateTime.now());
             messageService.save(userMessage);
 
-            String aiResponse = generateAIResponse(message, UserContext.getCurrentUser().getRoleCode(), context);
+            DbAnswerContext dbContext = readonlyDatabaseQaService.resolve(message);
+            String aiResponse = aiService.generateResponse(
+                buildUserPrompt(message, dbContext),
+                buildSystemPrompt(params, dbContext)
+            );
 
             AIMessage assistantMessage = new AIMessage();
             assistantMessage.setConversationId(conversationIdFinal);
@@ -72,12 +84,12 @@ public class AIController {
             assistantMessage.setCreateTime(LocalDateTime.now());
             messageService.save(assistantMessage);
 
-            return MapUtils.of("code", 200, "message", "成功", "data", MapUtils.of(
+            return MapUtils.of("code", 200, "message", "success", "data", MapUtils.of(
                 "conversationId", String.valueOf(conversationIdFinal),
                 "response", aiResponse
             ));
         } catch (Exception e) {
-            return MapUtils.of("code", 500, "message", "AI响应失败: " + e.getMessage());
+            return MapUtils.of("code", 500, "message", "AI response failed: " + e.getMessage());
         }
     }
 
@@ -98,7 +110,7 @@ public class AIController {
             .last("LIMIT 1");
         AIConversation conversation = conversationService.getOne(conversationWrapper);
         if (conversation == null) {
-            return MapUtils.of("code", 403, "message", "无权访问该会话");
+            return MapUtils.of("code", 403, "message", "conversation access denied");
         }
 
         QueryWrapper<AIMessage> wrapper = new QueryWrapper<>();
@@ -115,13 +127,13 @@ public class AIController {
         String originalText = params.get("originalText");
 
         if (fileName == null || originalText == null) {
-            return MapUtils.of("code", 400, "message", "文件名和内容不能为空");
+            return MapUtils.of("code", 400, "message", "fileName and originalText are required");
         }
 
         try {
-            return MapUtils.of("code", 200, "message", "上传成功");
+            return MapUtils.of("code", 200, "message", "upload success");
         } catch (Exception e) {
-            return MapUtils.of("code", 500, "message", "上传失败: " + e.getMessage());
+            return MapUtils.of("code", 500, "message", "upload failed: " + e.getMessage());
         }
     }
 
@@ -143,19 +155,39 @@ public class AIController {
         return message;
     }
 
-    private String generateAIResponse(String message, String userRole, Map<String, Object> context) {
-        if (message.contains("查询") || message.contains("追溯")) {
-            return "我可以帮您查询药品的追溯信息。请提供药品的批次号或监管码，我将为您查询完整的追溯链条。";
+    private String buildSystemPrompt(Map<String, Object> params, DbAnswerContext dbContext) {
+        Object sceneRaw = params.get("scene");
+        String scene = sceneRaw == null ? "" : String.valueOf(sceneRaw).trim();
+        String dbFacts = readonlyDatabaseQaService.toPromptBlock(dbContext);
+
+        if ("public".equalsIgnoreCase(scene)) {
+            return "你是面向公众用户的药品追溯客服助手。只提供通俗、保守、易懂的建议；可以帮助识别追溯信息、说明常见用药安全注意事项、指导问题上报。不要提供诊断结论，不要替代医生。\n\n"
+                + "回答时优先依据下面的数据库只读事实，不得编造不存在的数据：\n"
+                + dbFacts;
         }
-        if (message.contains("统计") || message.contains("报告")) {
-            return "我可以为您生成药品流通统计报告。请告诉我您需要统计的时间范围和药品类型，我将为您生成详细的统计报表。";
+        if ("enterprise".equalsIgnoreCase(scene)) {
+            return "你是面向医药企业的运营合规助手。重点帮助处理进销存合规、批次追溯、异常处置、自查建议。回答应简洁、专业、可执行。\n\n"
+                + "回答时优先依据下面的数据库只读事实，不得编造不存在的数据：\n"
+                + dbFacts;
         }
-        if (message.contains("风险") || message.contains("预警")) {
-            return "我可以为您分析药品风险情况。请提供相关的批次信息或企业信息，我将为您进行风险评估和预警分析。";
+        if ("institution".equalsIgnoreCase(scene)) {
+            return "你是面向医疗机构的药品管理助手。重点帮助验收入库、用药记录规范、不良反应上报、院内追溯流程。回答应专业、保守、合规。\n\n"
+                + "回答时优先依据下面的数据库只读事实，不得编造不存在的数据：\n"
+                + dbFacts;
         }
-        if (message.contains("法规") || message.contains("政策")) {
-            return "根据《药品经营质量管理规范》(GSP)的相关规定，药品经营企业需要建立完善的质量管理体系，确保药品来源可查、去向可追。";
+        if ("regulator".equalsIgnoreCase(scene)) {
+            return "你是面向监管人员的药品监管分析助手。重点帮助风险研判、线索梳理、执法检查准备、统计口径说明。不要编造事实，结论要谨慎。\n\n"
+                + "回答时优先依据下面的数据库只读事实，不得编造不存在的数据：\n"
+                + dbFacts;
         }
-        return "您好！我是智能药品追溯助手，可以帮您查询药品追溯信息、生成统计报告、分析风险预警、解答法规政策等问题。请问有什么可以帮助您的？";
+        return "你是药品追溯系统的智能助手。回答使用中文，保持简洁、准确、可执行。\n\n"
+            + "回答时优先依据下面的数据库只读事实，不得编造不存在的数据：\n"
+            + dbFacts;
+    }
+
+    private String buildUserPrompt(String userMessage, DbAnswerContext dbContext) {
+        return "请基于系统提供的数据库只读工具结果与角色要求回答下面的问题。"
+            + "当前识别出的数据库问答意图是：" + dbContext.getIntent() + "。"
+            + "如果数据库没有明确事实，请明确说明不确定，并给出保守建议。\n\n用户问题：" + userMessage;
     }
 }

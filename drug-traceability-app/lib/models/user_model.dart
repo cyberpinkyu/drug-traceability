@@ -25,6 +25,9 @@ class User extends HiveObject {
   @HiveField(6)
   final String token;
 
+  @HiveField(7)
+  final String refreshToken;
+
   User({
     required this.id,
     required this.username,
@@ -33,6 +36,7 @@ class User extends HiveObject {
     required this.phone,
     required this.role,
     required this.token,
+    this.refreshToken = '',
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
@@ -42,8 +46,31 @@ class User extends HiveObject {
       name: json['name'] ?? '',
       email: json['email'] ?? '',
       phone: json['phone'] ?? '',
-      role: json['role'] ?? 'public',
-      token: json['token'] ?? '',
+      role: json['role'] ?? json['roleCode'] ?? 'public',
+      token: json['token'] ?? json['accessToken'] ?? '',
+      refreshToken: json['refreshToken'] ?? '',
+    );
+  }
+
+  User copyWith({
+    String? id,
+    String? username,
+    String? name,
+    String? email,
+    String? phone,
+    String? role,
+    String? token,
+    String? refreshToken,
+  }) {
+    return User(
+      id: id ?? this.id,
+      username: username ?? this.username,
+      name: name ?? this.name,
+      email: email ?? this.email,
+      phone: phone ?? this.phone,
+      role: role ?? this.role,
+      token: token ?? this.token,
+      refreshToken: refreshToken ?? this.refreshToken,
     );
   }
 
@@ -56,6 +83,7 @@ class User extends HiveObject {
       'phone': phone,
       'role': role,
       'token': token,
+      'refreshToken': refreshToken,
     };
   }
 

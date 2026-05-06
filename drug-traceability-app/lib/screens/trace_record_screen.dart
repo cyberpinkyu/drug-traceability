@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 import '../services/api_service.dart';
@@ -11,6 +13,8 @@ class TraceRecordScreen extends StatefulWidget {
 }
 
 class _TraceRecordScreenState extends State<TraceRecordScreen> {
+  static const String _historyStorageKey = 'trace_record_history';
+  static const String _currentRecordStorageKey = 'trace_record_current';
   final ApiService _apiService = ApiService();
   final TextEditingController _codeController = TextEditingController();
 
@@ -22,9 +26,66 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
   bool _handlingScan = false;
 
   @override
+  void initState() {
+    super.initState();
+    _loadPersistedTraceState();
+  }
+
+  @override
   void dispose() {
     _codeController.dispose();
     super.dispose();
+  }
+
+  Future<void> _loadPersistedTraceState() async {
+    if (kIsWeb) return;
+
+    final settingsBox = await Hive.openBox('settings');
+    final rawHistory = settingsBox.get(_historyStorageKey);
+    final rawRecord = settingsBox.get(_currentRecordStorageKey);
+
+    final history = <Map<String, dynamic>>[];
+    if (rawHistory is List) {
+      for (final item in rawHistory) {
+        if (item is Map) {
+          history.add(Map<String, dynamic>.from(item));
+        }
+      }
+    }
+
+    Map<String, dynamic>? record;
+    if (rawRecord is Map) {
+      record = Map<String, dynamic>.from(rawRecord);
+    }
+
+    if (!mounted) return;
+    setState(() {
+      _historyRecords
+        ..clear()
+        ..addAll(history);
+      _record = record;
+      _hasSearched = record != null;
+    });
+  }
+
+  Future<void> _persistTraceState() async {
+    if (kIsWeb) return;
+
+    final settingsBox = await Hive.openBox('settings');
+    await settingsBox.put(
+      _historyStorageKey,
+      _historyRecords.map((item) => Map<String, dynamic>.from(item)).toList(),
+    );
+
+    if (_record == null) {
+      await settingsBox.delete(_currentRecordStorageKey);
+      return;
+    }
+
+    await settingsBox.put(
+      _currentRecordStorageKey,
+      Map<String, dynamic>.from(_record!),
+    );
   }
 
   Future<void> _searchTrace() async {
@@ -49,13 +110,18 @@ class _TraceRecordScreenState extends State<TraceRecordScreen> {
       setState(() {
         _record = data;
         _hasSearched = true;
+        _historyRecords.removeWhere((item) => item['code']?.toString() == (result['code']?.toString() ?? input));
         _historyRecords.insert(0, {
           'code': result['code']?.toString() ?? input,
           'type': result['type']?.toString() ?? 'unknown',
-          'timestamp': DateTime.now(),
+          'timestamp': DateTime.now().toIso8601String(),
           'drugName': data['drugName']?.toString() ?? data['name']?.toString() ?? 'unknown',
         });
+        if (_historyRecords.length > 20) {
+          _historyRecords.removeRange(20, _historyRecords.length);
+        }
       });
+      await _persistTraceState();
 
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(

@@ -4,6 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import 'models/user_model.dart';
+import 'providers/user_provider.dart';
+import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
 
 void main() async {
@@ -17,7 +19,24 @@ void main() async {
     await Hive.openBox('settings');
   }
 
-  runApp(const ProviderScope(child: MyApp()));
+  User? initialUser;
+  if (!kIsWeb) {
+    final userBox = await Hive.openBox<User>('userBox');
+    initialUser = userBox.get('currentUser');
+  }
+
+  runApp(ProviderScope(
+    overrides: [
+      userProvider.overrideWith((ref) {
+        final notifier = UserNotifier();
+        if (initialUser != null) {
+          notifier.setUser(initialUser!);
+        }
+        return notifier;
+      }),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -75,7 +94,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: seed, brightness: Brightness.dark),
       ),
       themeMode: ThemeMode.system,
-      home: const LoginScreen(),
+      home: Consumer(
+        builder: (context, ref, _) {
+          final user = ref.watch(userProvider);
+          return user == null ? const LoginScreen() : const HomeScreen();
+        },
+      ),
     );
   }
 }

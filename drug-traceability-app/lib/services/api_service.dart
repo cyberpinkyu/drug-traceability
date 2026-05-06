@@ -3,6 +3,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import '../models/user_model.dart';
 
+const String kDefaultLanApiBaseUrl = 'http://192.168.0.106:8080';
+
 class ApiException implements Exception {
   final int? code;
   final String message;
@@ -19,10 +21,12 @@ class ApiService {
 
   late Dio _dio;
   static String _webToken = '';
+  static String _webRefreshToken = '';
+  Future<void>? _refreshingToken;
 
   final String baseUrl = const String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'http://localhost:8080',
+    defaultValue: kDefaultLanApiBaseUrl,
   );
 
   ApiService._internal() {
@@ -43,10 +47,25 @@ class ApiService {
         }
         handler.next(options);
       },
-      onError: (error, handler) {
+      onError: (error, handler) async {
         final statusCode = error.response?.statusCode;
         if (statusCode == 401) {
-          _handleUnauthorized();
+          final shouldRetry = error.requestOptions.extra['retriedAfterRefresh'] != true;
+          if (shouldRetry && await _refreshAccessToken()) {
+            final retryToken = await _readToken();
+            final requestOptions = error.requestOptions;
+            requestOptions.headers['Authorization'] = 'Bearer $retryToken';
+            requestOptions.extra['retriedAfterRefresh'] = true;
+            try {
+              final response = await _dio.fetch(requestOptions);
+              handler.resolve(response);
+              return;
+            } catch (_) {
+              await _handleUnauthorized();
+            }
+          } else {
+            await _handleUnauthorized();
+          }
         }
         handler.next(error);
       },
@@ -55,6 +74,10 @@ class ApiService {
 
   void setWebToken(String token) {
     _webToken = token;
+  }
+
+  void setWebRefreshToken(String token) {
+    _webRefreshToken = token;
   }
 
   Future<String> _readToken() async {
@@ -66,9 +89,79 @@ class ApiService {
     return user?.token ?? '';
   }
 
+  Future<String> _readRefreshToken() async {
+    if (kIsWeb) {
+      return _webRefreshToken;
+    }
+    final userBox = await Hive.openBox<User>('userBox');
+    final user = userBox.get('currentUser');
+    return user?.refreshToken ?? '';
+  }
+
+  Future<bool> _refreshAccessToken() async {
+    if (_refreshingToken != null) {
+      await _refreshingToken;
+      return (await _readToken()).isNotEmpty;
+    }
+
+    final refreshFuture = _doRefreshAccessToken();
+    _refreshingToken = refreshFuture;
+    try {
+      await refreshFuture;
+      return (await _readToken()).isNotEmpty;
+    } finally {
+      _refreshingToken = null;
+    }
+  }
+
+  Future<void> _doRefreshAccessToken() async {
+    final refreshToken = await _readRefreshToken();
+    if (refreshToken.isEmpty) {
+      return;
+    }
+
+    try {
+      final response = await _dio.post(
+        '/auth/refresh',
+        data: {'refreshToken': refreshToken},
+        options: Options(headers: {'Authorization': null}),
+      );
+      final payload = Map<String, dynamic>.from(response.data as Map);
+      if (payload['code'] != 200 || payload['data'] is! Map) {
+        return;
+      }
+
+      final data = Map<String, dynamic>.from(payload['data'] as Map);
+      final newToken = data['token']?.toString() ?? data['accessToken']?.toString() ?? '';
+      final newRefreshToken = data['refreshToken']?.toString() ?? refreshToken;
+      if (newToken.isEmpty) {
+        return;
+      }
+
+      if (kIsWeb) {
+        _webToken = newToken;
+        _webRefreshToken = newRefreshToken;
+        return;
+      }
+
+      final userBox = await Hive.openBox<User>('userBox');
+      final user = userBox.get('currentUser');
+      if (user == null) {
+        return;
+      }
+      await userBox.put(
+        'currentUser',
+        user.copyWith(token: newToken, refreshToken: newRefreshToken),
+      );
+    } catch (_) {
+      // ignore and let caller handle unauthorized state
+    }
+  }
+
   Future<void> _handleUnauthorized() async {
     if (kIsWeb) {
       _webToken = '';
+      _webRefreshToken = '';
       return;
     }
     final userBox = await Hive.openBox<User>('userBox');

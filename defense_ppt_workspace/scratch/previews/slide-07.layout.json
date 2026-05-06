@@ -1,0 +1,2599 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/eay6yc",
+    "id": "eay6yc",
+    "slide": 7,
+    "layoutId": "0fd4975e-e717-47e2-8f71-daa90e35448d",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "2e3b606b-3860-4dcd-8498-b4eb538d288a",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "0fd4975e-e717-47e2-8f71-daa90e35448d",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "2e3b606b-3860-4dcd-8498-b4eb538d288a",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "2e3b606b-3860-4dcd-8498-b4eb538d288a",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1orytsvu",
+      "id": "1",
+      "name": "canvas",
+      "bbox": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "composeSource": {
+        "run": 1,
+        "path": "0.0"
+      },
+      "geometry": "rect",
+      "fillColor": "#F7FAF8"
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u18jqh0f",
+      "id": "2",
+      "name": "top-rule",
+      "bbox": [
+        0,
+        0,
+        1920,
+        12
+      ],
+      "composeSource": {
+        "run": 1,
+        "path": "0.1"
+      },
+      "geometry": "rect",
+      "fillColor": "#1F7A5A"
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jm1cfa9w",
+      "id": "3",
+      "name": "slide-title",
+      "bbox": [
+        102,
+        70,
+        250,
+        60
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.0.0"
+      },
+      "geometry": "rect",
+      "text": "测试与结论",
+      "textPreview": "测试与结论",
+      "resolvedFontSize": 50,
+      "resolvedTextStyle": {
+        "fontSize": 50,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "测试与结论"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "测试与结论",
+          "runs": [
+            {
+              "index": 1,
+              "text": "测试与结论",
+              "fontSize": 50,
+              "color": "#13231E",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cfa9w3m9",
+      "id": "4",
+      "name": "slide-subtitle",
+      "bbox": [
+        102,
+        144,
+        936,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.0.1"
+      },
+      "geometry": "rect",
+      "text": "测试重点不是覆盖所有边角，而是验证核心链路、权限隔离、数据一致性和多端可用性。",
+      "textPreview": "测试重点不是覆盖所有边角，而是验证核心链路、权限隔离、数据一致性和多端可用性。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "测试重点不是覆盖所有边角，而是验证核心链路、权限隔离、数据一致性和多端可用性。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "测试重点不是覆盖所有边角，而是验证核心链路、权限隔离、数据一致性和多端可用性。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "测试重点不是覆盖所有边角，而是验证核心链路、权限隔离、数据一致性和多端可用性。",
+              "fontSize": 24,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1032lszq",
+      "id": "5",
+      "name": "test-heading",
+      "bbox": [
+        102,
+        206,
+        806,
+        36
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.0"
+      },
+      "geometry": "rect",
+      "text": "测试覆盖",
+      "textPreview": "测试覆盖",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "fontSize": 30,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "测试覆盖"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "测试覆盖",
+          "runs": [
+            {
+              "index": 1,
+              "text": "测试覆盖",
+              "fontSize": 30,
+              "color": "#1F7A5A",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u9knih4b",
+      "id": "6",
+      "name": "test-no-0",
+      "bbox": [
+        102,
+        270,
+        48,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.0"
+      },
+      "geometry": "rect",
+      "text": "01",
+      "textPreview": "01",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01",
+          "runs": [
+            {
+              "index": 1,
+              "text": "01",
+              "fontSize": 22,
+              "color": "#D8912B",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/judg7ads",
+      "id": "7",
+      "name": "test-text-0",
+      "bbox": [
+        166,
+        270,
+        742,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.1"
+      },
+      "geometry": "rect",
+      "text": "登录认证与权限拦截",
+      "textPreview": "登录认证与权限拦截",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "登录认证与权限拦截"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "登录认证与权限拦截",
+          "runs": [
+            {
+              "index": 1,
+              "text": "登录认证与权限拦截",
+              "fontSize": 24,
+              "color": "#13231E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cj6tovah",
+      "id": "8",
+      "name": "test-no-1",
+      "bbox": [
+        102,
+        328,
+        48,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.2.0"
+      },
+      "geometry": "rect",
+      "text": "02",
+      "textPreview": "02",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "02"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "02",
+          "runs": [
+            {
+              "index": 1,
+              "text": "02",
+              "fontSize": 22,
+              "color": "#D8912B",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/54zidony",
+      "id": "9",
+      "name": "test-text-1",
+      "bbox": [
+        166,
+        328,
+        742,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.2.1"
+      },
+      "geometry": "rect",
+      "text": "药品 / 批次 / 采购 / 销售 / 库存",
+      "textPreview": "药品 / 批次 / 采购 / 销售 / 库存",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "药品 / 批次 / 采购 / 销售 / 库存"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "药品 / 批次 / 采购 / 销售 / 库存",
+          "runs": [
+            {
+              "index": 1,
+              "text": "药品 / 批次 / 采购 / 销售 / 库存",
+              "fontSize": 24,
+              "color": "#13231E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t47y1kre",
+      "id": "10",
+      "name": "test-no-2",
+      "bbox": [
+        102,
+        384,
+        48,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.3.0"
+      },
+      "geometry": "rect",
+      "text": "03",
+      "textPreview": "03",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "03"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "03",
+          "runs": [
+            {
+              "index": 1,
+              "text": "03",
+              "fontSize": 22,
+              "color": "#D8912B",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0je9cvix",
+      "id": "11",
+      "name": "test-text-2",
+      "bbox": [
+        166,
+        384,
+        742,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.3.1"
+      },
+      "geometry": "rect",
+      "text": "监管任务派发、调查、处置",
+      "textPreview": "监管任务派发、调查、处置",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "监管任务派发、调查、处置"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "监管任务派发、调查、处置",
+          "runs": [
+            {
+              "index": 1,
+              "text": "监管任务派发、调查、处置",
+              "fontSize": 24,
+              "color": "#13231E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/byhgn29g",
+      "id": "12",
+      "name": "test-no-3",
+      "bbox": [
+        102,
+        442,
+        48,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.4.0"
+      },
+      "geometry": "rect",
+      "text": "04",
+      "textPreview": "04",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "04"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "04",
+          "runs": [
+            {
+              "index": 1,
+              "text": "04",
+              "fontSize": 22,
+              "color": "#D8912B",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/idonyd0z",
+      "id": "13",
+      "name": "test-text-3",
+      "bbox": [
+        166,
+        442,
+        742,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.4.1"
+      },
+      "geometry": "rect",
+      "text": "追溯图谱、统计分析、报表消息",
+      "textPreview": "追溯图谱、统计分析、报表消息",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "追溯图谱、统计分析、报表消息"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "追溯图谱、统计分析、报表消息",
+          "runs": [
+            {
+              "index": 1,
+              "text": "追溯图谱、统计分析、报表消息",
+              "fontSize": 24,
+              "color": "#13231E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tcj6tova",
+      "id": "14",
+      "name": "test-no-4",
+      "bbox": [
+        102,
+        498,
+        48,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.5.0"
+      },
+      "geometry": "rect",
+      "text": "05",
+      "textPreview": "05",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "05"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "05",
+          "runs": [
+            {
+              "index": 1,
+              "text": "05",
+              "fontSize": 22,
+              "color": "#D8912B",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0rqd4vmt",
+      "id": "15",
+      "name": "test-text-4",
+      "bbox": [
+        166,
+        498,
+        742,
+        30
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.5.1"
+      },
+      "geometry": "rect",
+      "text": "扫码增强、数据交换、AI 问答",
+      "textPreview": "扫码增强、数据交换、AI 问答",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "扫码增强、数据交换、AI 问答"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "扫码增强、数据交换、AI 问答",
+          "runs": [
+            {
+              "index": 1,
+              "text": "扫码增强、数据交换、AI 问答",
+              "fontSize": 24,
+              "color": "#13231E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b6xkf6dc",
+      "id": "16",
+      "name": "result-heading",
+      "bbox": [
+        970,
+        206,
+        848,
+        36
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.0"
+      },
+      "geometry": "rect",
+      "text": "结论与不足",
+      "textPreview": "结论与不足",
+      "resolvedFontSize": 30,
+      "resolvedTextStyle": {
+        "fontSize": 30,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "结论与不足"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "结论与不足",
+          "runs": [
+            {
+              "index": 1,
+              "text": "结论与不足",
+              "fontSize": 30,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/il0rqd4v",
+      "id": "17",
+      "name": "result-main",
+      "bbox": [
+        970,
+        270,
+        848,
+        98
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1"
+      },
+      "geometry": "rect",
+      "text": "系统已能稳定支撑两条主流程：\n“药品主数据—批次—流通—库存”追溯主链；\n“线索上报—任务派发—调查处置—结果归档”监管闭环。",
+      "textPreview": "系统已能稳定支撑两条主流程： | “药品主数据—批次—流通—库存”追溯主链； | “线索上报—任务派发—调查处置—结果归档”监管闭环。",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "系统已能稳定支撑两条主流程："
+          },
+          {
+            "index": 2,
+            "text": "“药品主数据—批次—流通—库存”追溯主链；"
+          },
+          {
+            "index": 3,
+            "text": "“线索上报—任务派发—调查处置—结果归档”监管闭环。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "系统已能稳定支撑两条主流程：",
+          "runs": [
+            {
+              "index": 1,
+              "text": "系统已能稳定支撑两条主流程：",
+              "fontSize": 27,
+              "color": "#13231E",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "text": "“药品主数据—批次—流通—库存”追溯主链；",
+          "runs": [
+            {
+              "index": 1,
+              "text": "“药品主数据—批次—流通—库存”追溯主链；",
+              "fontSize": 27,
+              "color": "#13231E",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "text": "“线索上报—任务派发—调查处置—结果归档”监管闭环。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "“线索上报—任务派发—调查处置—结果归档”监管闭环。",
+              "fontSize": 27,
+              "color": "#13231E",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tovahoza",
+      "id": "18",
+      "name": "result-rule",
+      "bbox": [
+        970,
+        396,
+        848,
+        2
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.2"
+      },
+      "geometry": "rect",
+      "fillColor": "#D4E3DE",
+      "lineColor": "#D4E3DE",
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/032lszqt",
+      "id": "19",
+      "name": "future",
+      "bbox": [
+        970,
+        426,
+        848,
+        58
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.3"
+      },
+      "geometry": "rect",
+      "text": "后续优化：高并发库存一致性、弱网体验、批量导入性能、AI 结果稳定性、安全专项测试。",
+      "textPreview": "后续优化：高并发库存一致性、弱网体验、批量导入性能、AI 结果稳定性、安全专项测试。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "后续优化：高并发库存一致性、弱网体验、批量导入性能、AI"
+          },
+          {
+            "index": 2,
+            "text": "结果稳定性、安全专项测试。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "后续优化：高并发库存一致性、弱网体验、批量导入性能、AI 结果稳定性、安全专项测试。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "后续优化：高并发库存一致性、弱网体验、批量导入性能、AI 结果稳定性、安全专项测试。",
+              "fontSize": 24,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/czed8v6p",
+      "id": "20",
+      "name": "footer",
+      "bbox": [
+        102,
+        994,
+        1716,
+        18
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.2"
+      },
+      "geometry": "rect",
+      "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+      "textPreview": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+          "runs": [
+            {
+              "index": 1,
+              "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+              "fontSize": 14,
+              "color": "#7B8B86"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "composeRuns": [
+    {
+      "index": 1,
+      "frame": {
+        "left": 0,
+        "top": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "baseUnit": 8,
+      "root": {
+        "path": "0",
+        "kind": "layers",
+        "name": "background",
+        "requestedSize": {
+          "width": {
+            "mode": "fill",
+            "value": 1
+          },
+          "height": {
+            "mode": "fill",
+            "value": 1
+          }
+        },
+        "intrinsicSize": {
+          "width": 1920,
+          "height": 1080
+        },
+        "frame": {
+          "left": 0,
+          "top": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "children": [
+          {
+            "path": "0.0",
+            "kind": "shape",
+            "name": "canvas",
+            "requestedSize": {
+              "width": {
+                "mode": "fixed",
+                "value": 1920
+              },
+              "height": {
+                "mode": "fixed",
+                "value": 1080
+              }
+            },
+            "intrinsicSize": {
+              "width": 1920,
+              "height": 1080
+            },
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 1080
+            },
+            "snappedFrame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 1080
+            },
+            "children": [],
+            "geometry": "rect",
+            "element": {
+              "aid": "sh/1orytsvu",
+              "id": "1",
+              "kind": "shape"
+            }
+          },
+          {
+            "path": "0.1",
+            "kind": "shape",
+            "name": "top-rule",
+            "requestedSize": {
+              "width": {
+                "mode": "fixed",
+                "value": 1920
+              },
+              "height": {
+                "mode": "fixed",
+                "value": 12
+              }
+            },
+            "intrinsicSize": {
+              "width": 1920,
+              "height": 12
+            },
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 12
+            },
+            "snappedFrame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 12
+            },
+            "children": [],
+            "geometry": "rect",
+            "element": {
+              "aid": "sh/u18jqh0f",
+              "id": "2",
+              "kind": "shape"
+            }
+          }
+        ],
+        "padding": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "alignItems": "stretch",
+        "justifyItems": "stretch",
+        "contentFrame": {
+          "left": 0,
+          "top": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "items": [
+          {
+            "path": "0.0",
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 1080
+            }
+          },
+          {
+            "path": "0.1",
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "frame": {
+        "left": 0,
+        "top": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "baseUnit": 8,
+      "root": {
+        "path": "0",
+        "kind": "column",
+        "name": "root",
+        "requestedSize": {
+          "width": {
+            "mode": "fill",
+            "value": 1
+          },
+          "height": {
+            "mode": "fill",
+            "value": 1
+          }
+        },
+        "intrinsicSize": {
+          "width": 204,
+          "height": 327.6
+        },
+        "frame": {
+          "left": 0,
+          "top": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "children": [
+          {
+            "path": "0.0",
+            "kind": "column",
+            "name": "title-stack",
+            "requestedSize": {
+              "width": {
+                "mode": "fill",
+                "value": 1
+              },
+              "height": {
+                "mode": "hug"
+              }
+            },
+            "intrinsicSize": {
+              "width": 936,
+              "height": 102.8
+            },
+            "frame": {
+              "left": 102,
+              "top": 70,
+              "width": 1716,
+              "height": 102.8
+            },
+            "children": [
+              {
+                "path": "0.0.0",
+                "kind": "text",
+                "name": "slide-title",
+                "requestedSize": {
+                  "width": {
+                    "mode": "wrap",
+                    "max": 1640
+                  },
+                  "height": {
+                    "mode": "hug"
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 250,
+                  "height": 60
+                },
+                "frame": {
+                  "left": 102,
+                  "top": 70,
+                  "width": 250,
+                  "height": 60
+                },
+                "snappedFrame": {
+                  "left": 102,
+                  "top": 70,
+                  "width": 250,
+                  "height": 60
+                },
+                "children": [],
+                "text": "测试与结论",
+                "transform": "none",
+                "element": {
+                  "aid": "sh/jm1cfa9w",
+                  "id": "3",
+                  "kind": "shape"
+                }
+              },
+              {
+                "path": "0.0.1",
+                "kind": "text",
+                "name": "slide-subtitle",
+                "requestedSize": {
+                  "width": {
+                    "mode": "wrap",
+                    "max": 1320
+                  },
+                  "height": {
+                    "mode": "hug"
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 936,
+                  "height": 28.8
+                },
+                "frame": {
+                  "left": 102,
+                  "top": 144,
+                  "width": 936,
+                  "height": 28.8
+                },
+                "snappedFrame": {
+                  "left": 102,
+                  "top": 144,
+                  "width": 936,
+                  "height": 30
+                },
+                "children": [],
+                "text": "测试重点不是覆盖所有边角，而是验证核心链路、权限隔离、数据一致性和多端可用性。",
+                "transform": "none",
+                "element": {
+                  "aid": "sh/cfa9w3m9",
+                  "id": "4",
+                  "kind": "shape"
+                }
+              }
+            ],
+            "padding": {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "gap": 14,
+            "effectiveGap": 14,
+            "justifyOffset": 0,
+            "align": "start",
+            "justify": "start",
+            "contentFrame": {
+              "left": 102,
+              "top": 70,
+              "width": 1716,
+              "height": 102.8
+            },
+            "items": [
+              {
+                "path": "0.0.0",
+                "frame": {
+                  "left": 102,
+                  "top": 70,
+                  "width": 250,
+                  "height": 60
+                }
+              },
+              {
+                "path": "0.0.1",
+                "frame": {
+                  "left": 102,
+                  "top": 144,
+                  "width": 936,
+                  "height": 28.8
+                }
+              }
+            ]
+          },
+          {
+            "path": "0.1",
+            "kind": "grid",
+            "name": "test-grid",
+            "requestedSize": {
+              "width": {
+                "mode": "fill",
+                "value": 1
+              },
+              "height": {
+                "mode": "fill",
+                "value": 1
+              }
+            },
+            "intrinsicSize": {
+              "width": 62,
+              "height": 0
+            },
+            "frame": {
+              "left": 102,
+              "top": 206.8,
+              "width": 1716,
+              "height": 752.4
+            },
+            "children": [
+              {
+                "path": "0.1.0",
+                "kind": "column",
+                "name": "test-left",
+                "requestedSize": {
+                  "width": {
+                    "mode": "fill",
+                    "value": 1
+                  },
+                  "height": {
+                    "mode": "fill",
+                    "value": 1
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 0,
+                  "height": 320
+                },
+                "frame": {
+                  "left": 102,
+                  "top": 206.8,
+                  "width": 806.83,
+                  "height": 752.4
+                },
+                "children": [
+                  {
+                    "path": "0.1.0.0",
+                    "kind": "text",
+                    "name": "test-heading",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "frame": {
+                      "left": 102,
+                      "top": 206.8,
+                      "width": 806.83,
+                      "height": 36
+                    },
+                    "snappedFrame": {
+                      "left": 102,
+                      "top": 206,
+                      "width": 806,
+                      "height": 36
+                    },
+                    "children": [],
+                    "text": "测试覆盖",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/1032lszq",
+                      "id": "5",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.0.1",
+                    "kind": "row",
+                    "name": "test-item-0",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 64,
+                      "height": 28.8
+                    },
+                    "frame": {
+                      "left": 102,
+                      "top": 270.8,
+                      "width": 806.83,
+                      "height": 28.8
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.0.1.0",
+                        "kind": "text",
+                        "name": "test-no-0",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 48
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 48,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 102,
+                          "top": 270.8,
+                          "width": 48,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 102,
+                          "top": 270,
+                          "width": 48,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "01",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/u9knih4b",
+                          "id": "6",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.1",
+                        "kind": "text",
+                        "name": "test-text-0",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 28.8
+                        },
+                        "frame": {
+                          "left": 166,
+                          "top": 270.8,
+                          "width": 742.83,
+                          "height": 28.8
+                        },
+                        "snappedFrame": {
+                          "left": 166,
+                          "top": 270,
+                          "width": 742,
+                          "height": 30
+                        },
+                        "children": [],
+                        "text": "登录认证与权限拦截",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/judg7ads",
+                          "id": "7",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0,
+                      "left": 0
+                    },
+                    "gap": 16,
+                    "effectiveGap": 16,
+                    "justifyOffset": 0,
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 102,
+                      "top": 270.8,
+                      "width": 806.83,
+                      "height": 28.8
+                    },
+                    "items": [
+                      {
+                        "path": "0.1.0.1.0",
+                        "frame": {
+                          "left": 102,
+                          "top": 270.8,
+                          "width": 48,
+                          "height": 26.4
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.1",
+                        "frame": {
+                          "left": 166,
+                          "top": 270.8,
+                          "width": 742.83,
+                          "height": 28.8
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "path": "0.1.0.2",
+                    "kind": "row",
+                    "name": "test-item-1",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 64,
+                      "height": 28.8
+                    },
+                    "frame": {
+                      "left": 102,
+                      "top": 327.6,
+                      "width": 806.83,
+                      "height": 28.8
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.0.2.0",
+                        "kind": "text",
+                        "name": "test-no-1",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 48
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 48,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 102,
+                          "top": 327.6,
+                          "width": 48,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 102,
+                          "top": 328,
+                          "width": 48,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "02",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/cj6tovah",
+                          "id": "8",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.2.1",
+                        "kind": "text",
+                        "name": "test-text-1",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 28.8
+                        },
+                        "frame": {
+                          "left": 166,
+                          "top": 327.6,
+                          "width": 742.83,
+                          "height": 28.8
+                        },
+                        "snappedFrame": {
+                          "left": 166,
+                          "top": 328,
+                          "width": 742,
+                          "height": 30
+                        },
+                        "children": [],
+                        "text": "药品 / 批次 / 采购 / 销售 / 库存",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/54zidony",
+                          "id": "9",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0,
+                      "left": 0
+                    },
+                    "gap": 16,
+                    "effectiveGap": 16,
+                    "justifyOffset": 0,
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 102,
+                      "top": 327.6,
+                      "width": 806.83,
+                      "height": 28.8
+                    },
+                    "items": [
+                      {
+                        "path": "0.1.0.2.0",
+                        "frame": {
+                          "left": 102,
+                          "top": 327.6,
+                          "width": 48,
+                          "height": 26.4
+                        }
+                      },
+                      {
+                        "path": "0.1.0.2.1",
+                        "frame": {
+                          "left": 166,
+                          "top": 327.6,
+                          "width": 742.83,
+                          "height": 28.8
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "path": "0.1.0.3",
+                    "kind": "row",
+                    "name": "test-item-2",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 64,
+                      "height": 28.8
+                    },
+                    "frame": {
+                      "left": 102,
+                      "top": 384.4,
+                      "width": 806.83,
+                      "height": 28.8
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.0.3.0",
+                        "kind": "text",
+                        "name": "test-no-2",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 48
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 48,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 102,
+                          "top": 384.4,
+                          "width": 48,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 102,
+                          "top": 384,
+                          "width": 48,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "03",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/t47y1kre",
+                          "id": "10",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.3.1",
+                        "kind": "text",
+                        "name": "test-text-2",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 28.8
+                        },
+                        "frame": {
+                          "left": 166,
+                          "top": 384.4,
+                          "width": 742.83,
+                          "height": 28.8
+                        },
+                        "snappedFrame": {
+                          "left": 166,
+                          "top": 384,
+                          "width": 742,
+                          "height": 30
+                        },
+                        "children": [],
+                        "text": "监管任务派发、调查、处置",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/0je9cvix",
+                          "id": "11",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0,
+                      "left": 0
+                    },
+                    "gap": 16,
+                    "effectiveGap": 16,
+                    "justifyOffset": 0,
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 102,
+                      "top": 384.4,
+                      "width": 806.83,
+                      "height": 28.8
+                    },
+                    "items": [
+                      {
+                        "path": "0.1.0.3.0",
+                        "frame": {
+                          "left": 102,
+                          "top": 384.4,
+                          "width": 48,
+                          "height": 26.4
+                        }
+                      },
+                      {
+                        "path": "0.1.0.3.1",
+                        "frame": {
+                          "left": 166,
+                          "top": 384.4,
+                          "width": 742.83,
+                          "height": 28.8
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "path": "0.1.0.4",
+                    "kind": "row",
+                    "name": "test-item-3",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 64,
+                      "height": 28.8
+                    },
+                    "frame": {
+                      "left": 102,
+                      "top": 441.2,
+                      "width": 806.83,
+                      "height": 28.8
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.0.4.0",
+                        "kind": "text",
+                        "name": "test-no-3",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 48
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 48,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 102,
+                          "top": 441.2,
+                          "width": 48,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 102,
+                          "top": 442,
+                          "width": 48,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "04",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/byhgn29g",
+                          "id": "12",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.4.1",
+                        "kind": "text",
+                        "name": "test-text-3",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 28.8
+                        },
+                        "frame": {
+                          "left": 166,
+                          "top": 441.2,
+                          "width": 742.83,
+                          "height": 28.8
+                        },
+                        "snappedFrame": {
+                          "left": 166,
+                          "top": 442,
+                          "width": 742,
+                          "height": 30
+                        },
+                        "children": [],
+                        "text": "追溯图谱、统计分析、报表消息",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/idonyd0z",
+                          "id": "13",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0,
+                      "left": 0
+                    },
+                    "gap": 16,
+                    "effectiveGap": 16,
+                    "justifyOffset": 0,
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 102,
+                      "top": 441.2,
+                      "width": 806.83,
+                      "height": 28.8
+                    },
+                    "items": [
+                      {
+                        "path": "0.1.0.4.0",
+                        "frame": {
+                          "left": 102,
+                          "top": 441.2,
+                          "width": 48,
+                          "height": 26.4
+                        }
+                      },
+                      {
+                        "path": "0.1.0.4.1",
+                        "frame": {
+                          "left": 166,
+                          "top": 441.2,
+                          "width": 742.83,
+                          "height": 28.8
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "path": "0.1.0.5",
+                    "kind": "row",
+                    "name": "test-item-4",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 64,
+                      "height": 28.8
+                    },
+                    "frame": {
+                      "left": 102,
+                      "top": 498,
+                      "width": 806.83,
+                      "height": 28.8
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.0.5.0",
+                        "kind": "text",
+                        "name": "test-no-4",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 48
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 48,
+                          "height": 26.4
+                        },
+                        "frame": {
+                          "left": 102,
+                          "top": 498,
+                          "width": 48,
+                          "height": 26.4
+                        },
+                        "snappedFrame": {
+                          "left": 102,
+                          "top": 498,
+                          "width": 48,
+                          "height": 28
+                        },
+                        "children": [],
+                        "text": "05",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/tcj6tova",
+                          "id": "14",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.5.1",
+                        "kind": "text",
+                        "name": "test-text-4",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fill",
+                            "value": 1
+                          },
+                          "height": {
+                            "mode": "hug"
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 28.8
+                        },
+                        "frame": {
+                          "left": 166,
+                          "top": 498,
+                          "width": 742.83,
+                          "height": 28.8
+                        },
+                        "snappedFrame": {
+                          "left": 166,
+                          "top": 498,
+                          "width": 742,
+                          "height": 30
+                        },
+                        "children": [],
+                        "text": "扫码增强、数据交换、AI 问答",
+                        "transform": "none",
+                        "element": {
+                          "aid": "sh/0rqd4vmt",
+                          "id": "15",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0,
+                      "left": 0
+                    },
+                    "gap": 16,
+                    "effectiveGap": 16,
+                    "justifyOffset": 0,
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 102,
+                      "top": 498,
+                      "width": 806.83,
+                      "height": 28.8
+                    },
+                    "items": [
+                      {
+                        "path": "0.1.0.5.0",
+                        "frame": {
+                          "left": 102,
+                          "top": 498,
+                          "width": 48,
+                          "height": 26.4
+                        }
+                      },
+                      {
+                        "path": "0.1.0.5.1",
+                        "frame": {
+                          "left": 166,
+                          "top": 498,
+                          "width": 742.83,
+                          "height": 28.8
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "padding": {
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                },
+                "gap": 28,
+                "effectiveGap": 28,
+                "justifyOffset": 0,
+                "align": "start",
+                "justify": "start",
+                "contentFrame": {
+                  "left": 102,
+                  "top": 206.8,
+                  "width": 806.83,
+                  "height": 752.4
+                },
+                "items": [
+                  {
+                    "path": "0.1.0.0",
+                    "frame": {
+                      "left": 102,
+                      "top": 206.8,
+                      "width": 806.83,
+                      "height": 36
+                    }
+                  },
+                  {
+                    "path": "0.1.0.1",
+                    "frame": {
+                      "left": 102,
+                      "top": 270.8,
+                      "width": 806.83,
+                      "height": 28.8
+                    }
+                  },
+                  {
+                    "path": "0.1.0.2",
+                    "frame": {
+                      "left": 102,
+                      "top": 327.6,
+                      "width": 806.83,
+                      "height": 28.8
+                    }
+                  },
+                  {
+                    "path": "0.1.0.3",
+                    "frame": {
+                      "left": 102,
+                      "top": 384.4,
+                      "width": 806.83,
+                      "height": 28.8
+                    }
+                  },
+                  {
+                    "path": "0.1.0.4",
+                    "frame": {
+                      "left": 102,
+                      "top": 441.2,
+                      "width": 806.83,
+                      "height": 28.8
+                    }
+                  },
+                  {
+                    "path": "0.1.0.5",
+                    "frame": {
+                      "left": 102,
+                      "top": 498,
+                      "width": 806.83,
+                      "height": 28.8
+                    }
+                  }
+                ]
+              },
+              {
+                "path": "0.1.1",
+                "kind": "column",
+                "name": "test-right",
+                "requestedSize": {
+                  "width": {
+                    "mode": "fill",
+                    "value": 1
+                  },
+                  "height": {
+                    "mode": "fill",
+                    "value": 1
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 0,
+                  "height": 248
+                },
+                "frame": {
+                  "left": 970.83,
+                  "top": 206.8,
+                  "width": 847.17,
+                  "height": 752.4
+                },
+                "children": [
+                  {
+                    "path": "0.1.1.0",
+                    "kind": "text",
+                    "name": "result-heading",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 36
+                    },
+                    "frame": {
+                      "left": 970.83,
+                      "top": 206.8,
+                      "width": 847.17,
+                      "height": 36
+                    },
+                    "snappedFrame": {
+                      "left": 970,
+                      "top": 206,
+                      "width": 848,
+                      "height": 36
+                    },
+                    "children": [],
+                    "text": "结论与不足",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/b6xkf6dc",
+                      "id": "16",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.1.1",
+                    "kind": "text",
+                    "name": "result-main",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 97.2
+                    },
+                    "frame": {
+                      "left": 970.83,
+                      "top": 270.8,
+                      "width": 847.17,
+                      "height": 97.2
+                    },
+                    "snappedFrame": {
+                      "left": 970,
+                      "top": 270,
+                      "width": 848,
+                      "height": 98
+                    },
+                    "children": [],
+                    "text": "系统已能稳定支撑两条主流程：\n“药品主数据—批次—流通—库存”追溯主链；\n“线索上报—任务派发—调查处置—结果归档”监管闭环。",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/il0rqd4v",
+                      "id": "17",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.1.2",
+                    "kind": "rule",
+                    "name": "result-rule",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "fixed",
+                        "value": 2
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 2
+                    },
+                    "frame": {
+                      "left": 970.83,
+                      "top": 396,
+                      "width": 847.17,
+                      "height": 2
+                    },
+                    "snappedFrame": {
+                      "left": 970,
+                      "top": 396,
+                      "width": 848,
+                      "height": 2
+                    },
+                    "children": [],
+                    "weight": 2,
+                    "element": {
+                      "aid": "sh/tovahoza",
+                      "id": "18",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.1.3",
+                    "kind": "text",
+                    "name": "future",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 28.8
+                    },
+                    "frame": {
+                      "left": 970.83,
+                      "top": 426,
+                      "width": 847.17,
+                      "height": 57.6
+                    },
+                    "snappedFrame": {
+                      "left": 970,
+                      "top": 426,
+                      "width": 848,
+                      "height": 58
+                    },
+                    "children": [],
+                    "text": "后续优化：高并发库存一致性、弱网体验、批量导入性能、AI 结果稳定性、安全专项测试。",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/032lszqt",
+                      "id": "19",
+                      "kind": "shape"
+                    }
+                  }
+                ],
+                "padding": {
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                },
+                "gap": 28,
+                "effectiveGap": 28,
+                "justifyOffset": 0,
+                "align": "start",
+                "justify": "start",
+                "contentFrame": {
+                  "left": 970.83,
+                  "top": 206.8,
+                  "width": 847.17,
+                  "height": 752.4
+                },
+                "items": [
+                  {
+                    "path": "0.1.1.0",
+                    "frame": {
+                      "left": 970.83,
+                      "top": 206.8,
+                      "width": 847.17,
+                      "height": 36
+                    }
+                  },
+                  {
+                    "path": "0.1.1.1",
+                    "frame": {
+                      "left": 970.83,
+                      "top": 270.8,
+                      "width": 847.17,
+                      "height": 97.2
+                    }
+                  },
+                  {
+                    "path": "0.1.1.2",
+                    "frame": {
+                      "left": 970.83,
+                      "top": 396,
+                      "width": 847.17,
+                      "height": 2
+                    }
+                  },
+                  {
+                    "path": "0.1.1.3",
+                    "frame": {
+                      "left": 970.83,
+                      "top": 426,
+                      "width": 847.17,
+                      "height": 57.6
+                    }
+                  }
+                ]
+              }
+            ],
+            "padding": {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "columnGap": 62,
+            "rowGap": 0,
+            "alignItems": "stretch",
+            "justifyItems": "stretch",
+            "contentFrame": {
+              "left": 102,
+              "top": 206.8,
+              "width": 1716,
+              "height": 752.4
+            },
+            "columns": [
+              {
+                "mode": "fr",
+                "value": 1
+              },
+              {
+                "mode": "fr",
+                "value": 1.05
+              }
+            ],
+            "autoRows": "auto",
+            "resolvedRows": [
+              "auto"
+            ],
+            "columnSizes": [
+              806.83,
+              847.17
+            ],
+            "rowSizes": [
+              752.4
+            ],
+            "cells": [
+              {
+                "path": "0.1.0",
+                "column": 0,
+                "row": 0,
+                "columnSpan": 1,
+                "rowSpan": 1,
+                "cellFrame": {
+                  "left": 102,
+                  "top": 206.8,
+                  "width": 806.83,
+                  "height": 752.4
+                }
+              },
+              {
+                "path": "0.1.1",
+                "column": 1,
+                "row": 0,
+                "columnSpan": 1,
+                "rowSpan": 1,
+                "cellFrame": {
+                  "left": 970.83,
+                  "top": 206.8,
+                  "width": 847.17,
+                  "height": 752.4
+                }
+              }
+            ]
+          },
+          {
+            "path": "0.2",
+            "kind": "text",
+            "name": "footer",
+            "requestedSize": {
+              "width": {
+                "mode": "fill",
+                "value": 1
+              },
+              "height": {
+                "mode": "hug"
+              }
+            },
+            "intrinsicSize": {
+              "width": 0,
+              "height": 16.8
+            },
+            "frame": {
+              "left": 102,
+              "top": 993.2,
+              "width": 1716,
+              "height": 16.8
+            },
+            "snappedFrame": {
+              "left": 102,
+              "top": 994,
+              "width": 1716,
+              "height": 18
+            },
+            "children": [],
+            "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+            "transform": "none",
+            "element": {
+              "aid": "sh/czed8v6p",
+              "id": "20",
+              "kind": "shape"
+            }
+          }
+        ],
+        "padding": {
+          "top": 70,
+          "right": 102,
+          "bottom": 70,
+          "left": 102
+        },
+        "gap": 34,
+        "effectiveGap": 34,
+        "justifyOffset": 0,
+        "align": "start",
+        "justify": "start",
+        "contentFrame": {
+          "left": 102,
+          "top": 70,
+          "width": 1716,
+          "height": 940
+        },
+        "items": [
+          {
+            "path": "0.0",
+            "frame": {
+              "left": 102,
+              "top": 70,
+              "width": 1716,
+              "height": 102.8
+            }
+          },
+          {
+            "path": "0.1",
+            "frame": {
+              "left": 102,
+              "top": 206.8,
+              "width": 1716,
+              "height": 752.4
+            }
+          },
+          {
+            "path": "0.2",
+            "frame": {
+              "left": 102,
+              "top": 993.2,
+              "width": 1716,
+              "height": 16.8
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

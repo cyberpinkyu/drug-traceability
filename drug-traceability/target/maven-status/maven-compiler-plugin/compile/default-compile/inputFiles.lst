@@ -78,6 +78,7 @@ C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\AIKnowled
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\RegulatoryTaskService.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\mapper\ProductionBatchMapper.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\filter\RequestBodyCachingFilter.java
+C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\ReadonlyDatabaseQaService.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\common\RequireRole.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\service\impl\InventoryServiceImpl.java
 C:\dev\design\drug-traceability\src\main\java\com\example\drug\mapper\AIToolUsageLogMapper.java

@@ -1,0 +1,5236 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/zni023",
+    "id": "zni023",
+    "slide": 4,
+    "layoutId": "0fd4975e-e717-47e2-8f71-daa90e35448d",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "2e3b606b-3860-4dcd-8498-b4eb538d288a",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "0fd4975e-e717-47e2-8f71-daa90e35448d",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "2e3b606b-3860-4dcd-8498-b4eb538d288a",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "2e3b606b-3860-4dcd-8498-b4eb538d288a",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kjm1cfa9",
+      "id": "1",
+      "name": "canvas",
+      "bbox": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "composeSource": {
+        "run": 1,
+        "path": "0.0"
+      },
+      "geometry": "rect",
+      "fillColor": "#F7FAF8"
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/r2p8nqxs",
+      "id": "2",
+      "name": "top-rule",
+      "bbox": [
+        0,
+        0,
+        1920,
+        12
+      ],
+      "composeSource": {
+        "run": 1,
+        "path": "0.1"
+      },
+      "geometry": "rect",
+      "fillColor": "#1F7A5A"
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2hwfyxob",
+      "id": "3",
+      "name": "slide-title",
+      "bbox": [
+        92,
+        70,
+        898,
+        60
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.0.0"
+      },
+      "geometry": "rect",
+      "text": "核心业务：一条追溯主链 + 一个监管闭环",
+      "textPreview": "核心业务：一条追溯主链 + 一个监管闭环",
+      "resolvedFontSize": 50,
+      "resolvedTextStyle": {
+        "fontSize": 50,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "核心业务：一条追溯主链 + 一个监管闭环"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "核心业务：一条追溯主链 + 一个监管闭环",
+          "runs": [
+            {
+              "index": 1,
+              "text": "核心业务：一条追溯主链 + 一个监管闭环",
+              "fontSize": 50,
+              "color": "#13231E",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9gr2p8nq",
+      "id": "4",
+      "name": "slide-subtitle",
+      "bbox": [
+        92,
+        144,
+        734,
+        58
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.0.1"
+      },
+      "geometry": "rect",
+      "text": "讲解重点：系统不是单表 CRUD，而是围绕批次和线索组织业务流转。",
+      "textPreview": "讲解重点：系统不是单表 CRUD，而是围绕批次和线索组织业务流转。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "讲解重点：系统不是单表 CRUD，而是围绕批次和线索组织业务流转。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "讲解重点：系统不是单表 CRUD，而是围绕批次和线索组织业务流转。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "讲解重点：系统不是单表 CRUD，而是围绕批次和线索组织业务流转。",
+              "fontSize": 24,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gvy90je9",
+      "id": "5",
+      "name": "trace-heading",
+      "bbox": [
+        92,
+        236,
+        1736,
+        34
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.0"
+      },
+      "geometry": "rect",
+      "text": "药品追溯主链",
+      "textPreview": "药品追溯主链",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "药品追溯主链"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "药品追溯主链",
+          "runs": [
+            {
+              "index": 1,
+              "text": "药品追溯主链",
+              "fontSize": 28,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ra5gbq1o",
+      "id": "6",
+      "name": "node-药品主数据",
+      "bbox": [
+        92,
+        287.2,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.0"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2p8nqxs7",
+      "id": "7",
+      "name": "node-text-药品主数据",
+      "bbox": [
+        108,
+        302,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.0.0"
+      },
+      "geometry": "rect",
+      "text": "药品主数据",
+      "textPreview": "药品主数据",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "药品主数据"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "药品主数据",
+          "runs": [
+            {
+              "index": 1,
+              "text": "药品主数据",
+              "fontSize": 22,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9knih4by",
+      "id": "8",
+      "name": "arrow-symbol-drug_id",
+      "bbox": [
+        322,
+        288,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.1.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kzupwb2h",
+      "id": "9",
+      "name": "arrow-label-drug_id",
+      "bbox": [
+        322,
+        342,
+        92,
+        16
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.1.1"
+      },
+      "geometry": "rect",
+      "text": "drug_id",
+      "textPreview": "drug_id",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "drug_id"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "drug_id",
+          "runs": [
+            {
+              "index": 1,
+              "text": "drug_id",
+              "fontSize": 12,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ulwval87",
+      "id": "10",
+      "name": "node-生产批次",
+      "bbox": [
+        424,
+        287.2,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.2"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j6tovaho",
+      "id": "11",
+      "name": "node-text-生产批次",
+      "bbox": [
+        440,
+        302,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.2.0"
+      },
+      "geometry": "rect",
+      "text": "生产批次",
+      "textPreview": "生产批次",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "生产批次"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "生产批次",
+          "runs": [
+            {
+              "index": 1,
+              "text": "生产批次",
+              "fontSize": 22,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/crmhk3q5",
+      "id": "12",
+      "name": "arrow-symbol-batch_id",
+      "bbox": [
+        654,
+        288,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.3.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cfa9w3m",
+      "id": "13",
+      "name": "arrow-label-batch_id",
+      "bbox": [
+        654,
+        342,
+        92,
+        16
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.3.1"
+      },
+      "geometry": "rect",
+      "text": "batch_id",
+      "textPreview": "batch_id",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "batch_id"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "batch_id",
+          "runs": [
+            {
+              "index": 1,
+              "text": "batch_id",
+              "fontSize": 12,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uxc3ylc7",
+      "id": "14",
+      "name": "node-采购记录",
+      "bbox": [
+        756,
+        287.2,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.4"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ji5snelo",
+      "id": "15",
+      "name": "node-text-采购记录",
+      "bbox": [
+        772,
+        302,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.4.0"
+      },
+      "geometry": "rect",
+      "text": "采购记录",
+      "textPreview": "采购记录",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "采购记录"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "采购记录",
+          "runs": [
+            {
+              "index": 1,
+              "text": "采购记录",
+              "fontSize": 22,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/c3ylc7u5",
+      "id": "16",
+      "name": "arrow-symbol-batch_id",
+      "bbox": [
+        986,
+        288,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.5.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1kre1w7m",
+      "id": "17",
+      "name": "arrow-label-batch_id",
+      "bbox": [
+        986,
+        342,
+        92,
+        16
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.5.1"
+      },
+      "geometry": "rect",
+      "text": "batch_id",
+      "textPreview": "batch_id",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "batch_id"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "batch_id",
+          "runs": [
+            {
+              "index": 1,
+              "text": "batch_id",
+              "fontSize": 12,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q5o7qpg3",
+      "id": "18",
+      "name": "node-销售记录",
+      "bbox": [
+        1088,
+        287.2,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.6"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jqh0fepk",
+      "id": "19",
+      "name": "node-text-销售记录",
+      "bbox": [
+        1104,
+        302,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.6.0"
+      },
+      "geometry": "rect",
+      "text": "销售记录",
+      "textPreview": "销售记录",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "销售记录"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "销售记录",
+          "runs": [
+            {
+              "index": 1,
+              "text": "销售记录",
+              "fontSize": 22,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bulwval8",
+      "id": "20",
+      "name": "arrow-symbol-org+batch",
+      "bbox": [
+        1318,
+        288,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.7.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i9s36hcr",
+      "id": "21",
+      "name": "arrow-label-org+batch",
+      "bbox": [
+        1318,
+        342,
+        92,
+        16
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.7.1"
+      },
+      "geometry": "rect",
+      "text": "org+batch",
+      "textPreview": "org+batch",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "org+batch"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "org+batch",
+          "runs": [
+            {
+              "index": 1,
+              "text": "org+batch",
+              "fontSize": 12,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p0bi9s36",
+      "id": "22",
+      "name": "node-库存台账",
+      "bbox": [
+        1420,
+        287.2,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.8"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0fepkzup",
+      "id": "23",
+      "name": "node-text-库存台账",
+      "bbox": [
+        1436,
+        302,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.0.1.8.0"
+      },
+      "geometry": "rect",
+      "text": "库存台账",
+      "textPreview": "库存台账",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "库存台账"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "库存台账",
+          "runs": [
+            {
+              "index": 1,
+              "text": "库存台账",
+              "fontSize": 22,
+              "color": "#2563A8",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bi9s36hc",
+      "id": "24",
+      "name": "loop-heading",
+      "bbox": [
+        92,
+        414,
+        1736,
+        34
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.0"
+      },
+      "geometry": "rect",
+      "text": "监管处置闭环",
+      "textPreview": "监管处置闭环",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "fontSize": 28,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "监管处置闭环"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "监管处置闭环",
+          "runs": [
+            {
+              "index": 1,
+              "text": "监管处置闭环",
+              "fontSize": 28,
+              "color": "#D8912B",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ixczed8v",
+      "id": "25",
+      "name": "node-公众举报",
+      "bbox": [
+        92,
+        464.8,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.0"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tovahoza",
+      "id": "26",
+      "name": "node-text-公众举报",
+      "bbox": [
+        108,
+        478,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.0.0"
+      },
+      "geometry": "rect",
+      "text": "公众举报",
+      "textPreview": "公众举报",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "公众举报"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "公众举报",
+          "runs": [
+            {
+              "index": 1,
+              "text": "公众举报",
+              "fontSize": 22,
+              "color": "#D8912B",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/032lszqt",
+      "id": "27",
+      "name": "arrow-symbol-线索",
+      "bbox": [
+        322,
+        464,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.1.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b6xkf6dc",
+      "id": "28",
+      "name": "arrow-label-线索",
+      "bbox": [
+        322,
+        520,
+        92,
+        16
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.1.1"
+      },
+      "geometry": "rect",
+      "text": "线索",
+      "textPreview": "线索",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "线索"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "线索",
+          "runs": [
+            {
+              "index": 1,
+              "text": "线索",
+              "fontSize": 12,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/il0rqd4v",
+      "id": "29",
+      "name": "node-任务派发",
+      "bbox": [
+        424,
+        464.8,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.2"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sneloj2t",
+      "id": "30",
+      "name": "node-text-任务派发",
+      "bbox": [
+        440,
+        478,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.2.0"
+      },
+      "geometry": "rect",
+      "text": "任务派发",
+      "textPreview": "任务派发",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "任务派发"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "任务派发",
+          "runs": [
+            {
+              "index": 1,
+              "text": "任务派发",
+              "fontSize": 22,
+              "color": "#D8912B",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l87ed8ba",
+      "id": "31",
+      "name": "arrow-symbol-责任人",
+      "bbox": [
+        654,
+        464,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.3.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 32,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ahoza1gv",
+      "id": "32",
+      "name": "arrow-label-责任人",
+      "bbox": [
+        654,
+        520,
+        92,
+        16
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.3.1"
+      },
+      "geometry": "rect",
+      "text": "责任人",
+      "textPreview": "责任人",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "责任人"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "责任人",
+          "runs": [
+            {
+              "index": 1,
+              "text": "责任人",
+              "fontSize": 12,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 33,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/32lszqtc",
+      "id": "33",
+      "name": "node-调查核查",
+      "bbox": [
+        756,
+        464.8,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.4"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 34,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/szqtcj6t",
+      "id": "34",
+      "name": "node-text-调查核查",
+      "bbox": [
+        772,
+        478,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.4.0"
+      },
+      "geometry": "rect",
+      "text": "调查核查",
+      "textPreview": "调查核查",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "调查核查"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "调查核查",
+          "runs": [
+            {
+              "index": 1,
+              "text": "调查核查",
+              "fontSize": 22,
+              "color": "#D8912B",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 35,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lkjm1cfa",
+      "id": "35",
+      "name": "arrow-symbol-结论",
+      "bbox": [
+        986,
+        464,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.5.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 36,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/at47y1kr",
+      "id": "36",
+      "name": "arrow-label-结论",
+      "bbox": [
+        986,
+        520,
+        92,
+        16
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.5.1"
+      },
+      "geometry": "rect",
+      "text": "结论",
+      "textPreview": "结论",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "结论"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "结论",
+          "runs": [
+            {
+              "index": 1,
+              "text": "结论",
+              "fontSize": 12,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 37,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ex0nuxc",
+      "id": "37",
+      "name": "node-处罚处置",
+      "bbox": [
+        1088,
+        464.8,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.6"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 38,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w3m94fu1",
+      "id": "38",
+      "name": "node-text-处罚处置",
+      "bbox": [
+        1104,
+        478,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.6.0"
+      },
+      "geometry": "rect",
+      "text": "处罚处置",
+      "textPreview": "处罚处置",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "处罚处置"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "处罚处置",
+          "runs": [
+            {
+              "index": 1,
+              "text": "处罚处置",
+              "fontSize": 22,
+              "color": "#D8912B",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 39,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/loj2t83i",
+      "id": "39",
+      "name": "arrow-symbol-留痕",
+      "bbox": [
+        1318,
+        464,
+        92,
+        52
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.7.0"
+      },
+      "geometry": "rect",
+      "text": "→",
+      "textPreview": "→",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "→"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "→",
+          "runs": [
+            {
+              "index": 1,
+              "text": "→",
+              "fontSize": 42,
+              "color": "#5C6F68",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 40,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xczed8v6",
+      "id": "40",
+      "name": "arrow-label-留痕",
+      "bbox": [
+        1318,
+        520,
+        92,
+        16
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.7.1"
+      },
+      "geometry": "rect",
+      "text": "留痕",
+      "textPreview": "留痕",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "留痕"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "留痕",
+          "runs": [
+            {
+              "index": 1,
+              "text": "留痕",
+              "fontSize": 12,
+              "color": "#5C6F68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 41,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8v6psfil",
+      "id": "41",
+      "name": "node-结果归档",
+      "bbox": [
+        1420,
+        464.8,
+        220,
+        72
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.8"
+      },
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF"
+    },
+    {
+      "order": 42,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fa9w3m94",
+      "id": "42",
+      "name": "node-text-结果归档",
+      "bbox": [
+        1436,
+        478,
+        188,
+        28
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.1.1.8.0"
+      },
+      "geometry": "rect",
+      "text": "结果归档",
+      "textPreview": "结果归档",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "+mn-lt",
+        "bold": true,
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "结果归档"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "结果归档",
+          "runs": [
+            {
+              "index": 1,
+              "text": "结果归档",
+              "fontSize": 22,
+              "color": "#D8912B",
+              "bold": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 43,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qpg3ex0n",
+      "id": "43",
+      "name": "proof-1",
+      "bbox": [
+        92,
+        590,
+        560,
+        56
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.0"
+      },
+      "geometry": "rect",
+      "text": "批次是追溯主键：生产、采购、销售、库存围绕 batch_id 聚合。",
+      "textPreview": "批次是追溯主键：生产、采购、销售、库存围绕 batch_id 聚合。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "批次是追溯主键：生产、采购、销售、库存围绕"
+          },
+          {
+            "index": 2,
+            "text": "batch_id 聚合。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "批次是追溯主键：生产、采购、销售、库存围绕 batch_id 聚合。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "批次是追溯主键：生产、采购、销售、库存围绕 batch_id 聚合。",
+              "fontSize": 23,
+              "color": "#13231E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 44,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x4nap4r6",
+      "id": "44",
+      "name": "proof-2",
+      "bbox": [
+        680,
+        590,
+        560,
+        56
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.1"
+      },
+      "geometry": "rect",
+      "text": "库存写入与流转记录放入事务，避免记录成功但库存未更新。",
+      "textPreview": "库存写入与流转记录放入事务，避免记录成功但库存未更新。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "库存写入与流转记录放入事务，避免记录成功但库存未"
+          },
+          {
+            "index": 2,
+            "text": "更新。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "库存写入与流转记录放入事务，避免记录成功但库存未更新。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "库存写入与流转记录放入事务，避免记录成功但库存未更新。",
+              "fontSize": 23,
+              "color": "#13231E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 45,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8jqh0fep",
+      "id": "45",
+      "name": "proof-3",
+      "bbox": [
+        1268,
+        590,
+        560,
+        56
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.1.2.2"
+      },
+      "geometry": "rect",
+      "text": "监管任务记录派发、调查、处置时间点，满足流程复盘。",
+      "textPreview": "监管任务记录派发、调查、处置时间点，满足流程复盘。",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "监管任务记录派发、调查、处置时间点，满足流程复盘"
+          },
+          {
+            "index": 2,
+            "text": "。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "监管任务记录派发、调查、处置时间点，满足流程复盘。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "监管任务记录派发、调查、处置时间点，满足流程复盘。",
+              "fontSize": 23,
+              "color": "#13231E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 46,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fyxobm58",
+      "id": "46",
+      "name": "footer",
+      "bbox": [
+        92,
+        994,
+        1736,
+        18
+      ],
+      "composeSource": {
+        "run": 2,
+        "path": "0.2"
+      },
+      "geometry": "rect",
+      "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+      "textPreview": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "alignment": "left"
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+          "runs": [
+            {
+              "index": 1,
+              "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+              "fontSize": 14,
+              "color": "#7B8B86"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "composeRuns": [
+    {
+      "index": 1,
+      "frame": {
+        "left": 0,
+        "top": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "baseUnit": 8,
+      "root": {
+        "path": "0",
+        "kind": "layers",
+        "name": "background",
+        "requestedSize": {
+          "width": {
+            "mode": "fill",
+            "value": 1
+          },
+          "height": {
+            "mode": "fill",
+            "value": 1
+          }
+        },
+        "intrinsicSize": {
+          "width": 1920,
+          "height": 1080
+        },
+        "frame": {
+          "left": 0,
+          "top": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "children": [
+          {
+            "path": "0.0",
+            "kind": "shape",
+            "name": "canvas",
+            "requestedSize": {
+              "width": {
+                "mode": "fixed",
+                "value": 1920
+              },
+              "height": {
+                "mode": "fixed",
+                "value": 1080
+              }
+            },
+            "intrinsicSize": {
+              "width": 1920,
+              "height": 1080
+            },
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 1080
+            },
+            "snappedFrame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 1080
+            },
+            "children": [],
+            "geometry": "rect",
+            "element": {
+              "aid": "sh/kjm1cfa9",
+              "id": "1",
+              "kind": "shape"
+            }
+          },
+          {
+            "path": "0.1",
+            "kind": "shape",
+            "name": "top-rule",
+            "requestedSize": {
+              "width": {
+                "mode": "fixed",
+                "value": 1920
+              },
+              "height": {
+                "mode": "fixed",
+                "value": 12
+              }
+            },
+            "intrinsicSize": {
+              "width": 1920,
+              "height": 12
+            },
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 12
+            },
+            "snappedFrame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 12
+            },
+            "children": [],
+            "geometry": "rect",
+            "element": {
+              "aid": "sh/r2p8nqxs",
+              "id": "2",
+              "kind": "shape"
+            }
+          }
+        ],
+        "padding": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "alignItems": "stretch",
+        "justifyItems": "stretch",
+        "contentFrame": {
+          "left": 0,
+          "top": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "items": [
+          {
+            "path": "0.0",
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 1080
+            }
+          },
+          {
+            "path": "0.1",
+            "frame": {
+              "left": 0,
+              "top": 0,
+              "width": 1920,
+              "height": 12
+            }
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "frame": {
+        "left": 0,
+        "top": 0,
+        "width": 1920,
+        "height": 1080
+      },
+      "baseUnit": 8,
+      "root": {
+        "path": "0",
+        "kind": "column",
+        "name": "root",
+        "requestedSize": {
+          "width": {
+            "mode": "fill",
+            "value": 1
+          },
+          "height": {
+            "mode": "fill",
+            "value": 1
+          }
+        },
+        "intrinsicSize": {
+          "width": 184,
+          "height": 327.6
+        },
+        "frame": {
+          "left": 0,
+          "top": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "children": [
+          {
+            "path": "0.0",
+            "kind": "column",
+            "name": "title-stack",
+            "requestedSize": {
+              "width": {
+                "mode": "fill",
+                "value": 1
+              },
+              "height": {
+                "mode": "hug"
+              }
+            },
+            "intrinsicSize": {
+              "width": 897.5,
+              "height": 102.8
+            },
+            "frame": {
+              "left": 92,
+              "top": 70,
+              "width": 1736,
+              "height": 131.6
+            },
+            "children": [
+              {
+                "path": "0.0.0",
+                "kind": "text",
+                "name": "slide-title",
+                "requestedSize": {
+                  "width": {
+                    "mode": "wrap",
+                    "max": 1640
+                  },
+                  "height": {
+                    "mode": "hug"
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 897.5,
+                  "height": 60
+                },
+                "frame": {
+                  "left": 92,
+                  "top": 70,
+                  "width": 897.5,
+                  "height": 60
+                },
+                "snappedFrame": {
+                  "left": 92,
+                  "top": 70,
+                  "width": 898,
+                  "height": 60
+                },
+                "children": [],
+                "text": "核心业务：一条追溯主链 + 一个监管闭环",
+                "transform": "none",
+                "element": {
+                  "aid": "sh/2hwfyxob",
+                  "id": "3",
+                  "kind": "shape"
+                }
+              },
+              {
+                "path": "0.0.1",
+                "kind": "text",
+                "name": "slide-subtitle",
+                "requestedSize": {
+                  "width": {
+                    "mode": "wrap",
+                    "max": 1320
+                  },
+                  "height": {
+                    "mode": "hug"
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 733.42,
+                  "height": 28.8
+                },
+                "frame": {
+                  "left": 92,
+                  "top": 144,
+                  "width": 733.42,
+                  "height": 57.6
+                },
+                "snappedFrame": {
+                  "left": 92,
+                  "top": 144,
+                  "width": 734,
+                  "height": 58
+                },
+                "children": [],
+                "text": "讲解重点：系统不是单表 CRUD，而是围绕批次和线索组织业务流转。",
+                "transform": "none",
+                "element": {
+                  "aid": "sh/9gr2p8nq",
+                  "id": "4",
+                  "kind": "shape"
+                }
+              }
+            ],
+            "padding": {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "gap": 14,
+            "effectiveGap": 14,
+            "justifyOffset": 0,
+            "align": "start",
+            "justify": "start",
+            "contentFrame": {
+              "left": 92,
+              "top": 70,
+              "width": 1736,
+              "height": 131.6
+            },
+            "items": [
+              {
+                "path": "0.0.0",
+                "frame": {
+                  "left": 92,
+                  "top": 70,
+                  "width": 897.5,
+                  "height": 60
+                }
+              },
+              {
+                "path": "0.0.1",
+                "frame": {
+                  "left": 92,
+                  "top": 144,
+                  "width": 733.42,
+                  "height": 57.6
+                }
+              }
+            ]
+          },
+          {
+            "path": "0.1",
+            "kind": "column",
+            "name": "content",
+            "requestedSize": {
+              "width": {
+                "mode": "fill",
+                "value": 1
+              },
+              "height": {
+                "mode": "fill",
+                "value": 1
+              }
+            },
+            "intrinsicSize": {
+              "width": 0,
+              "height": 382.8
+            },
+            "frame": {
+              "left": 92,
+              "top": 235.6,
+              "width": 1736,
+              "height": 723.6
+            },
+            "children": [
+              {
+                "path": "0.1.0",
+                "kind": "column",
+                "name": "trace-chain",
+                "requestedSize": {
+                  "width": {
+                    "mode": "fill",
+                    "value": 1
+                  },
+                  "height": {
+                    "mode": "hug"
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 0,
+                  "height": 123.6
+                },
+                "frame": {
+                  "left": 92,
+                  "top": 235.6,
+                  "width": 1736,
+                  "height": 123.6
+                },
+                "children": [
+                  {
+                    "path": "0.1.0.0",
+                    "kind": "text",
+                    "name": "trace-heading",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 33.6
+                    },
+                    "frame": {
+                      "left": 92,
+                      "top": 235.6,
+                      "width": 1736,
+                      "height": 33.6
+                    },
+                    "snappedFrame": {
+                      "left": 92,
+                      "top": 236,
+                      "width": 1736,
+                      "height": 34
+                    },
+                    "children": [],
+                    "text": "药品追溯主链",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/gvy90je9",
+                      "id": "5",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.0.1",
+                    "kind": "row",
+                    "name": "trace-flow",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 1548,
+                      "height": 72
+                    },
+                    "frame": {
+                      "left": 92,
+                      "top": 287.2,
+                      "width": 1736,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.0.1.0",
+                        "kind": "panel",
+                        "name": "node-药品主数据",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 220
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 92,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 92,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.0.0",
+                            "kind": "text",
+                            "name": "node-text-药品主数据",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 108,
+                              "top": 301.2,
+                              "width": 188,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 108,
+                              "top": 302,
+                              "width": 188,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "药品主数据",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/2p8nqxs7",
+                              "id": "7",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 108,
+                          "top": 301.2,
+                          "width": 188,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/ra5gbq1o",
+                          "id": "6",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.1",
+                        "kind": "column",
+                        "name": "arrow-drug_id",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 68.8
+                        },
+                        "frame": {
+                          "left": 322,
+                          "top": 287.2,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.1.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-drug_id",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 322,
+                              "top": 287.2,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 322,
+                              "top": 288,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/9knih4by",
+                              "id": "8",
+                              "kind": "shape"
+                            }
+                          },
+                          {
+                            "path": "0.1.0.1.1.1",
+                            "kind": "text",
+                            "name": "arrow-label-drug_id",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 14.4
+                            },
+                            "frame": {
+                              "left": 322,
+                              "top": 341.6,
+                              "width": 92,
+                              "height": 14.4
+                            },
+                            "snappedFrame": {
+                              "left": 322,
+                              "top": 342,
+                              "width": 92,
+                              "height": 16
+                            },
+                            "children": [],
+                            "text": "drug_id",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/kzupwb2h",
+                              "id": "9",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 322,
+                          "top": 287.2,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.0.1.1.0",
+                            "frame": {
+                              "left": 322,
+                              "top": 287.2,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          },
+                          {
+                            "path": "0.1.0.1.1.1",
+                            "frame": {
+                              "left": 322,
+                              "top": 341.6,
+                              "width": 92,
+                              "height": 14.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.0.1.2",
+                        "kind": "panel",
+                        "name": "node-生产批次",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 220
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 424,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 424,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.2.0",
+                            "kind": "text",
+                            "name": "node-text-生产批次",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 440,
+                              "top": 301.2,
+                              "width": 188,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 440,
+                              "top": 302,
+                              "width": 188,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "生产批次",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/j6tovaho",
+                              "id": "11",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 440,
+                          "top": 301.2,
+                          "width": 188,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/ulwval87",
+                          "id": "10",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.3",
+                        "kind": "column",
+                        "name": "arrow-batch_id",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 68.8
+                        },
+                        "frame": {
+                          "left": 654,
+                          "top": 287.2,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.3.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-batch_id",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 654,
+                              "top": 287.2,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 654,
+                              "top": 288,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/crmhk3q5",
+                              "id": "12",
+                              "kind": "shape"
+                            }
+                          },
+                          {
+                            "path": "0.1.0.1.3.1",
+                            "kind": "text",
+                            "name": "arrow-label-batch_id",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 14.4
+                            },
+                            "frame": {
+                              "left": 654,
+                              "top": 341.6,
+                              "width": 92,
+                              "height": 14.4
+                            },
+                            "snappedFrame": {
+                              "left": 654,
+                              "top": 342,
+                              "width": 92,
+                              "height": 16
+                            },
+                            "children": [],
+                            "text": "batch_id",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/1cfa9w3m",
+                              "id": "13",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 654,
+                          "top": 287.2,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.0.1.3.0",
+                            "frame": {
+                              "left": 654,
+                              "top": 287.2,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          },
+                          {
+                            "path": "0.1.0.1.3.1",
+                            "frame": {
+                              "left": 654,
+                              "top": 341.6,
+                              "width": 92,
+                              "height": 14.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.0.1.4",
+                        "kind": "panel",
+                        "name": "node-采购记录",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 220
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 756,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 756,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.4.0",
+                            "kind": "text",
+                            "name": "node-text-采购记录",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 772,
+                              "top": 301.2,
+                              "width": 188,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 772,
+                              "top": 302,
+                              "width": 188,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "采购记录",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/ji5snelo",
+                              "id": "15",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 772,
+                          "top": 301.2,
+                          "width": 188,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/uxc3ylc7",
+                          "id": "14",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.5",
+                        "kind": "column",
+                        "name": "arrow-batch_id",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 68.8
+                        },
+                        "frame": {
+                          "left": 986,
+                          "top": 287.2,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.5.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-batch_id",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 986,
+                              "top": 287.2,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 986,
+                              "top": 288,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/c3ylc7u5",
+                              "id": "16",
+                              "kind": "shape"
+                            }
+                          },
+                          {
+                            "path": "0.1.0.1.5.1",
+                            "kind": "text",
+                            "name": "arrow-label-batch_id",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 14.4
+                            },
+                            "frame": {
+                              "left": 986,
+                              "top": 341.6,
+                              "width": 92,
+                              "height": 14.4
+                            },
+                            "snappedFrame": {
+                              "left": 986,
+                              "top": 342,
+                              "width": 92,
+                              "height": 16
+                            },
+                            "children": [],
+                            "text": "batch_id",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/1kre1w7m",
+                              "id": "17",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 986,
+                          "top": 287.2,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.0.1.5.0",
+                            "frame": {
+                              "left": 986,
+                              "top": 287.2,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          },
+                          {
+                            "path": "0.1.0.1.5.1",
+                            "frame": {
+                              "left": 986,
+                              "top": 341.6,
+                              "width": 92,
+                              "height": 14.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.0.1.6",
+                        "kind": "panel",
+                        "name": "node-销售记录",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 220
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 1088,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 1088,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.6.0",
+                            "kind": "text",
+                            "name": "node-text-销售记录",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 1104,
+                              "top": 301.2,
+                              "width": 188,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 1104,
+                              "top": 302,
+                              "width": 188,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "销售记录",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/jqh0fepk",
+                              "id": "19",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 1104,
+                          "top": 301.2,
+                          "width": 188,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/q5o7qpg3",
+                          "id": "18",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.7",
+                        "kind": "column",
+                        "name": "arrow-org+batch",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 68.8
+                        },
+                        "frame": {
+                          "left": 1318,
+                          "top": 287.2,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.7.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-org+batch",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 1318,
+                              "top": 287.2,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 1318,
+                              "top": 288,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/bulwval8",
+                              "id": "20",
+                              "kind": "shape"
+                            }
+                          },
+                          {
+                            "path": "0.1.0.1.7.1",
+                            "kind": "text",
+                            "name": "arrow-label-org+batch",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 14.4
+                            },
+                            "frame": {
+                              "left": 1318,
+                              "top": 341.6,
+                              "width": 92,
+                              "height": 14.4
+                            },
+                            "snappedFrame": {
+                              "left": 1318,
+                              "top": 342,
+                              "width": 92,
+                              "height": 16
+                            },
+                            "children": [],
+                            "text": "org+batch",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/i9s36hcr",
+                              "id": "21",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 1318,
+                          "top": 287.2,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.0.1.7.0",
+                            "frame": {
+                              "left": 1318,
+                              "top": 287.2,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          },
+                          {
+                            "path": "0.1.0.1.7.1",
+                            "frame": {
+                              "left": 1318,
+                              "top": 341.6,
+                              "width": 92,
+                              "height": 14.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.0.1.8",
+                        "kind": "panel",
+                        "name": "node-库存台账",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 220
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 1420,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 1420,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.0.1.8.0",
+                            "kind": "text",
+                            "name": "node-text-库存台账",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 1436,
+                              "top": 301.2,
+                              "width": 188,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 1436,
+                              "top": 302,
+                              "width": 188,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "库存台账",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/0fepkzup",
+                              "id": "23",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 1436,
+                          "top": 301.2,
+                          "width": 188,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/p0bi9s36",
+                          "id": "22",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0,
+                      "left": 0
+                    },
+                    "gap": 10,
+                    "effectiveGap": 10,
+                    "justifyOffset": 0,
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 92,
+                      "top": 287.2,
+                      "width": 1736,
+                      "height": 72
+                    },
+                    "items": [
+                      {
+                        "path": "0.1.0.1.0",
+                        "frame": {
+                          "left": 92,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.1",
+                        "frame": {
+                          "left": 322,
+                          "top": 287.2,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.2",
+                        "frame": {
+                          "left": 424,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.3",
+                        "frame": {
+                          "left": 654,
+                          "top": 287.2,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.4",
+                        "frame": {
+                          "left": 756,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.5",
+                        "frame": {
+                          "left": 986,
+                          "top": 287.2,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.6",
+                        "frame": {
+                          "left": 1088,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.7",
+                        "frame": {
+                          "left": 1318,
+                          "top": 287.2,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.0.1.8",
+                        "frame": {
+                          "left": 1420,
+                          "top": 287.2,
+                          "width": 220,
+                          "height": 72
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "padding": {
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                },
+                "gap": 18,
+                "effectiveGap": 18,
+                "justifyOffset": 0,
+                "align": "start",
+                "justify": "start",
+                "contentFrame": {
+                  "left": 92,
+                  "top": 235.6,
+                  "width": 1736,
+                  "height": 123.6
+                },
+                "items": [
+                  {
+                    "path": "0.1.0.0",
+                    "frame": {
+                      "left": 92,
+                      "top": 235.6,
+                      "width": 1736,
+                      "height": 33.6
+                    }
+                  },
+                  {
+                    "path": "0.1.0.1",
+                    "frame": {
+                      "left": 92,
+                      "top": 287.2,
+                      "width": 1736,
+                      "height": 72
+                    }
+                  }
+                ]
+              },
+              {
+                "path": "0.1.1",
+                "kind": "column",
+                "name": "reg-loop",
+                "requestedSize": {
+                  "width": {
+                    "mode": "fill",
+                    "value": 1
+                  },
+                  "height": {
+                    "mode": "hug"
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 0,
+                  "height": 123.6
+                },
+                "frame": {
+                  "left": 92,
+                  "top": 413.2,
+                  "width": 1736,
+                  "height": 123.6
+                },
+                "children": [
+                  {
+                    "path": "0.1.1.0",
+                    "kind": "text",
+                    "name": "loop-heading",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 33.6
+                    },
+                    "frame": {
+                      "left": 92,
+                      "top": 413.2,
+                      "width": 1736,
+                      "height": 33.6
+                    },
+                    "snappedFrame": {
+                      "left": 92,
+                      "top": 414,
+                      "width": 1736,
+                      "height": 34
+                    },
+                    "children": [],
+                    "text": "监管处置闭环",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/bi9s36hc",
+                      "id": "24",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.1.1",
+                    "kind": "row",
+                    "name": "loop-flow",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 1548,
+                      "height": 72
+                    },
+                    "frame": {
+                      "left": 92,
+                      "top": 464.8,
+                      "width": 1736,
+                      "height": 72
+                    },
+                    "children": [
+                      {
+                        "path": "0.1.1.1.0",
+                        "kind": "panel",
+                        "name": "node-公众举报",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 220
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 92,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 92,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.1.1.0.0",
+                            "kind": "text",
+                            "name": "node-text-公众举报",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 108,
+                              "top": 478.8,
+                              "width": 188,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 108,
+                              "top": 478,
+                              "width": 188,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "公众举报",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/tovahoza",
+                              "id": "26",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 108,
+                          "top": 478.8,
+                          "width": 188,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/ixczed8v",
+                          "id": "25",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.1.1.1",
+                        "kind": "column",
+                        "name": "arrow-线索",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 68.8
+                        },
+                        "frame": {
+                          "left": 322,
+                          "top": 464.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.1.1.1.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-线索",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 322,
+                              "top": 464.8,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 322,
+                              "top": 464,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/032lszqt",
+                              "id": "27",
+                              "kind": "shape"
+                            }
+                          },
+                          {
+                            "path": "0.1.1.1.1.1",
+                            "kind": "text",
+                            "name": "arrow-label-线索",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 14.4
+                            },
+                            "frame": {
+                              "left": 322,
+                              "top": 519.2,
+                              "width": 92,
+                              "height": 14.4
+                            },
+                            "snappedFrame": {
+                              "left": 322,
+                              "top": 520,
+                              "width": 92,
+                              "height": 16
+                            },
+                            "children": [],
+                            "text": "线索",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/b6xkf6dc",
+                              "id": "28",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 322,
+                          "top": 464.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.1.1.1.0",
+                            "frame": {
+                              "left": 322,
+                              "top": 464.8,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          },
+                          {
+                            "path": "0.1.1.1.1.1",
+                            "frame": {
+                              "left": 322,
+                              "top": 519.2,
+                              "width": 92,
+                              "height": 14.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.1.1.2",
+                        "kind": "panel",
+                        "name": "node-任务派发",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 220
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 424,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 424,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.1.1.2.0",
+                            "kind": "text",
+                            "name": "node-text-任务派发",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 440,
+                              "top": 478.8,
+                              "width": 188,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 440,
+                              "top": 478,
+                              "width": 188,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "任务派发",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/sneloj2t",
+                              "id": "30",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 440,
+                          "top": 478.8,
+                          "width": 188,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/il0rqd4v",
+                          "id": "29",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.1.1.3",
+                        "kind": "column",
+                        "name": "arrow-责任人",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 68.8
+                        },
+                        "frame": {
+                          "left": 654,
+                          "top": 464.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.1.1.3.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-责任人",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 654,
+                              "top": 464.8,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 654,
+                              "top": 464,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/l87ed8ba",
+                              "id": "31",
+                              "kind": "shape"
+                            }
+                          },
+                          {
+                            "path": "0.1.1.1.3.1",
+                            "kind": "text",
+                            "name": "arrow-label-责任人",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 14.4
+                            },
+                            "frame": {
+                              "left": 654,
+                              "top": 519.2,
+                              "width": 92,
+                              "height": 14.4
+                            },
+                            "snappedFrame": {
+                              "left": 654,
+                              "top": 520,
+                              "width": 92,
+                              "height": 16
+                            },
+                            "children": [],
+                            "text": "责任人",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/ahoza1gv",
+                              "id": "32",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 654,
+                          "top": 464.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.1.1.3.0",
+                            "frame": {
+                              "left": 654,
+                              "top": 464.8,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          },
+                          {
+                            "path": "0.1.1.1.3.1",
+                            "frame": {
+                              "left": 654,
+                              "top": 519.2,
+                              "width": 92,
+                              "height": 14.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.1.1.4",
+                        "kind": "panel",
+                        "name": "node-调查核查",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 220
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 756,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 756,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.1.1.4.0",
+                            "kind": "text",
+                            "name": "node-text-调查核查",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 772,
+                              "top": 478.8,
+                              "width": 188,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 772,
+                              "top": 478,
+                              "width": 188,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "调查核查",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/szqtcj6t",
+                              "id": "34",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 772,
+                          "top": 478.8,
+                          "width": 188,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/32lszqtc",
+                          "id": "33",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.1.1.5",
+                        "kind": "column",
+                        "name": "arrow-结论",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 68.8
+                        },
+                        "frame": {
+                          "left": 986,
+                          "top": 464.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.1.1.5.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-结论",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 986,
+                              "top": 464.8,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 986,
+                              "top": 464,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/lkjm1cfa",
+                              "id": "35",
+                              "kind": "shape"
+                            }
+                          },
+                          {
+                            "path": "0.1.1.1.5.1",
+                            "kind": "text",
+                            "name": "arrow-label-结论",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 14.4
+                            },
+                            "frame": {
+                              "left": 986,
+                              "top": 519.2,
+                              "width": 92,
+                              "height": 14.4
+                            },
+                            "snappedFrame": {
+                              "left": 986,
+                              "top": 520,
+                              "width": 92,
+                              "height": 16
+                            },
+                            "children": [],
+                            "text": "结论",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/at47y1kr",
+                              "id": "36",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 986,
+                          "top": 464.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.1.1.5.0",
+                            "frame": {
+                              "left": 986,
+                              "top": 464.8,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          },
+                          {
+                            "path": "0.1.1.1.5.1",
+                            "frame": {
+                              "left": 986,
+                              "top": 519.2,
+                              "width": 92,
+                              "height": 14.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.1.1.6",
+                        "kind": "panel",
+                        "name": "node-处罚处置",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 220
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 1088,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 1088,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.1.1.6.0",
+                            "kind": "text",
+                            "name": "node-text-处罚处置",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 1104,
+                              "top": 478.8,
+                              "width": 188,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 1104,
+                              "top": 478,
+                              "width": 188,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "处罚处置",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/w3m94fu1",
+                              "id": "38",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 1104,
+                          "top": 478.8,
+                          "width": 188,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/3ex0nuxc",
+                          "id": "37",
+                          "kind": "shape"
+                        }
+                      },
+                      {
+                        "path": "0.1.1.1.7",
+                        "kind": "column",
+                        "name": "arrow-留痕",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 92
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 0,
+                          "height": 68.8
+                        },
+                        "frame": {
+                          "left": 1318,
+                          "top": 464.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.1.1.7.0",
+                            "kind": "text",
+                            "name": "arrow-symbol-留痕",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 50.4
+                            },
+                            "frame": {
+                              "left": 1318,
+                              "top": 464.8,
+                              "width": 92,
+                              "height": 50.4
+                            },
+                            "snappedFrame": {
+                              "left": 1318,
+                              "top": 464,
+                              "width": 92,
+                              "height": 52
+                            },
+                            "children": [],
+                            "text": "→",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/loj2t83i",
+                              "id": "39",
+                              "kind": "shape"
+                            }
+                          },
+                          {
+                            "path": "0.1.1.1.7.1",
+                            "kind": "text",
+                            "name": "arrow-label-留痕",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 14.4
+                            },
+                            "frame": {
+                              "left": 1318,
+                              "top": 519.2,
+                              "width": 92,
+                              "height": 14.4
+                            },
+                            "snappedFrame": {
+                              "left": 1318,
+                              "top": 520,
+                              "width": 92,
+                              "height": 16
+                            },
+                            "children": [],
+                            "text": "留痕",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/xczed8v6",
+                              "id": "40",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0
+                        },
+                        "gap": 4,
+                        "effectiveGap": 4,
+                        "justifyOffset": 0,
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 1318,
+                          "top": 464.8,
+                          "width": 92,
+                          "height": 72
+                        },
+                        "items": [
+                          {
+                            "path": "0.1.1.1.7.0",
+                            "frame": {
+                              "left": 1318,
+                              "top": 464.8,
+                              "width": 92,
+                              "height": 50.4
+                            }
+                          },
+                          {
+                            "path": "0.1.1.1.7.1",
+                            "frame": {
+                              "left": 1318,
+                              "top": 519.2,
+                              "width": 92,
+                              "height": 14.4
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "path": "0.1.1.1.8",
+                        "kind": "panel",
+                        "name": "node-结果归档",
+                        "requestedSize": {
+                          "width": {
+                            "mode": "fixed",
+                            "value": 220
+                          },
+                          "height": {
+                            "mode": "fixed",
+                            "value": 72
+                          }
+                        },
+                        "intrinsicSize": {
+                          "width": 32,
+                          "height": 54.4
+                        },
+                        "frame": {
+                          "left": 1420,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "snappedFrame": {
+                          "left": 1420,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        },
+                        "children": [
+                          {
+                            "path": "0.1.1.1.8.0",
+                            "kind": "text",
+                            "name": "node-text-结果归档",
+                            "requestedSize": {
+                              "width": {
+                                "mode": "fill",
+                                "value": 1
+                              },
+                              "height": {
+                                "mode": "hug"
+                              }
+                            },
+                            "intrinsicSize": {
+                              "width": 0,
+                              "height": 26.4
+                            },
+                            "frame": {
+                              "left": 1436,
+                              "top": 478.8,
+                              "width": 188,
+                              "height": 26.4
+                            },
+                            "snappedFrame": {
+                              "left": 1436,
+                              "top": 478,
+                              "width": 188,
+                              "height": 28
+                            },
+                            "children": [],
+                            "text": "结果归档",
+                            "transform": "none",
+                            "element": {
+                              "aid": "sh/fa9w3m94",
+                              "id": "42",
+                              "kind": "shape"
+                            }
+                          }
+                        ],
+                        "padding": {
+                          "top": 14,
+                          "right": 16,
+                          "bottom": 14,
+                          "left": 16
+                        },
+                        "align": "start",
+                        "justify": "start",
+                        "contentFrame": {
+                          "left": 1436,
+                          "top": 478.8,
+                          "width": 188,
+                          "height": 44
+                        },
+                        "element": {
+                          "aid": "sh/8v6psfil",
+                          "id": "41",
+                          "kind": "shape"
+                        }
+                      }
+                    ],
+                    "padding": {
+                      "top": 0,
+                      "right": 0,
+                      "bottom": 0,
+                      "left": 0
+                    },
+                    "gap": 10,
+                    "effectiveGap": 10,
+                    "justifyOffset": 0,
+                    "align": "start",
+                    "justify": "start",
+                    "contentFrame": {
+                      "left": 92,
+                      "top": 464.8,
+                      "width": 1736,
+                      "height": 72
+                    },
+                    "items": [
+                      {
+                        "path": "0.1.1.1.0",
+                        "frame": {
+                          "left": 92,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.1.1.1",
+                        "frame": {
+                          "left": 322,
+                          "top": 464.8,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.1.1.2",
+                        "frame": {
+                          "left": 424,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.1.1.3",
+                        "frame": {
+                          "left": 654,
+                          "top": 464.8,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.1.1.4",
+                        "frame": {
+                          "left": 756,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.1.1.5",
+                        "frame": {
+                          "left": 986,
+                          "top": 464.8,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.1.1.6",
+                        "frame": {
+                          "left": 1088,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.1.1.7",
+                        "frame": {
+                          "left": 1318,
+                          "top": 464.8,
+                          "width": 92,
+                          "height": 72
+                        }
+                      },
+                      {
+                        "path": "0.1.1.1.8",
+                        "frame": {
+                          "left": 1420,
+                          "top": 464.8,
+                          "width": 220,
+                          "height": 72
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "padding": {
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                },
+                "gap": 18,
+                "effectiveGap": 18,
+                "justifyOffset": 0,
+                "align": "start",
+                "justify": "start",
+                "contentFrame": {
+                  "left": 92,
+                  "top": 413.2,
+                  "width": 1736,
+                  "height": 123.6
+                },
+                "items": [
+                  {
+                    "path": "0.1.1.0",
+                    "frame": {
+                      "left": 92,
+                      "top": 413.2,
+                      "width": 1736,
+                      "height": 33.6
+                    }
+                  },
+                  {
+                    "path": "0.1.1.1",
+                    "frame": {
+                      "left": 92,
+                      "top": 464.8,
+                      "width": 1736,
+                      "height": 72
+                    }
+                  }
+                ]
+              },
+              {
+                "path": "0.1.2",
+                "kind": "grid",
+                "name": "evidence-grid",
+                "requestedSize": {
+                  "width": {
+                    "mode": "fill",
+                    "value": 1
+                  },
+                  "height": {
+                    "mode": "hug"
+                  }
+                },
+                "intrinsicSize": {
+                  "width": 56,
+                  "height": 27.6
+                },
+                "frame": {
+                  "left": 92,
+                  "top": 590.8,
+                  "width": 1736,
+                  "height": 55.2
+                },
+                "children": [
+                  {
+                    "path": "0.1.2.0",
+                    "kind": "text",
+                    "name": "proof-1",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 27.6
+                    },
+                    "frame": {
+                      "left": 92,
+                      "top": 590.8,
+                      "width": 560,
+                      "height": 55.2
+                    },
+                    "snappedFrame": {
+                      "left": 92,
+                      "top": 590,
+                      "width": 560,
+                      "height": 56
+                    },
+                    "children": [],
+                    "text": "批次是追溯主键：生产、采购、销售、库存围绕 batch_id 聚合。",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/qpg3ex0n",
+                      "id": "43",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.2.1",
+                    "kind": "text",
+                    "name": "proof-2",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 27.6
+                    },
+                    "frame": {
+                      "left": 680,
+                      "top": 590.8,
+                      "width": 560,
+                      "height": 55.2
+                    },
+                    "snappedFrame": {
+                      "left": 680,
+                      "top": 590,
+                      "width": 560,
+                      "height": 56
+                    },
+                    "children": [],
+                    "text": "库存写入与流转记录放入事务，避免记录成功但库存未更新。",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/x4nap4r6",
+                      "id": "44",
+                      "kind": "shape"
+                    }
+                  },
+                  {
+                    "path": "0.1.2.2",
+                    "kind": "text",
+                    "name": "proof-3",
+                    "requestedSize": {
+                      "width": {
+                        "mode": "fill",
+                        "value": 1
+                      },
+                      "height": {
+                        "mode": "hug"
+                      }
+                    },
+                    "intrinsicSize": {
+                      "width": 0,
+                      "height": 27.6
+                    },
+                    "frame": {
+                      "left": 1268,
+                      "top": 590.8,
+                      "width": 560,
+                      "height": 55.2
+                    },
+                    "snappedFrame": {
+                      "left": 1268,
+                      "top": 590,
+                      "width": 560,
+                      "height": 56
+                    },
+                    "children": [],
+                    "text": "监管任务记录派发、调查、处置时间点，满足流程复盘。",
+                    "transform": "none",
+                    "element": {
+                      "aid": "sh/8jqh0fep",
+                      "id": "45",
+                      "kind": "shape"
+                    }
+                  }
+                ],
+                "padding": {
+                  "top": 0,
+                  "right": 0,
+                  "bottom": 0,
+                  "left": 0
+                },
+                "columnGap": 28,
+                "rowGap": 0,
+                "alignItems": "stretch",
+                "justifyItems": "stretch",
+                "contentFrame": {
+                  "left": 92,
+                  "top": 590.8,
+                  "width": 1736,
+                  "height": 55.2
+                },
+                "columns": [
+                  {
+                    "mode": "fr",
+                    "value": 1
+                  },
+                  {
+                    "mode": "fr",
+                    "value": 1
+                  },
+                  {
+                    "mode": "fr",
+                    "value": 1
+                  }
+                ],
+                "autoRows": "auto",
+                "resolvedRows": [
+                  "auto"
+                ],
+                "columnSizes": [
+                  560,
+                  560,
+                  560
+                ],
+                "rowSizes": [
+                  55.2
+                ],
+                "cells": [
+                  {
+                    "path": "0.1.2.0",
+                    "column": 0,
+                    "row": 0,
+                    "columnSpan": 1,
+                    "rowSpan": 1,
+                    "cellFrame": {
+                      "left": 92,
+                      "top": 590.8,
+                      "width": 560,
+                      "height": 55.2
+                    }
+                  },
+                  {
+                    "path": "0.1.2.1",
+                    "column": 1,
+                    "row": 0,
+                    "columnSpan": 1,
+                    "rowSpan": 1,
+                    "cellFrame": {
+                      "left": 680,
+                      "top": 590.8,
+                      "width": 560,
+                      "height": 55.2
+                    }
+                  },
+                  {
+                    "path": "0.1.2.2",
+                    "column": 2,
+                    "row": 0,
+                    "columnSpan": 1,
+                    "rowSpan": 1,
+                    "cellFrame": {
+                      "left": 1268,
+                      "top": 590.8,
+                      "width": 560,
+                      "height": 55.2
+                    }
+                  }
+                ]
+              }
+            ],
+            "padding": {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "gap": 54,
+            "effectiveGap": 54,
+            "justifyOffset": 0,
+            "align": "start",
+            "justify": "start",
+            "contentFrame": {
+              "left": 92,
+              "top": 235.6,
+              "width": 1736,
+              "height": 723.6
+            },
+            "items": [
+              {
+                "path": "0.1.0",
+                "frame": {
+                  "left": 92,
+                  "top": 235.6,
+                  "width": 1736,
+                  "height": 123.6
+                }
+              },
+              {
+                "path": "0.1.1",
+                "frame": {
+                  "left": 92,
+                  "top": 413.2,
+                  "width": 1736,
+                  "height": 123.6
+                }
+              },
+              {
+                "path": "0.1.2",
+                "frame": {
+                  "left": 92,
+                  "top": 590.8,
+                  "width": 1736,
+                  "height": 55.2
+                }
+              }
+            ]
+          },
+          {
+            "path": "0.2",
+            "kind": "text",
+            "name": "footer",
+            "requestedSize": {
+              "width": {
+                "mode": "fill",
+                "value": 1
+              },
+              "height": {
+                "mode": "hug"
+              }
+            },
+            "intrinsicSize": {
+              "width": 0,
+              "height": 16.8
+            },
+            "frame": {
+              "left": 92,
+              "top": 993.2,
+              "width": 1736,
+              "height": 16.8
+            },
+            "snappedFrame": {
+              "left": 92,
+              "top": 994,
+              "width": 1736,
+              "height": 18
+            },
+            "children": [],
+            "text": "计算机221-25号 余梓杰 | 基于 Spring Boot 的药品追溯监管系统",
+            "transform": "none",
+            "element": {
+              "aid": "sh/fyxobm58",
+              "id": "46",
+              "kind": "shape"
+            }
+          }
+        ],
+        "padding": {
+          "top": 70,
+          "right": 92,
+          "bottom": 70,
+          "left": 92
+        },
+        "gap": 34,
+        "effectiveGap": 34,
+        "justifyOffset": 0,
+        "align": "start",
+        "justify": "start",
+        "contentFrame": {
+          "left": 92,
+          "top": 70,
+          "width": 1736,
+          "height": 940
+        },
+        "items": [
+          {
+            "path": "0.0",
+            "frame": {
+              "left": 92,
+              "top": 70,
+              "width": 1736,
+              "height": 131.6
+            }
+          },
+          {
+            "path": "0.1",
+            "frame": {
+              "left": 92,
+              "top": 235.6,
+              "width": 1736,
+              "height": 723.6
+            }
+          },
+          {
+            "path": "0.2",
+            "frame": {
+              "left": 92,
+              "top": 993.2,
+              "width": 1736,
+              "height": 16.8
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
